@@ -1,6 +1,6 @@
 # shiny-gallery
 
-Code repository for apps in the Shiny Gallery (formerly known as Shiny User Showcase). These are apps that are contributed by users.
+This repository contains the source code for user-contribiuted apps featured in the Shiny Gallery (formerly known as Shiny User Showcase).
 
 ## Categories
 
