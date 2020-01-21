@@ -4,21 +4,23 @@ This repository contains the source code for user-contribiuted apps featured in 
 
 ## Categories
 
-Apps are categorized with the following tags. An app can fall into multiple categories as well.
+Apps are categorized with the following tags (listed here in alphabetical order). An app can fall into multiple categories as well.
 
-- Pharma - Drug Development, Clinical Trials
+- Consulting
+- Education
 - Finance - Investment, Retail Banking, Underwriting, Rating Agencies
+- Healthcare
+- High Tech 
+- Hospitality 
+- Human Resources
 - Insurance - Underwriting, Home and Auto 
 - Manufacturing
 - Oil and Gas
-- Hospitality 
-- Retail
-- Healthcare
-- High Tech 
+- Pharma - Drug Development, Clinical Trials
 - Public Sector - Local and Federal Governments
-- Human Resources
-- Consulting
-- Education
+- Research
+- Retail
+- Shiny Extensions
 
 ## Adding new apps
 
