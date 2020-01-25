@@ -1,0 +1,47 @@
+ html { height: 100% } 
+ body { height: 100%; 
+       margin: 0px; 
+       padding: 0px;
+       
+              }
+#map_canvas {min-height: 100%; height:auto; }
+/*#map_canvas {min-height: 100%;height:800px; } */
+
+td{
+background-color: PowderBlue ;
+border:1px solid white;
+}
+
+th
+{
+background-color: CornflowerBlue;
+border:1px solid white;
+}
+
+table{
+border-collapse:collapse;
+text-align:center;
+}
+
+tr:hover td{ background-color: CornflowerBlue;}
+
+p{margin-top:0;
+  margin-bottom:0;
+  }
+ul{margin-top:0;
+   margin-bottom:0;
+   padding-top:0;
+   padding-bottom:0
+   }
+   
+ * {
+ font-size: 100%;
+ font-family: Calibri; /*Arial Narrow;*/
+}
+
+.legend td{text-align:left;background-color:rgba(255,255,255,0.5); opacity:0.89}
+
+#cBoxes {position:absolute;
+    right:5px;
+    top:50px;
+    background:transparent} 
