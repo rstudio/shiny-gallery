@@ -1,6 +1,10 @@
 # CRAN Explorer
 
-Explore CRAN packages in an interactive R Shiny app. You can see the application in action on shinyapps.io: [https://nz-stefan.shinyapps.io/cran-explorer/](https://nz-stefan.shinyapps.io/cran-explorer/).
+This app was originally submitted for the 2019 Shiny Contest by [Stefan Schliebs](https://github.com/nz-stefan). Code is copied over from [this repo](https://github.com/nz-stefan/cran-explorer) and app is re-deployed at [gallery.shinyapps.io/cran-explorer](https://gallery.shinyapps.io/cran-explorer/). 
+
+## App description
+
+Explore CRAN packages in an interactive R Shiny app. You can see the application in action on shinyapps.io: [gallery.shinyapps.io/cran-explorer](https://gallery.shinyapps.io/cran-explorer/).
 
 The goal of this project is to demonstrate the development of a complete data service entirely written in the statistical programming language R. Besides this web application, the project includes the creation of a data refresh process (also written in R) that runs inside an AWS Docker container on a daily schedule. Additionally, efforts were made to develop this project in a reproducible way by controlling the operating environmentand the used R version (through Docker containers), a complete list of all required R packages and their specific versions (through `packrat`) with the intention to  promote collaborative development and to reduce the friction of the setup process of R projects in heterogeneous development environments.
 
