@@ -1,0 +1,30 @@
+.graph-loading-bar {
+  padding-left: 40%;
+  /*visibility: hidden;*/
+}
+
+.graph-loading-bar-background {
+  width: 102px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(159, 159, 159, 0.7);
+}
+
+
+.graph-progress-bar {
+  background: #777;
+  position: absolute;
+  margin: 1px;
+  height: 2px;
+  border-radius: 1px
+}
+
+.graph-loading-text{
+  font-family: Arial;
+  text-align: left;
+  font-size: 8pt;
+  color: #555;
+  margin-top: -20px;
+  padding-left: 2px;
+}
+    

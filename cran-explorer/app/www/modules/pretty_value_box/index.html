@@ -1,0 +1,39 @@
+<section class="bubble" style="background-color: {{ background_color }};">
+  <header>
+    <ul>
+      <li>
+        {{ icon }} {{ title }}
+      </li>
+      <li class="big-num">
+        <h4>{{ value }}</h4>
+      </li>
+    </ul>
+  </header>
+  <article>
+    <ul class="sections">
+
+      <li class="list">
+        <ul>
+          <li><i class="fa fa-fw fa-clock-o"></i> {{ last_days }}</li>
+          <li><i class="fa fa-fw fa-calendar-o"></i> {{ date_range }}</li>
+        </ul>
+      </li>
+      <li class="text-right">
+        {{ inline_bar }}
+      </li>
+    </ul>
+
+  </article>
+  <footer>
+    <ul class="sections">
+      <li>
+        <i class="fa fa-fw fa-clock-o"></i> {{ trend_label }}
+      </li>
+      <li class="big-num">
+        <!--i class="fa fa-arrow-circle-down down fa-inverse"></i-->
+        {{ trend_icon }}
+        {{ trend }}
+      </li>
+    </ul>
+  </footer>
+</section>

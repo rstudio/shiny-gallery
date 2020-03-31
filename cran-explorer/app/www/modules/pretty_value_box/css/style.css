@@ -1,0 +1,122 @@
+
+/*
+@charset "UTF-8";
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+
+.cards {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.cards .card {
+  padding: 0px;
+  margin: 0px;
+}
+*/
+
+section.bubble {
+  background-color: #7a0000;
+  border-bottom: 2px solid #424956;
+}
+section.bubble header {
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 100;
+  padding: 10px 10px 10px 10px;
+  font-size: 1.5em;
+}
+section.bubble header h4 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 2em;
+  text-align: right;
+  margin: 0px;
+}
+section.bubble header ul {
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  padding: 0PX;
+  margin: 0px;
+  justify-content: space-between;
+}
+section.bubble article {
+  position: relative;
+  padding: 0px 10px 10px 10px;
+}
+section.bubble article .inlinebar {
+  opacity: 1;
+}
+section.bubble article .inlinebar canvas {
+  vertical-align: bottom !important;
+  zoom: 0.5;
+  max-width: 100%;
+}
+section.bubble article ul.sections {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  padding: 0px;
+  margin: 0px;
+  font-size: 1em;
+}
+section.bubble article ul.sections li {
+  flex-grow: 1;
+}
+section.bubble article ul.sections li.list {
+  color: #424956;
+  font-size: 1em;
+}
+section.bubble article ul.sections li.list ul {
+  list-style: none;
+  padding: 0px;
+  font-size: 1em;
+  text-align: left;
+}
+section.bubble article ul.sections li.list ul li:first-child {
+  font-weight: bold;
+}
+section.bubble footer {
+  padding: 10px 10px 10px 10px;
+  background-color: #f4f5f6;
+  color: #424956;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+section.bubble footer ul.sections {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+section.bubble footer ul.sections li {
+  list-style: none;
+  flex-grow: 1;
+}
+section.bubble footer ul.sections li:last-child {
+  text-align: right;
+}
+section.bubble footer ul.sections li.big-num {
+  color: #424956;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+section.bubble footer ul.sections li.big-num i.up {
+  color: #70c030;
+}
+section.bubble footer ul.sections li.big-num i.down {
+  color: #F16262;
+}
+section.bubble:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-top-color: #424956;
+  border-width: 15px;
+  margin-left: -15px;
+}

@@ -1,0 +1,261 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Stefan">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>R Package Explorer</title>
+    <!-- Shiny added header -->
+    {{ headContent() }}
+    
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!--Modules CSS-->
+    <link rel="stylesheet" href="modules/pretty_value_box/css/style.css">
+    <link rel="stylesheet" href="modules/graph_network/css/style.css">
+</head>
+
+<body data-spy="scroll" data-target="#primary-menu">
+
+    <div class="preloader">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+    <!--Mainmenu-area-->
+    <div class="mainmenu-area" data-spy="affix" data-offset-top="100">
+        <div class="container">
+            <!--Logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://www.datascienceacademy.co.nz" target="_blank" class="navbar-brand logo">
+                    <h5>Data<br>Science<br>Academy</h5>
+                </a>
+            </div>
+            <!--Logo/-->
+            <nav class="collapse navbar-collapse" id="primary-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#home-page">Home</a></li>
+                    <li><a href="#cran-stats">CRAN Stats</a></li>
+                    <li><a href="#featured-pkgs">Featured</a></li>
+                    <li><a href="#pkg-deps">Explorer</a></li>
+                    <!--li><a href="#team-page">Team</a></li-->
+                    <!--li><a href="#faq-page">FAQ</a></li-->
+                    <!--li><a href="#blog-page">Blog</a></li-->
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--Mainmenu-area/-->
+
+
+
+    <!--Header-area-->
+    <header class="header-area overlay full-height relative v-center" id="home-page">
+        <div class="absolute anlge-bg"></div>
+        <div class="container">
+            <div class="row v-center">
+                <div class="col-xs-12 col-md-7 header-text">
+                    <h2>R Package Explorer</h2>
+                    <p>
+                      Browse the CRAN package database and package dependencies.
+                    </p>
+                    {{ header_ui }}
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header-area/-->
+
+
+    <section class="testimonial-area section-padding gray-bg overlay" id="cran-stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                    <div class="page-title">
+                        <h2>CRAN stats</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <div class="testimonials">
+                      
+                      <div class="testimonial">
+                        <div class="testimonial-photo">
+                          {{ box_packages_new_month }}
+                        </div>
+                      </div>
+                      
+                      <div class="testimonial">
+                        <div class="testimonial-photo">
+                          {{ box_packages_updated_month }}
+                        </div>
+                      </div>
+                      
+                      <div class="testimonial">
+                        <div class="testimonial-photo">
+                          {{ box_packages_new_year }}
+                        </div>
+                      </div>
+                      
+                      <div class="testimonial">
+                        <div class="testimonial-photo">
+                          {{ box_packages_updated_year }}
+                        </div>
+                      </div>
+
+                      <!--div class="testimonial">
+                        <div class="testimonial-photo">
+                          <img src="images/avatar-small-3.png" alt="">
+                        </div>
+                        <h3>Monthly publications of new packages</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel vero dolore officiis, velit id libero illum harum hic magni, quae repellendus adipisci possimus saepe nostrum doloribus repudiandae asperiores commodi voluptate.</p>
+                      </div-->
+                    </div>
+                </div>
+            </div>
+            {{ package_chart }}
+        </div>
+    </section>
+    
+    
+    <!-- Featured packages -->
+    {{ featured_packages }}
+
+
+    
+
+    <!--Feature-area-->
+    <section class="gray-bg section-padding" id="pkg-deps">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <div class="page-title">
+                        <h2>Package Explorer</h2>
+                        <p>Select a package from the table to display its dependecies or references as an ego network graph. Flip the "Layout" switch to activate the online layout algorithm for a better visualisation of the network. Hovering over a network node reveals the package title and clicking of it shows the ego graph of the clicked package. Move in the graph and zoom by dragging and using the mouse wheel.</p>
+                    </div>
+                </div>
+            </div>
+            {{ dependency_network }}
+        </div>
+    </section>
+    <!--Feature-area/-->
+
+
+    <footer class="footer-area relative sky-bg" id="about">
+        <div class="absolute footer-bg"></div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 text-center">
+                        <div class="page-title">
+                            <h2>About this app</h2>
+                            <p style="text-align: left">
+                              The goal of this app is to demonstrate the development of a complete data service entirely written in the statistical programming language R. Besides this web application, the project includes the creation of a data refresh process (also written in R) that runs inside an AWS Docker container on a daily schedule. Additionally, efforts were made to develop this project in a reproducible way by controlling the operating environmentand the used R version (through Docker containers), a complete list of all required R packages and their specific versions (through <verbatim>packrat</verbatim>) with the intention to  promote collaborative development and to reduce the friction of the setup process of R projects in heterogeneous development environments.  
+                            </p>
+                            
+                            <h3>App</h3>
+                            <p style="text-align: left">
+                              This web application is written using the <a href="https://shiny.rstudio.com/" target="_blank">R Shiny</a> web framework. It demonstrates the use of custom HTML templates in Shiny apps to create a fancy user experience. The theme used in this app is made by <a href="https://colorlib.com">Colorlib</a>. The was developed with best Shiny practices in mind, e.g. the use of Shiny modules. In total about 1,100 lines of code were written for this app in less than 80 hours. This time included app ideation and all required research of data sources, data preparation and its operationalisation, app development, design and how to best present the information.
+                            </p>
+                            
+                            <h3>Data</h3>
+                            <p style="text-align: left">
+                              The data for this app is extracted from <a href="https://www.r-pkg.org/" target="_blank">MetaCRAN</a> which provides a database of all packages on CRAN and their publication history. The extraction processes transforms and summarises the data for efficient consumption in this app. The app's data is refreshed through a separate R process which runs daily in a Docker container on AWS. The data refresh is published in its own git repository (to be published soon). 
+                            </p>
+                            
+                            <h3>Deployment</h3>
+                            <p style="text-align: left">
+                              The app is deployed through RStudio's webservice <a href="https://shinyapps.io/" target="_blank">shinyapps.io</a>. Additionally, the app is published on <a href="https://rstudio.cloud/project/258634" target="_blank">RStudio Cloud</a> which provides a complete development environment of the project.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 pull-right">
+                        <ul class="social-menu text-right x-left">
+                            <!--li><a href="#"><i class="ti-facebook"></i></a></li>
+                            <li><a href="#"><i class="ti-twitter"></i></a></li>
+                            <li><a href="#"><i class="ti-google"></i></a></li-->
+                            <li><a href="https://www.linkedin.com/in/sschliebs/" target="_blank"><i class="ti-linkedin"></i></a></li>
+                            <li><a href="https://github.com/nz-stefan/cran-explorer" target="_blank"><i class="ti-github"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <p>
+                          This app is open source and its code can be used freely.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <p>This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com">Colorlib</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!--Vendor-JS-->
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <!--Plugin-JS-->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <script src="js/scrollUp.min.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js"></script>
+    <!--Main-active-JS-->
+    <script src="js/main.js"></script>
+    
+    <!--Modules-JS-->
+    <!--script src="modules/pretty_value_box/js/script.js"></script-->
+</body>
+
+</html>
