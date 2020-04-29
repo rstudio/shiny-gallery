@@ -1,0 +1,790 @@
+---
+title: "UNCCC Data Report"
+author: "Marwa Salem"
+date: "July, 2015"
+runtime: shiny
+output:
+  html_document:
+     highlight: tango
+     toc: yes
+     number_sections: yes
+     theme: cerulean
+     includes:
+         in_header: myhtml.html
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(data.table)
+library(DT)
+library(rgdal)
+library(leaflet)
+library(htmltools)
+library(rcdimple)
+suppressPackageStartupMessages(library(googleVis))
+library(shinyBS)
+library(sunburstR)
+library(rCharts)
+library(RColorBrewer)
+
+load('total.rdata')
+allcntry <- data.table(read.csv('UNFCCC_allcountries.csv'))
+tier <- data.table(read.csv('alltier1estimates.csv', stringsAsFactors = FALSE))
+```
+
+# Disclaimer {#disclaimer}
+
+
+This interactive document is just a demonstration of the capabilities of Rmarkdown and Shiny.  It is not an actual report for the UNCCC data.  Although the numbers displayed in the plots and tables are taken from the UNCCC website, only the first paragraph of the text is written and is based on the UNCCC data.  The rest of the text is from an online Lipsum generator.
+
+# Data Overview
+
+
+All the numbers in the following paragraph are calculated by inline bits of R code that use the UNCCC datasets.  This paragragh:
+```{r, echo=TRUE, eval=FALSE}
+The United Nations Framework Convention on Climate Change (UNCCC) reports emissions data for `r length(unique(allcntry[, Country]))` countries, `r length(unique(allcntry[Region== 'Annex', Country]))` of which are classified as Annex I countries, while `r length(unique(allcntry[Region== 'Non_Annex', Country]))` are Non-Annex I countries.  The reported data comprises `r length(unique(allcntry[, GHG_gas]))` greenhouse (GHG) gases, `r unique(allcntry[, GHG_gas])[1:(length(unique(allcntry[, GHG_gas])) - 1)]` and `r unique(allcntry[, GHG_gas])[length(unique(allcntry[, GHG_gas]))]`.  The latest reported data spans the period `r  min(unique(allcntry[, Year])) ` - `r  max(unique(allcntry[, Year])) `. In `r  max(unique(allcntry[, Year])) `, the US produced a total of `r  round(allcntry[Country == 'United States of America' & Year == max(unique(allcntry[, Year])), sum(Value, na.rm = TRUE)]) ` Gg of emissions of the different GHG gases.
+
+```
+
+
+Becomes:    
+The United Nations Framework Convention on Climate Change (UNCCC) reports emissions data for `r length(unique(allcntry[, Country]))` countries, `r length(unique(allcntry[Region== 'Annex', Country]))` of which are classified as Annex I countries, while `r length(unique(allcntry[Region== 'Non_Annex', Country]))` are Non-Annex I countries.  The reported data comprises `r length(unique(allcntry[, GHG_gas]))` greenhouse (GHG) gases, `r unique(allcntry[, GHG_gas])[1:(length(unique(allcntry[, GHG_gas])) - 1)]` and `r unique(allcntry[, GHG_gas])[length(unique(allcntry[, GHG_gas]))]`.  The latest reported data spans the period `r  min(unique(allcntry[, Year])) ` - `r  max(unique(allcntry[, Year])) `. In `r  max(unique(allcntry[, Year])) `, the US produced a total of `r  round(allcntry[Country == 'United States of America' & Year == max(unique(allcntry[, Year])), sum(Value, na.rm = TRUE)]) ` Gg of emissions of the different GHG gases.
+
+
+## Historic Data
+
+### Country-Level Data
+    
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla diam ipsum, finibus quis nulla vitae, dictum dapibus ipsum. Maecenas sed nisi ac erat consectetur varius. Mauris semper est non consectetur rutrum. Ut a condimentum metus, sed condimentum ante. Cras rhoncus commodo ipsum, id imperdiet dolor cursus vel. Proin pretium orci ac orci molestie, et fermentum tellus fermentum. Sed sollicitudin in eros nec vestibulum. Suspendisse in enim est. Phasellus porttitor pretium tortor, ac ultricies odio molestie quis. Donec ac nulla sed odio dictum condimentum eu vitae turpis. Maecenas bibendum tellus et dolor vulputate consectetur. Duis iaculis bibendum venenatis.
+
+Nunc molestie bibendum eros euismod placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin auctor quam vitae vehicula lobortis. Aenean sodales, ipsum faucibus mollis vestibulum, massa orci tincidunt est, malesuada egestas ante leo ut dui. Sed mi velit, hendrerit eu mollis nec, pellentesque ut libero. Nullam libero leo, volutpat vel quam quis, dignissim scelerisque libero. Nulla dictum eros non faucibus fringilla. Donec id est augue. Donec iaculis sollicitudin justo et auctor. Nunc suscipit felis nec metus viverra, vel dapibus lacus pellentesque. Donec nec tristique metus. Integer fermentum metus ac magna accumsan, vitae vestibulum lectus tincidunt. Donec vel sem erat.
+
+Cras eget dolor ut justo ullamcorper malesuada ac et arcu. Mauris pellentesque mi ac commodo blandit. Morbi eu sem sed dui interdum luctus ac ut nulla. Fusce vestibulum quam quis leo vehicula tincidunt. Suspendisse convallis neque lorem. Mauris consectetur volutpat orci quis placerat. Ut hendrerit mattis elementum. Praesent tortor turpis, mollis vitae metus ac, malesuada mattis tortor. Aliquam erat volutpat. Curabitur quis dui et mauris faucibus aliquet non nec enim.
+
+Nam ut purus tellus. Donec eu tortor lacinia ante pellentesque gravida id ac elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur eu nisl aliquam, ultrices libero at, viverra tellus. Nam laoreet ac dolor volutpat malesuada. Maecenas sollicitudin erat id tortor convallis pharetra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum id pharetra odio, sed cursus ipsum. Fusce tristique, tellus a dapibus pretium, leo est vestibulum metus, id lacinia tellus libero in nisi. In ac est tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras pellentesque vitae magna non facilisis. Aenean consectetur eget augue sit amet pulvinar. Curabitur ut rutrum quam. Morbi vel ex et erat pellentesque dignissim.      
+
+--------
+
+```{r, echo = FALSE, eval = TRUE, message=FALSE}
+
+total2 <- total[, list(Year, Region, Country, GHG_gas, Units, Value)]
+total2 <- total2[!is.na(Value)]
+
+datatable(
+      total2,
+      filter = 'top',
+      rownames = FALSE,
+      extensions = c('Buttons','Select'),
+      options = list(
+          
+            "dom" = 'T<"clear">lfrtip',
+            "oTableTools" = list(
+                  "sSwfPath" = "//cdnjs.cloudflare.com/ajax/libs/datatables-tabletools/2.1.5/swf/copy_csv_xls.swf",
+                  "aButtons" = list(
+                        "copy",
+                        "print",
+                        list("sExtends" = "collection",
+                             "sButtonText" = "Save",
+                             "aButtons" = c("csv", "xls")
+                        )           
+            )
+            )
+            )
+)
+
+```
+
+-----------
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lacus erat, malesuada non efficitur ac, aliquam in dolor. Maecenas iaculis leo mi, sed commodo ex ultricies eget. Etiam porttitor rutrum consectetur. Nunc et convallis justo, id sagittis tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam quis lacinia mauris. Nulla fringilla, lectus at pretium fringilla, ligula mi lobortis elit, in consectetur dolor elit et orci.
+
+Pellentesque hendrerit ultrices turpis, non venenatis metus aliquet quis. Suspendisse ut luctus odio, at cursus urna. Proin non lectus at ipsum dapibus vulputate non in tellus. Sed molestie orci mi, non egestas mauris egestas et. Vestibulum posuere vitae mi ac tempor. Etiam sit amet posuere ligula. Pellentesque orci est, venenatis sit amet arcu a, eleifend porta tellus. Nam ut facilisis libero, quis imperdiet nunc.
+
+Phasellus ac ante in felis dignissim rutrum in id dui. Phasellus pharetra, sem non venenatis fringilla, tortor enim lacinia turpis, nec rhoncus justo ligula eget nunc. Sed lobortis arcu eu elementum posuere. Pellentesque tempus enim nec augue sagittis, id interdum turpis cursus. Quisque condimentum lacinia odio. Etiam risus orci, sodales a arcu ut, sodales sagittis mauris. Nunc felis enim, euismod quis accumsan elementum, facilisis id lacus. Aenean vitae dictum elit.
+
+Duis interdum suscipit magna fringilla ultrices. Sed ultricies in dolor nec commodo. Phasellus placerat felis lectus, sit amet scelerisque felis porttitor nec. Donec eu lectus vitae arcu tempor tristique non eget velit. Nunc luctus enim ut libero placerat, a tincidunt nunc vehicula. Vivamus bibendum laoreet justo, eget aliquet mi vestibulum sed. Suspendisse lectus enim, auctor vel tellus sit amet, venenatis pretium nisi. Praesent placerat hendrerit erat.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+load('total.rdata')
+allcntry <- data.table(read.csv('UNFCCC_allcountries.csv'))
+
+setnames(total, c('iso', 'Calculated_total'), c('iso_a3', 'calc'))
+total <- total[, GHG_gas := as.character(GHG_gas)]
+total <- total[!duplicated(total[, list(Country, GHG_gas, Year)])]
+
+allcntry <- allcntry[Country == 'United Kingdom of Great Britain and Northern Ireland', Country := 'Uk']
+allcntry <- allcntry[Country == 'United Republic of Tanzania', Country := 'Tanzania']
+allcntry <- allcntry[Country == 'The former Yugoslav Republic of Macedonia', Country := 'Macedonia']
+allcntry <- allcntry[Country == 'Venezuela (Bolivarian Republic of)', Country := 'Venezuela']
+allcntry <- allcntry[, Source := as.character(Source)]
+
+# world <- readOGR(getwd(), 'ne_50m_admin_0_countries', encoding='UTF-8')
+# 
+# # Save the data row.names into an explicit variable
+# world$rn <- row.names(world)
+
+shinyApp(
+  
+  ui = fluidPage(
+br(),
+  bsCollapse(multiple = TRUE, open = 'second',
+    bsCollapsePanel(h4("Map Customization", style = "text-align: center; text-decoration: underline;"), 
+                    style = "info", value = 'first',
+                    fluidRow(column(4,
+                                    selectizeInput('gas', h4("Select GHG gas:"),
+                                                   choices = unique(total[, GHG_gas]))
+                    ),
+                    column(4,
+                           selectizeInput('year', h4('Select Year:'),
+                                          choices = unique(total[, Year]))
+                    ),
+                    column(4,
+                           selectizeInput('colors', h4('Select Colors:'),
+                                          choices = c('Oranges',
+                                                      'Blues',
+                                                      'Greens',
+                                                      'Reds',
+                                                      'RdBu'))
+                    )
+                    ),
+                    fluidRow(
+                      column(4,
+                             selectizeInput("layer", h4("Select Map Layer"),
+                                            choices = c('OpenMapSurfer.Roads',
+                                                        'Esri.WorldStreetMap',
+                                                        'Thunderforest.Transport',
+                                                        'Esri.DeLorme',
+                                                        'Esri.WorldShadedRelief',
+                                                        'Esri.WorldGrayCanvas',
+                                                        'Esri.WorldImagery',
+                                                        'MapQuestOpen.OSM',                                                        
+                                                        'OpenMapSurfer.Grayscale',
+                                                        'OpenStreetMap.Mapnik'))
+                      ),
+                      column(4,
+                             numericInput('opacity', h4('Select Opacity'),
+                                          value = 0.5)
+                      )
+                      
+                    )
+                    ),
+      bsCollapsePanel(h4("Map (clicking on a country will make its plots appear in the tab below)", style = "text-align: center; text-decoration: underline;"), 
+                      style = "info", value = 'second',
+                fluidRow(column(1),
+                         column(10,
+                                # textOutput('test'),
+                                leafletOutput("mymap", width = "100%", height = 700),
+                                br(),
+                                br()
+                         )
+                )
+                ),
+             bsCollapsePanel(h4("View Selected Country Dashboard", style = "text-align: center; text-decoration: underline;"), 
+                             style = "info", value = 'third',
+                             h3(textOutput("countryname"), style = "text-align: center; color: #005672; text-decoration: underline;"),
+                             br(),
+                             fluidRow(
+                               column(6,
+                                      selectizeInput('sector', h5('Select sector:'),
+                                                     choices = unique(allcntry[, Source])),
+                                      dimpleOutput('dimplebar', height = 290),
+                                      br(),
+                                      br()
+                                      ),
+                               column(6,
+                                      selectizeInput('bubbleyear', h5('Select Year:'),
+                                                     choices = unique(total[, Year])),
+                                      dimpleOutput('dimplebubble', height = 290),
+                                      br(),
+                                      br()
+                                      )
+                               )
+             )
+  ),
+  br(),
+  br()
+
+  ),
+  
+  server = function(input, output) {
+
+      world <- reactive({
+          world <- readOGR(getwd(), 'ne_50m_admin_0_countries', encoding='UTF-8')
+
+# Save the data row.names into an explicit variable
+world$rn <- row.names(world)
+
+return(world)
+
+      })
+      
+ # Create temporary data tables to work on the attributes
+tmp <- reactive({
+    tmp <- data.table(world()@data)
+  setkey(tmp, iso_a3)
+  return(tmp)
+})
+  
+  # Subsetting the totals data based on choices
+  totaldata <- reactive({
+    data <- total[Year == input$year &
+                    GHG_gas == input$gas]
+    data <- data[!duplicated(data[, iso_a3])]
+    # To merge data from UNCCC data into world
+    setkey(data, iso_a3)
+    return(data)
+  })
+  
+  mapdata <- reactive({
+    data <- totaldata()
+    mapfig <- data[tmp()]
+    setkey(mapfig, rn)        
+    return(mapfig)
+  })
+  
+  
+  colorpal <- reactive({
+    colorNumeric(palette = input$colors, 
+                 domain = mapdata()$calc)
+  })
+  
+  output$mymap <- renderLeaflet({
+    leaflet() %>% addTiles(options = providerTileOptions(noWrap = FALSE))  %>% 
+      setView(lng = 0, lat = 0, zoom = 2) 
+    
+  })
+  
+  observe({
+    layer <- input$layer
+    leafletProxy("mymap") %>% addProviderTiles(input$layer, options = providerTileOptions(noWrap = FALSE)) 
+  })
+  
+  # Render polygons
+  observe({
+      world <- world()
+    world@data <- mapdata()[row.names(world)]  
+    pal <- colorpal()
+    opacity <- input$opacity
+    gas <- input$gas
+    mymap <- leafletProxy("mymap", data = world)
+    mymap %>% clearShapes()
+    
+    if(!is.null(world)) {
+    mymap %>%  addPolygons(data = world, stroke = FALSE, color = ~pal(calc),
+                           layerId = row.names(world),fillOpacity = opacity,
+                           popup = ~htmlEscape(paste(world$name, "Total ", gas, " = ", world$calc)))  
+    }
+    
+  })
+  
+
+  country_selected <- reactive({
+    click <- input$mymap_shape_click
+    world <- world()
+    if (!is.null(click)) {
+      isowd <- paste(world[row.names(world) == click$id,][['iso_a3']])
+      country <- unique(total[iso_a3 == isowd, Country])
+      return(country)
+    } else {
+      return()
+    }
+   
+  })
+  
+  graphdata <- reactive({
+    country <- country_selected()
+    data <- allcntry[Country == country ]
+    return(data)
+  })
+  
+  output$countryname <- renderText({
+    name = paste(country_selected())
+  })
+
+output$dimplebar <- renderDimple({
+  data <- graphdata()[Source == input$sector]
+  d1 <- data %>% dimple(
+    x = "Year",
+    y = 'Value',
+    groups = "GHG_gas",
+    type = "bar"
+  ) %>%
+  xAxis( type = "addCategoryAxis", orderRule = "Year" ) %>% 
+  yAxis( type = "addMeasureAxis" ) %>%
+  add_legend(
+    x = 300,
+    y = 20,
+    width = 500,
+    height = 30,
+    horizontalAlign = "right"
+  )
+  return(d1)
+  })
+
+output$dimplebubble <- renderDimple({
+  data = graphdata()[Year== input$bubbleyear & Value != 0 & !is.na(Value)]
+d2 <- data %>% dimple(
+  x=c("Source"),
+  y="Value",
+  groups="GHG_gas",
+  type="bubble"
+  ) %>%
+  xAxis( type = "addCategoryAxis") %>% 
+  yAxis( type = "addMeasureAxis" ) %>%
+  add_legend(
+    x = 300,
+    y = 20,
+    width = 100,
+    height = 60,
+    horizontalAlign = "right"
+  )
+return(d2)
+})
+
+
+output$motion <- renderGvis({
+  data <- total[!is.na(calc) & calc != 0 & GHG_gas== input$motiongas]
+  gvisMotionChart(data,
+                  idvar = 'Country',
+                  timevar = 'Year',
+                  options = list(width = 500,
+                                 height = 500)
+  )
+})
+  },
+  
+  options = list(height = 1000)
+)
+```
+
+### Annex and Non-Annex Countries
+This section compares annex verus non annex countries.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae mollis dolor. Phasellus aliquet mauris non lectus consequat dictum. Morbi nisl metus, scelerisque id scelerisque sit amet, dictum viverra erat. In libero orci, molestie nec lobortis a, consectetur sed mi. Duis venenatis nunc non velit vulputate, non pulvinar purus bibendum. Maecenas ut felis nec arcu tempus pellentesque. Maecenas vitae lorem dolor. Fusce vehicula sagittis lectus at mattis. Integer non augue nec justo mollis congue nec ut mauris. Nulla accumsan vehicula consequat. Duis aliquet augue orci, vel posuere magna pellentesque sit amet. Morbi sed elit vitae quam tincidunt facilisis.
+
+Sed gravida vitae tortor a aliquet. Vestibulum nisi lorem, pretium et nulla sed, malesuada imperdiet metus. Aliquam non ullamcorper ex. Fusce at sem vel magna lacinia facilisis vel vel ipsum. Nunc eget turpis mauris. Nunc libero lacus, viverra in convallis nec, semper vitae dui. Integer maximus tincidunt rutrum. Integer tempus finibus dictum. Curabitur eget eros et purus auctor lobortis. Pellentesque vehicula tincidunt faucibus. Pellentesque eu accumsan risus, sit amet lacinia purus. Cras ante elit, pulvinar sed mi ac, mollis efficitur tellus. Vivamus porttitor elit quis eleifend malesuada. Duis tempus, justo dapibus hendrerit blandit, ante odio luctus nibh, ut malesuada magna ipsum ut purus. Maecenas vitae sem commodo, facilisis nunc ut, eleifend metus. Aliquam placerat egestas elementum.
+
+Aenean nunc ante, finibus in vehicula egestas, sagittis vel risus. Nullam ullamcorper ultricies mollis. Morbi in ullamcorper nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed mollis nulla lectus, sed dignissim lorem scelerisque vel. Etiam maximus sagittis mauris in pulvinar. Integer bibendum leo quis eleifend elementum. Nam dignissim consectetur enim in dignissim. Duis in tincidunt lectus. Donec eu turpis luctus tellus efficitur egestas non sed diam. Pellentesque volutpat, quam non imperdiet dictum, ipsum dolor porta purus, sed sodales mi arcu eget mauris. Fusce et aliquam felis.
+
+
+```{r, echo = FALSE}
+shinyApp(
+  
+  ui = fluidPage(
+     br(),
+  bsCollapse(multiple = FALSE, open = "first",
+    bsCollapsePanel(h4("Annex vs Non-Annex Graphs", style = "text-align: center; text-decoration: underline;"), 
+                    style = "info", value = 'first',
+                    selectizeInput('chart', h4('Chart Type:'),
+                                   choices = c('Sunburst', 
+                                               'Area Range',
+                                               'Motion Chart')),
+                    conditionalPanel(condition = 'input.chart ==  "Sunburst"',
+                                   selectizeInput('sunyear', h4('Year:'),
+                                                  choices = unique(total[, Year])),
+                                   sunburstOutput('sun')
+                                   ),
+                    conditionalPanel(condition = 'input.chart ==  "Area Range"',
+                                   fluidRow(column(4,
+                                                   selectizeInput('gas', h4("Select GHG gas:"),
+                                                                  choices = unique(total[, GHG_gas]))
+                                   ),
+                                   column(4
+                                   ),
+                                   column(4
+                                   )
+                                   ),
+                                 
+                                   fluidRow(
+                                     column(2),
+                                     column(8,
+                                            br(),
+                                            showOutput('timeplotannex', 'highcharts'),
+                                            showOutput('timeplotnonannex', 'highcharts')
+                                            )
+                                            
+                                     )
+                                   ),
+                    conditionalPanel(condition = 'input.chart ==  "Motion Chart"',
+                                   br(),
+                                   fluidRow(column(1),
+                                            column(10,
+                                                   htmlOutput('motion')
+                                            )),                             
+                                   br()   
+                    ),
+                    br(),
+                    br()
+   ) 
+   )
+  ),
+  
+  server = function(input, output) {
+      # Subsetting the totals data based on choices
+  totaldata <- reactive({
+    data <- total[Year == input$year &
+                    GHG_gas == input$gas]
+    data <- data[!duplicated(data[, iso_a3])]
+    # To merge data from UNCCC data into world
+    setkey(data, iso_a3)
+    return(data)
+  })
+  
+  areadata <- reactive({
+    data <- allcntry[GHG_gas == input$gas & !is.na(Value) & Value !=0]
+    plotdata <- data[, list(avg = mean(Value),
+                                 minimum = min(Value),
+                                 lbound = quantile(Value, 0.25),
+                                 ubound = quantile(Value, 0.75),
+                                 maximum = max(Value)),
+                          by = c('Year', 'Region')]
+    
+    return(plotdata)
+  })
+  
+  output$timeplotannex <- renderChart2({
+    data <- areadata()[Region == 'Annex']
+  
+      h <- rCharts :: Highcharts$new()
+      
+      h$series(
+        data = toJSONArray2(data[, list(Year, avg)], names = FALSE, json = FALSE),
+        zIndex = 1,
+        name = 'Mean',
+        color = '#297A52'
+      )
+      
+      h$series(
+        data = toJSONArray2(data[, list(Year, lbound, ubound)], names = FALSE, json = FALSE),
+        type = 'areasplinerange',
+        fillOpacity = 0.3,
+        lineWidth = 0.5,
+        color = '#297A52',
+        zIndex = 0,
+        name = 'Lower - Upper'
+      )
+      
+        h$series(
+          data = toJSONArray2(data[, list(Year, minimum, maximum)], names = FALSE, json = FALSE),
+          type = 'areasplinerange',
+          fillOpacity = 0.3,
+          lineWidth = 0.5,
+          color = '#297A52',
+          zIndex = 0,
+          name = 'Min - max'
+        )
+      
+      
+      h$set(tooltip = list(
+        crosshairs = TRUE,
+        shared = TRUE,
+        valueDecimals = 2
+      ))
+      h$title(text = 'Annex', margin = 10, style = list(fontSize = "20px", color = "#00527A"))
+      h$yAxis(labels = list(style = list(fontSize = '12px')))
+      h$xAxis( labels = list(rotation = 320, style = list(fontSize = '13px')))
+      h$legend(enabled = FALSE)
+      h$set(height = 300)
+      h$set(width = '100%')
+      h$chart(zoomType = 'xy', panKey = 'shift', panning = TRUE, 
+              borderWidth = 1, borderRadius = 8, borderColor = '#3A75B0')
+      h$plotOptions(series = list(allowPointSelect = TRUE))
+      h$exporting(filename = 'Annex')
+    
+    return(h)   
+  })
+  
+  output$timeplotnonannex <- renderChart2({
+    data <- areadata()[Region == 'Non_Annex']
+    
+    h <- rCharts :: Highcharts$new()
+    
+    h$series(
+      data = toJSONArray2(data[, list(Year, avg)], names = FALSE, json = FALSE),
+      zIndex = 1,
+      name = 'Mean',
+      color = '#CF7C00'
+    )
+    
+    h$series(
+      data = toJSONArray2(data[, list(Year, lbound, ubound)], names = FALSE, json = FALSE),
+      type = 'areasplinerange',
+      fillOpacity = 0.3,
+      lineWidth = 0.5,
+      color = '#CF7C00',
+      zIndex = 0,
+      name = 'Lower - Upper'
+    )
+    
+      h$series(
+        data = toJSONArray2(data[, list(Year, minimum, maximum)], names = FALSE, json = FALSE),
+        type = 'areasplinerange',
+        fillOpacity = 0.3,
+        lineWidth = 0.5,
+        color = '#CF7C00',
+        zIndex = 0,
+        name = 'Min - max'
+      )
+    
+    
+    h$set(tooltip = list(
+      crosshairs = TRUE,
+      shared = TRUE,
+      valueDecimals = 2
+    ))
+    h$title(text = 'Non-Annex', margin = 10, style = list(fontSize = "20px", color = "#00527A"))
+    h$yAxis(labels = list(style = list(fontSize = '12px')))
+    h$xAxis( labels = list(rotation = 320, style = list(fontSize = '13px')))
+    h$legend(enabled = FALSE)
+    h$set(height = 300)
+    h$set(width = '100%')
+    h$chart(zoomType = 'xy', panKey = 'shift', panning = TRUE, 
+            borderWidth = 1, borderRadius = 8, borderColor = '#3A75B0')
+    h$plotOptions(series = list(allowPointSelect = TRUE))
+    h$exporting(filename = 'Annex')
+    
+    return(h)   
+  })
+  
+  sundata <- reactive({
+    aa <- copy(allcntry)
+    aa[Region == 'Non_Annex', Region := 'Nonannex']
+    aa[Country == 'United States of America', Country := 'USA']
+    aa[Country == 'United Kingdom of Great Britain and Northern Ireland', Country := 'UK']
+    aa[Country == 'Russian Federation', Country := 'Russia']
+    
+    aa[Country == 'European Union (28)', Country := 'EU_28']
+    aa[Country == 'European Union (15)', Country := 'EU_15']
+    aa[, Source := gsub(' |\\(|\\)|/|-', '', Source)]
+    aa[Source == 'TotalGHGemissionsexcludingLULUCFLUCF', Source := 'GHGNoL']
+    aa[Source == 'RefrigerationandAirConditioningEquipment', Source := 'AC']
+    aa[Source == 'OtherapplicationsusingODSsubstitutes', Source := 'OtherODS']
+    aa[Source == 'PrescribedBurningofSavannas', Source := 'BurSav']
+    aa[Source == 'ProductionofHCFC', Source := 'ProdHCFC']
+    aa[Source == 'AdipicAcidProduction', Source := 'AAProd']
+    aa[Source == 'AerosolsMeteredDoseInhalers', Source := 'AMDI']
+    aa[Source == 'AgriculturalSoils', Source := 'AS']
+    aa[Source == 'CoalMiningandHandling', Source := 'CoalMine']
+    aa[Source == 'DomesticandCommercialWastewater', Source := 'DCWW']
+    
+    aa[Source == 'AluminiumProduction', Source := 'AlProd']
+    aa[Source == 'ChemicalIndustry', Source := 'ChemInd']
+    aa[Source == 'DomesticandCommercialwohumansewage', Source := 'DCHS']
+    aa[Source == 'ElectricalEquipment', Source := 'ElecEq']
+    aa[Source == 'EntericFermentation', Source := 'EF']
+    aa[Source == 'FieldBurningofAgriculturalResidues', Source := 'AgRes']
+    
+    aa[Source == 'FireExtinguishers', Source := 'FireEx']
+    aa[Source == 'FoamBlowing', Source := 'FB']
+    aa[Source == 'ForestLandconvertedtoCropland', Source := 'ForCrop']
+    aa[Source == 'ForestLandconvertedtoGrassland', Source := 'ForGrass']
+    aa[Source == 'FuelCombustionSectoralApproach', Source := 'FuelComb']
+    aa[Source == 'IndustrialWastewater', Source := 'IndWW']
+    aa[Source == 'IronandSteelProduction', Source := 'IronSteel']
+    aa[Source == 'SolventandOtherProductUse', Source := 'SOther']
+    
+    return(aa)
+  })
+  
+output$sun <-  renderSunburst({
+  
+  aa <- sundata()
+  aa <- aa[Year == input$sunyear]
+  
+  aa[, all := paste(Region, Country, GHG_gas, Source, sep = '-')]
+  second <- aa[, list(all, Value)]
+    
+  return(sunburst(second))
+})
+
+
+motiondata <- reactive({
+  data <- total[!is.na(calc) & calc != 0 ]
+  data <- data[, list(Year, GHG_gas, Country, Region, Value)]
+  data <- data[!duplicated(data[, list(Year, Country, Region, GHG_gas)])]
+  datacast <- dcast.data.table(data, Year + Region + Country ~ GHG_gas, value.var = 'Value')
+  return(datacast)
+})
+output$motion <- renderGvis({
+ # data <- total[!is.na(calc) & calc != 0 & GHG_gas== input$motiongas]
+  data <- motiondata()
+  gvisMotionChart(data,
+                  idvar = 'Country',
+                  timevar = 'Year',
+                  options = list(width = 700,
+                                 height = 500)
+  )
+  })
+  },
+  
+  options = list(height = 800)
+)
+```
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales congue lobortis. Phasellus tempus sollicitudin lacinia. Curabitur at ultricies felis. Praesent fermentum quam vitae dolor rutrum, ac hendrerit ex lacinia. Donec accumsan tellus non dapibus venenatis. Curabitur consectetur justo dapibus nisl vestibulum, quis mattis libero placerat. Nulla eu hendrerit enim, convallis dictum dui. Nullam lacinia, orci non fringilla pellentesque, velit arcu tempor arcu, quis ultrices risus mauris ut libero. Cras id finibus leo, quis consectetur tortor. Vivamus sit amet tincidunt tortor. Nulla fringilla commodo sem, sit amet lobortis leo mattis at. Vivamus rutrum massa quis leo feugiat lobortis. Suspendisse porta iaculis erat quis finibus. Nunc massa nunc, lobortis ac imperdiet non, pulvinar ac felis. Praesent in tellus ultricies, condimentum ex a, pulvinar massa. Vivamus aliquam vulputate ultrices.
+
+Maecenas sed bibendum enim, id porta ante. Aliquam imperdiet neque nulla, dignissim accumsan erat consequat sit amet. Aenean imperdiet egestas ipsum, in vehicula arcu finibus tincidunt. Curabitur id neque ut libero posuere ultrices vel eu erat. Nullam molestie augue ut nulla placerat, a imperdiet dolor interdum. Sed facilisis ultrices iaculis. Sed luctus mauris ultrices urna pretium, sit amet porta risus laoreet. Ut pulvinar sollicitudin urna vitae elementum. Aliquam sed nisl erat. Cras sit amet est urna. Quisque placerat neque vitae turpis molestie, sed varius lectus dignissim. Fusce vehicula lectus nec est maximus, molestie cursus sem fermentum. Ut accumsan congue nibh, vitae dictum nulla ultricies imperdiet. Integer sed nulla pharetra, dignissim velit at, faucibus ligula.
+
+Nullam euismod molestie sem, non placerat metus commodo eget. Curabitur consectetur tortor id tortor pretium efficitur. Sed purus libero, sollicitudin id justo ac, pretium imperdiet lacus. Nam sapien orci, cursus non lectus vel, pharetra lacinia nisi. Mauris scelerisque diam eget dolor ornare, efficitur tincidunt nibh finibus. Quisque nec dictum nisl. Vivamus eu tempus nunc. Mauris efficitur enim quis posuere pharetra. Duis efficitur diam in euismod efficitur. Pellentesque non consectetur purus. Nam malesuada aliquam lobortis. Aenean lacinia quam in augue congue, sed aliquet massa lobortis. Donec ac tellus est.
+
+Nulla facilisis dapibus ipsum, fringilla euismod tellus elementum maximus. Duis sit amet feugiat libero. Duis pretium rhoncus orci vehicula efficitur. Proin porta libero eget felis eleifend bibendum. Morbi imperdiet posuere ipsum, quis finibus erat ullamcorper sed. Phasellus metus sem, cursus quis vulputate in, blandit in diam. Maecenas feugiat tristique felis, quis maximus purus imperdiet sed. Aliquam erat magna, vulputate eu quam quis, ornare tincidunt risus. Nam in ipsum molestie, convallis felis quis, tristique mi. Nulla non dignissim sapien, quis porta neque. Donec orci mauris, tempus pretium placerat a, euismod sit amet magna. Mauris tempor sit amet urna sed feugiat. Ut dictum quam ut justo rutrum, gravida elementum velit pharetra.
+
+In ornare nunc ligula, quis semper quam ultrices in. Donec mollis, tortor sed scelerisque posuere, enim neque condimentum purus, vulputate scelerisque purus metus a dui. Nulla ullamcorper massa libero, sit amet efficitur quam malesuada at. Aenean varius mi dui. Cras porttitor erat nec sem tristique, eu accumsan lorem tempus. Sed lacus urna, cursus ac ex nec, efficitur vestibulum arcu. Nulla nec enim posuere mi tincidunt ornare. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean sit amet sollicitudin tellus, vitae iaculis tortor. Nullam id nunc semper, rutrum quam vitae, efficitur ex. Nam porta porta nunc, in cursus ipsum venenatis id. Etiam magna lectus, auctor id sem sit amet, aliquam lobortis dui. Fusce sollicitudin eros sed eros fermentum aliquet.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In id purus tortor. Pellentesque aliquet ligula eget massa tempus egestas. Donec iaculis orci sed pulvinar semper. Morbi placerat lectus lorem. In porta, justo ut ultrices auctor, justo mi venenatis mi, vitae porttitor elit sapien sagittis dolor. Proin egestas augue sed ipsum cursus, vitae auctor sem euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus rutrum, odio non luctus tincidunt, ante risus dignissim mauris, ut eleifend augue turpis a metus. Ut sed erat rutrum, mattis nunc ut, tincidunt elit. Ut mattis, ex ac convallis semper, nulla ipsum facilisis dolor, quis bibendum ex erat eu massa. Cras dignissim laoreet nunc, ut ornare ante lobortis ut.
+
+Nullam dignissim felis et posuere convallis. Aenean mauris libero, pharetra quis fermentum a, aliquet eget eros. Donec malesuada diam elit, ac cursus risus maximus feugiat. Fusce faucibus ac mauris id ornare. Fusce eget mollis odio. Pellentesque tincidunt aliquam quam. Vestibulum maximus pharetra ultrices. In placerat odio odio. Nullam aliquet dictum magna id porttitor. Nullam dapibus ex in justo gravida, vel gravida libero mollis. Etiam aliquam, tortor dictum rhoncus lobortis, orci lorem vulputate orci, sed ultrices elit leo a massa. Praesent vulputate neque eget dapibus elementum. Integer dictum rutrum varius.
+
+
+## Data Forecasts
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales congue lobortis. Phasellus tempus sollicitudin lacinia. Curabitur at ultricies felis. Praesent fermentum quam vitae dolor rutrum, ac hendrerit ex lacinia. Donec accumsan tellus non dapibus venenatis. Curabitur consectetur justo dapibus nisl vestibulum, quis mattis libero placerat. Nulla eu hendrerit enim, convallis dictum dui. Nullam lacinia, orci non fringilla pellentesque, velit arcu tempor arcu, quis ultrices risus mauris ut libero. Cras id finibus leo, quis consectetur tortor. Vivamus sit amet tincidunt tortor. Nulla fringilla commodo sem, sit amet lobortis leo mattis at. Vivamus rutrum massa quis leo feugiat lobortis. Suspendisse porta iaculis erat quis finibus. Nunc massa nunc, lobortis ac imperdiet non, pulvinar ac felis. Praesent in tellus ultricies, condimentum ex a, pulvinar massa. Vivamus aliquam vulputate ultrices.
+
+Maecenas sed bibendum enim, id porta ante. Aliquam imperdiet neque nulla, dignissim accumsan erat consequat sit amet. Aenean imperdiet egestas ipsum, in vehicula arcu finibus tincidunt. Curabitur id neque ut libero posuere ultrices vel eu erat. Nullam molestie augue ut nulla placerat, a imperdiet dolor interdum. Sed facilisis ultrices iaculis. Sed luctus mauris ultrices urna pretium, sit amet porta risus laoreet. Ut pulvinar sollicitudin urna vitae elementum. Aliquam sed nisl erat. Cras sit amet est urna. Quisque placerat neque vitae turpis molestie, sed varius lectus dignissim. Fusce vehicula lectus nec est maximus, molestie cursus sem fermentum. Ut accumsan congue nibh, vitae dictum nulla ultricies imperdiet. Integer sed nulla pharetra, dignissim velit at, faucibus ligula.
+
+```{r, echo=FALSE, message=FALSE}
+  tier <- tier[Country == 'United States of America', Country := 'USA']
+  tier <- tier[Country == 'Russian Federation', Country := 'Russia']
+  tier <- tier[Country == 'United Arab Emirates', Country := 'UAE']
+  tier <- tier[Country == 'United Kingdom of Great Britain and Northern Ireland', Country := 'UK']
+
+shinyApp(
+  
+  ui = fluidPage(
+    fluidRow(
+      column(4,
+             selectizeInput('tiersector', h4('Select Sector:'),
+                   choices = unique(tier[, Source]))
+             ),
+      column(4,
+             selectizeInput('tiercountry', h4("Select Countr(ies):"),
+                            choices = unique(tier[, Country]),
+                            multiple = TRUE,
+                            selected = c('USA', 'Canada', 'China', 'Brazil', 'Russia',
+                                         'India', 'UAE', 'UK'))
+             ),
+      column(4,
+             selectizeInput('tiergas', h4('Select GHG gas:'),
+                            choices = unique(tier[, GHG_gas]))
+             )
+      ),
+    fluidRow(
+     # column(1),
+      column(10,
+             showOutput('line', 'highcharts')
+             )
+      )
+  ),
+  
+  server = function(input, output) {
+    linedata <- reactive({
+      data <- tier[Source == input$tiersector &
+                   Country %in% input$tiercountry &
+                     GHG_gas == input$tiergas]
+      data <- data[, list(Country, Year, Value)]
+      data2 <- dcast.data.table(data, Year ~ Country, value.var = 'Value')
+    })
+    
+    output$line <- renderChart2({
+      colors1 <- brewer.pal(9, 'Paired') #[-c(5,6,7)]
+      colors2 <- brewer.pal(8, 'Dark2') #[-c(5,6,7)]
+      colors <- c(colors1, colors2)
+      
+      dataline <- linedata()
+      
+        ln <- rCharts::Highcharts$new()
+        ln$colors(colors )
+        ln$xAxis(type = 'category', labels = list(step = 2, rotation = 300))
+    
+  for(i in 2:ncol(dataline)) {
+      ln$series(
+        data = toJSONArray2(dataline[, c(1,i), with = FALSE], names = FALSE, json = FALSE),
+        name = names(dataline)[i],
+        type = 'spline'
+      )
+    }
+      ln$plotOptions(spline = list(connectNulls = TRUE, allowPointSelect = TRUE))
+      ln$chart(marginTop = 70, zoomType = 'xy', panKey = 'shift', panning = TRUE) 
+      ln$exporting(filename = "Line chart")
+      ln$set(height = 600)
+  return(ln)
+  
+    })
+  },
+  
+  options = list(height = 800)
+)
+
+```
+
+
+Nullam euismod molestie sem, non placerat metus commodo eget. Curabitur consectetur tortor id tortor pretium efficitur. Sed purus libero, sollicitudin id justo ac, pretium imperdiet lacus. Nam sapien orci, cursus non lectus vel, pharetra lacinia nisi. Mauris scelerisque diam eget dolor ornare, efficitur tincidunt nibh finibus. Quisque nec dictum nisl. Vivamus eu tempus nunc. Mauris efficitur enim quis posuere pharetra. Duis efficitur diam in euismod efficitur. Pellentesque non consectetur purus. Nam malesuada aliquam lobortis. Aenean lacinia quam in augue congue, sed aliquet massa lobortis. Donec ac tellus est.
+
+Nulla facilisis dapibus ipsum, fringilla euismod tellus elementum maximus. Duis sit amet feugiat libero. Duis pretium rhoncus orci vehicula efficitur. Proin porta libero eget felis eleifend bibendum. Morbi imperdiet posuere ipsum, quis finibus erat ullamcorper sed. Phasellus metus sem, cursus quis vulputate in, blandit in diam. Maecenas feugiat tristique felis, quis maximus purus imperdiet sed. Aliquam erat magna, vulputate eu quam quis, ornare tincidunt risus. Nam in ipsum molestie, convallis felis quis, tristique mi. Nulla non dignissim sapien, quis porta neque. Donec orci mauris, tempus pretium placerat a, euismod sit amet magna. Mauris tempor sit amet urna sed feugiat. Ut dictum quam ut justo rutrum, gravida elementum velit pharetra.
+
+In ornare nunc ligula, quis semper quam ultrices in. Donec mollis, tortor sed scelerisque posuere, enim neque condimentum purus, vulputate scelerisque purus metus a dui. Nulla ullamcorper massa libero, sit amet efficitur quam malesuada at. Aenean varius mi dui. Cras porttitor erat nec sem tristique, eu accumsan lorem tempus. Sed lacus urna, cursus ac ex nec, efficitur vestibulum arcu. Nulla nec enim posuere mi tincidunt ornare. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean sit amet sollicitudin tellus, vitae iaculis tortor. Nullam id nunc semper, rutrum quam vitae, efficitur ex. Nam porta porta nunc, in cursus ipsum venenatis id. Etiam magna lectus, auctor id sem sit amet, aliquam lobortis dui. Fusce sollicitudin eros sed eros fermentum aliquet.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In id purus tortor. Pellentesque aliquet ligula eget massa tempus egestas. Donec iaculis orci sed pulvinar semper. Morbi placerat lectus lorem. In porta, justo ut ultrices auctor, justo mi venenatis mi, vitae porttitor elit sapien sagittis dolor. Proin egestas augue sed ipsum cursus, vitae auctor sem euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus rutrum, odio non luctus tincidunt, ante risus dignissim mauris, ut eleifend augue turpis a metus. Ut sed erat rutrum, mattis nunc ut, tincidunt elit. Ut mattis, ex ac convallis semper, nulla ipsum facilisis dolor, quis bibendum ex erat eu massa. Cras dignissim laoreet nunc, ut ornare ante lobortis ut.
+
+Nullam dignissim felis et posuere convallis. Aenean mauris libero, pharetra quis fermentum a, aliquet eget eros. Donec malesuada diam elit, ac cursus risus maximus feugiat. Fusce faucibus ac mauris id ornare. Fusce eget mollis odio. Pellentesque tincidunt aliquam quam. Vestibulum maximus pharetra ultrices. In placerat odio odio. Nullam aliquet dictum magna id porttitor. Nullam dapibus ex in justo gravida, vel gravida libero mollis. Etiam aliquam, tortor dictum rhoncus lobortis, orci lorem vulputate orci, sed ultrices elit leo a massa. Praesent vulputate neque eget dapibus elementum. Integer dictum rutrum varius.
+
+
+# Acknowledgements
+
+The efforts of Jeffrey Petrusa, who was the project lead under which this data was imported and formatted and those of Ryan Callihan, who imported the data and assisted in its editing are very much appreciated.
+
+This report is made possible through the use of the R software and the following packages:
+
+* data.table: M Dowle, T Short, S Lianoglou, A Srinivasan with contributions from R Saporta and E Antonyan (2014). data.table: Extension of data.frame. R package version 1.9.4.
+  http://CRAN.R-project.org/package=data.table
+* DT:Yihui Xie (2014). DT: R Interface to the jQuery Plug-in DataTables. R package version 0.0.34. http://rstudio.github.io/DT
+
+* googleVis: Markus Gesmann and Diego de Castillo. Using the Google Visualisation API with R. The R Journal, 3(2):40-44, December 2011.
+
+* htmltools: RStudio and Inc. (2014). htmltools: Tools for HTML. R package version 0.2.6. http://CRAN.R-project.org/package=htmltools
+
+* leaflet: Joe Cheng and Yihui Xie (2015). leaflet: Create Interactive Web Maps with the JavaScript 'Leaflet' Library. R package version 1.0.0.9999. http://rstudio.github.io/leaflet/
+
+* rcdimple: John Kiernander, Mike Bostock, Jeremy Stucki, Kenton Russell and Ramnath Vaidyanathan (). rcdimple: Dimple htmlwidget. R package version 0.1.
+
+* rCharts: Ramnath Vaidyanathan (2013). rCharts: Interactive Charts using Javascript Visualization Libraries. R package version 0.4.5.
+
+* rgdal: Roger Bivand, Tim Keitt and Barry Rowlingson (2015). rgdal: Bindings for the Geospatial Data Abstraction Library. R package version 1.0-4. http://CRAN.R-project.org/package=rgdal
+
+* shiny: Winston Chang, Joe Cheng, JJ Allaire, Yihui Xie and Jonathan McPherson (2015). shiny: Web Application Framework for R. R package version 0.12.1. http://CRAN.R-project.org/package=shiny
+
+* shinyBS: Eric Bailey (2015). shinyBS: Twitter Bootstrap Components for Shiny. R package version 0.61. http://CRAN.R-project.org/package=shinyBS
+
+* sunburstR: Mike Bostock, Kerry Rodden and Kent Russell (2015). sunburstR: htmlwidget for Kerry Rodden d3.js sequence sunburst. R package version 0.1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
