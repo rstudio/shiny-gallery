@@ -4,7 +4,7 @@ Submitted to Shiny Contest 2019 by [Tiger Tang](https://community.rstudio.com/u/
 
 # Animated NYC metro traffic
 
-Wonder what one week of metro traffic would look like? Wanna see the heaviest/lightest traffic times for your NYC metro stops? Check out this app [here](https://tiger-tang.shinyapps.io/NYC_MTA/).
+Wonder what one week of metro traffic would look like? Wanna see the heaviest/lightest traffic times for your NYC metro stops? Check out this app [here](https://gallery.shinyapps.io/nyc-metro-vis/).
 
 ## Background 
 
