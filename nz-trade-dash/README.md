@@ -1,6 +1,8 @@
-## New Zealand Trade Intelligence
+# New Zealand Trade Intelligence
 
 Submitted to Shiny Contest 2019 by [Wei Zhang](https://community.rstudio.com/u/weizhang/summary). The app is re-hosted at https://gallery.shinyapps.io/nz-trade-dash.
+
+---
 
 This is a public version of the source code for the [New Zealand Trade Intelligence Dashboard](http://tradeintelligence.mbie.govt.nz). The Dashboard is built with R, JavaScript and Shiny.
 
