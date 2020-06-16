@@ -1,0 +1,132 @@
+---
+title: "Utah DWQ Lake Profile Dashboard"
+author: "Jake Vander Laan, Utah Division of Water Quality"
+date: "Feb 5 2019"
+---
+
+## Introduction
+This application is designed to interactively visualize lake profile data collected by DWQ and cooperators and provide a platform for performing and reviewing aquatic life use based water quality assessments based on lake profile data.  
+Source code and additional information for this application are available via the [DWQ Lake Profile Dashboard GitHub repository](https://github.com/utah-dwq/LakeProfileDashboard) .  
+This application is available under an [MIT license](https://github.com/utah-dwq/LakeProfileDashboard/blob/master/LICENSE) .  
+<br>
+
+## Data
+All data used by this application are available through either [Utah DWQ AWQMS](https://awqms.utah.gov) or [EPA WQP](https://www.waterqualitydata.us/) .
+The data used in this application are collected as water column profiles at lake sites throughout Utah.
+Lake profiles consist of measurements of dissolved oxygen, temperature, and pH at regular depth intervals through the water column. Intervals of 1 meter are typical
+for Utah DWQ sampling, but may be adjusted depending on the depth at any individual site. Data have been pre-processed to ensure consistency in parameter names and units
+and to calculate frequencies of exceedance of water quality criteria and widths of suitable habitat for fish based on
+areas meeting dissolved oxygen and temperature criteria for that waterbody (see the [DWQ integrated report methods](https://deq.utah.gov/legacy/programs/water-quality/monitoring-reporting/assessment/draft-2020-methodology-for-integrated-report.htm) for more details).
+<br>
+
+## Application usage
+The application has two main inputs: a map and a table. To build plots for any individual site, click on your desired site in either the map or the table.  
+
+The map shows all sites with profile data available. The table shows all of those sites and their associated uses and assessments for each parameter.  
+
+The map and table inputs are responsive to eachother. When you click a site on the map, the table will automatically filter to assessments associated with that site.
+When you click on a row in the table, the map will automatically fly to that site location.  
+
+Plots specific to that site will be rendered automatically. Several data plotting and review options are available.
+Outputs will automatically render any time the user updates one of the input widgets.
+<br>
+
+## Map elements
+Individual monitoring locations are displayed as circle markers on the map.
+In addition to displaying sites, site labels and polygons identifying assessment unit, beneficial use, and site-specific standard boundaries are also available. Topographic and satellite base layers are both available. 
+To turn on any of these layers, hover the mouse over the layers control box (top left of map, under zoom buttons) and select one or more layers.
+Features are searchable by site and assessment unit names or identifier codes. To search for a feature, click the magnifier glass (top left of map, under the layers control box) and start topping.
+Locations matching your search will appear as you type.  
+
+![](map.png)  
+Figure 1. Map usage guide.
+<br>
+<br>
+
+### Polygons
+#### Assessment units
+Assessment units show waterbodies in Utah that are assessed and reported on jointly. In the case of this application, these are all lakes or subsets of lakes.
+
+#### Beneficial uses
+All waterbodies in the State of Utah are assigned beneficial uses which describe the uses for which that waterbody is protected.
+This polygon shows boundaries and descriptions for those uses. Categories include: drinking water supply, recreation, aquatic life, and agriculture.
+See [R317-2-6. Use Designations](https://rules.utah.gov/publicat/code/r317/r317-002.htm#T8) for more information. This application is specifically designed
+for assessing attainment of aquatic life uses in lakes.
+
+#### Site specific standards
+For some waterbodies, site-specific standards that deviate from the state wide standards applied by beneficial use class have been developed.
+This polygon shows the boundaries and applicable criteria for those site specific standards.
+<br>
+
+
+## Outputs
+### Time series
+The "Time series" tab shows three outputs summarizing patterns in temperature, dissolved oxygen, and pH across depth and time at the selected site.
+<br>
+
+#### Heatmap
+The "Heatmap" plot shows an interpolated surface of the user selected parameter across depth and date for the selected site.  Applicable water quality criteria are shown as red contour
+lines if within the scale of the plot (figure 2). When DO/temp lens is the selected parameter, the z-axis is an interpolation between zero and one with one representing areas of the water column
+where either DO, temperature, or both does not meet the applicable water quality criteria. Zero represents zones of habitable water column.  
+
+<br>
+> **NOTES:**  
+> 1. The heatmap figure will interpolate across the entire time period for which data are available. Interpolations across time periods with few measured profiles should be interpreted carefully.  Use the 'Show all profile dates' checkbox to identify individual profile measurements on the figure.  
+> 2. Depending on the relative frequency and duration of exceedances, water quality standards may not always be visible in the interpolated figure.  
+
+<br>  
+![](heatmap.png)  
+Figure 2. Water column heatmap timeseries of water temperature. Red contour line labeled "20" indicates applicable water quality criterion.
+<br>
+<br>
+
+#### Habitable width
+The "Habitable width" plot shows the largest habitable width (defined as a zone where both dissolved oxygen and
+water temperature criteria are met) for each profile over time at the selected site.
+![](hab_width.png)  
+Figure 3. Habitable width timeseries. Width of water column meeting both dissolved oxygen and temperature criteria shown as grey circles.
+Total profile depth shown as dashed blue line. Three meters is marked with a red dotted line.  
+<br>
+<br>
+
+#### Water column exceedance
+The "Water column exceedances" plot shows the percent of data points in each profile for which
+the applicable water quality criterion was exceeded across time at the selected site.
+<br>
+
+
+### Individual profiles
+The "Individual profiles" tab shows two outputs for a single profile collected at the selected site and date.
+The first is a plot of temperature, dissolved oxygen, and pH against depth. On the single orofile plot applicable criteria for each parameter are plotted as horizontal lines
+with colors corresponding to the colors used for plotting parameter points. The second output is a scrollable table of the data from that profile used to generate the plot.
+In the profile table, cells are colored orange when a water quality criteron is exceeded for that parameter at that depth.
+<br>
+
+## Package dependencies & credits
+This application depends on functions contained within the [DWQ wqTools R-package](https://github.com/utah-dwq/wqTools).
+Special thanks to R packages leaflet, leaflet.extras, and Shiny.  
+
+### Package dependencies:  
+```
+	leaflet,
+	RColorBrewer,
+	akima,
+	jsonlite,
+	leaflet.extras,
+	lubridate,
+	mapedit,
+	magrittr,  
+	plyr,
+	rLakeAnalyzer,
+	reshape2,
+	sf,  
+	shinycssloaders,  
+	DT
+```
+
+## Help & feedback
+For additional help or to submit feedback or bug reports, please contact:  
+Jake Vander Laan  
+Utah Division of Water Quality  
+jvander@utah.gov  
+(801) 536-4350
