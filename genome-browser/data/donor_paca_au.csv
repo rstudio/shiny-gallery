@@ -1,0 +1,463 @@
+icgc_donor_id	project_code	study_donor_involved_in	submitted_donor_id	donor_sex	donor_vital_status	disease_status_last_followup	donor_relapse_type	donor_age_at_diagnosis	donor_age_at_enrollment	donor_age_at_last_followup	donor_relapse_interval	donor_diagnosis_icd10	donor_tumour_staging_system_at_diagnosis	donor_tumour_stage_at_diagnosis	donor_tumour_stage_at_diagnosis_supplemental	donor_survival_time	donor_interval_of_last_followup	prior_malignancy	cancer_type_prior_malignancy	cancer_history_first_degree_relative
+DO32887	PACA-AU		ICGC_0029	female	deceased	progression	distant recurrence/metastasis	79	79		202	C25.0	TNM			359		unknown		unknown
+DO32968	PACA-AU		ICGC_0050	male	alive	progression	local recurrence	78	78	80	197	C25.0	TNM			1456	583	unknown		unknown
+DO33084	PACA-AU		ICGC_0090	female	deceased			72	72			C25.0	TNM			6	6	unknown		unknown
+DO33408	PACA-AU	PCAWG	ICGC_0143	female	alive	stable		68	68			C25.0	TNM			909	433	unknown		unknown
+DO34056	PACA-AU		ICGC_0281	female	alive	stable		73	73			C25.0	TNM			350	350	unknown		unknown
+DO34632	PACA-AU		ICGC_0226	male	alive	stable		58	58			C25.0	TNM			523	246	unknown		unknown
+DO49096	PACA-AU		ICGC_0488	male	alive	progression	local recurrence	78	78		728	C25.0	TNM			1328	860	unknown		unknown
+DO49140	PACA-AU		ICGC_0366	female	deceased	progression	distant recurrence/metastasis	74	74		292	C25.0	TNM			560	560	unknown		unknown
+DO49177	PACA-AU		ICGC_0517	male	deceased	progression	distant recurrence/metastasis	61	61		112	C25.0	TNM			123	123	unknown		unknown
+DO32851	PACA-AU		ICGC_0016	female	deceased	progression	distant recurrence/metastasis	84	84		322	C25.0	TNM	T2NXMX		456		unknown		unknown
+DO32932	PACA-AU		ICGC_0041	male	alive	stable		74	74	75		C25.0	TNM			1502	575	unknown		unknown
+DO33328	PACA-AU		ICGC_0111	male	alive	progression	local recurrence	63	63			C25.0	TNM			906	122	unknown		unknown
+DO33904	PACA-AU		ICGC_0269	female	deceased	progression	distant recurrence/metastasis	72	72			C25.0	TNM			1737	1737	unknown		unknown
+DO34552	PACA-AU		ICGC_0237	female	deceased	progression	distant recurrence/metastasis	80	80			C25.0	TNM			183		unknown		unknown
+DO49097	PACA-AU		ICGC_0399	female	deceased	progression	distant recurrence/metastasis	55	55		661	C25.0	TNM			894	785	unknown		unknown
+DO49141	PACA-AU		ICGC_0367	male	deceased	progression	distant recurrence/metastasis	63	63		122	C25.0	TNM			357	357	unknown		unknown
+DO49178	PACA-AU	PCAWG	ICGC_0518	male	deceased	stable		58	58			C25.0	TNM			27	27	unknown		unknown
+DO33248	PACA-AU	PCAWG	ICGC_0115	female	deceased	progression	distant recurrence/metastasis	70	70		213	C25.0	TNM			796	595	unknown		unknown
+DO33824	PACA-AU		ICGC_0259	male	deceased	progression	local recurrence	56	56			C25.0	TNM			274	274	unknown		unknown
+DO34472	PACA-AU		ICGC_0145	male	deceased	progression	distant recurrence/metastasis	55	55		454	C25.0	TNM			515	515	unknown		unknown
+DO46712	PACA-AU		ICGC_0480	male	alive	stable		55	55			C25.0				44		unknown		unknown
+DO49098	PACA-AU		ICGC_0400	female	deceased	progression		82	82			C25.0	TNM			568	568	unknown		unknown
+DO49142	PACA-AU		ICGC_0368	male	deceased	progression		71	71			C25.0	TNM			111	111	unknown		unknown
+DO49179	PACA-AU		ICGC_0506		alive	stable						C25.0	TNM			2428		unknown		unknown
+DO32853	PACA-AU		ICGC_0017	female	deceased			72	72			C25.0	TNM			111		unknown		unknown
+DO33168	PACA-AU	PCAWG	ICGC_0099	female	deceased			80	80			C25.0	TNM			8	8	unknown		unknown
+DO33744	PACA-AU		ICGC_0249	male	deceased	progression	distant recurrence/metastasis	75	75			C25.0	TNM			554	554	unknown		unknown
+DO34392	PACA-AU		ICGC_0234	female	alive	progression	distant recurrence/metastasis	63	63			C25.0	TNM			715	427	unknown		unknown
+DO49099	PACA-AU		ICGC_0401	female	deceased	progression	local recurrence	59	59		131	C25.0	TNM			226	226	unknown		unknown
+DO49143	PACA-AU		ICGC_0369	female	deceased	progression		76	76			C25.0	TNM			1256	1256	unknown		unknown
+DO33664	PACA-AU		ICGC_0239	female	deceased	progression	local recurrence	70	70			C25.0	TNM			1352	1352	unknown		unknown
+DO49144	PACA-AU		ICGC_0370	male	deceased	progression		67	67			C25.0	TNM			1632	1632	unknown		unknown
+DO32855	PACA-AU		ICGC_0018	male	deceased	progression	distant recurrence/metastasis	64	64		315	C25.1	TNM			345		unknown		unknown
+DO32936	PACA-AU		ICGC_0042	male	deceased	progression	distant recurrence/metastasis	68	68		506	C25.0	TNM			552		unknown		unknown
+DO33584	PACA-AU		ICGC_0164	female	deceased	progression		55	55			C25.0	TNM			506		unknown		unknown
+DO34024	PACA-AU		ICGC_0277	male	alive	stable		72	72			C25.0	TNM			388	388	unknown		unknown
+DO34600	PACA-AU	PCAWG	ICGC_0199	male	deceased	progression		77	77		433	C25.0	TNM			537	433	unknown		unknown
+DO46715	PACA-AU		ICGC_0481	female	alive	stable						C25.0				545		unknown		unknown
+DO49145	PACA-AU		ICGC_0371	female	deceased	progression	distant recurrence/metastasis	58	58		112	C25.0	TNM			185	185	unknown		unknown
+DO32900	PACA-AU	PCAWG	ICGC_0033	male	deceased	progression	distant recurrence/metastasis	51	51	53	363	C25.0	TNM			768	603	unknown		unknown
+DO34520	PACA-AU		ICGC_0314	female	deceased			79	79			C25.0	TNM			10	10	unknown		unknown
+DO49146	PACA-AU		ICGC_0372	female	alive	stable		68	68			C25.0	TNM			564	564	unknown		unknown
+DO32857	PACA-AU		ICGC_0019	female	deceased	progression	distant recurrence/metastasis	79	79	81	377	C25.0	TNM			858	730	unknown		unknown
+DO33216	PACA-AU		ICGC_0110	male	deceased	progression	distant recurrence/metastasis	44	44		121	C25.0	TNM			141	141	unknown		unknown
+DO34440	PACA-AU		ICGC_0166	female	alive	stable		75	75			C25.0	TNM			855	205	unknown		unknown
+DO49110	PACA-AU		ICGC_0516	male	deceased	progression	distant recurrence/metastasis	56	56		1933	C25.0	TNM			2153	2153	unknown		unknown
+DO49147	PACA-AU		ICGC_0373	male	alive	stable		64	64			C25.0	TNM			363	363	unknown		unknown
+DO32821	PACA-AU		ICGC_0329	female	deceased				77									unknown		unknown
+DO33136	PACA-AU		ICGC_0092	male	alive	stable		71	71			C25.0	TNM			1395	633	unknown		unknown
+DO33712	PACA-AU		ICGC_0245	female	deceased	progression	local recurrence	67	67			C25.0	TNM			727	727	unknown		unknown
+DO34360	PACA-AU		ICGC_0177	male	alive	progression	local recurrence	45	45			C25.0	TNM			888	615	unknown		unknown
+DO46718	PACA-AU		ICGC_0482	female	alive	stable		66	66			C25.0				309		unknown		unknown
+DO49111	PACA-AU		ICGC_0405	female	alive	progression	local recurrence	65	65			C25.0	TNM			487		unknown		unknown
+DO49148	PACA-AU		ICGC_0374	male	deceased	progression	distant recurrence/metastasis	68	68		252	C25.0	TNM			722	722	unknown		unknown
+DO33056	PACA-AU		ICGC_0086	male	deceased			42	42			C25.0	TNM			216	216	unknown		unknown
+DO33632	PACA-AU		ICGC_0072	male	deceased	progression	distant recurrence/metastasis	67	67		808	C25.0				1105	1105	unknown		unknown
+DO34280	PACA-AU		ICGC_0197	female	alive	stable		72	72			C25.0	TNM			798	400	unknown		unknown
+DO49112	PACA-AU		ICGC_0358	male	alive	stable		66	66			C25.0	TNM			441	371	unknown		unknown
+DO49149	PACA-AU		ICGC_0375	male	alive	stable		70	70			C25.0	TNM			1920	1920	unknown		unknown
+DO32823	PACA-AU		ICGC_0001	male	deceased	progression	local recurrence	59	59	61	388	C25.0	TNM	T3N0MX		522		unknown		unknown
+DO32904	PACA-AU		ICGC_0034	female	deceased	progression	local recurrence	78	78			C25.2	TNM	T3N0MX		92		unknown		unknown
+DO33020	PACA-AU		ICGC_0064	male	deceased	progression	distant recurrence/metastasis	78	78	79		C25.0	TNM			434	225	unknown		unknown
+DO33552	PACA-AU	PCAWG	ICGC_0149	female	alive	stable		70	70		182	C25.0	TNM			873	402	unknown		unknown
+DO49113	PACA-AU	PCAWG	ICGC_0406	female	alive	stable		46	46			C25.0	TNM			413	265	unknown		unknown
+DO33472	PACA-AU	PCAWG	ICGC_0141	female	deceased	progression	distant recurrence/metastasis	75	75		273	C25.0	TNM			388	388	unknown		unknown
+DO32825	PACA-AU		ICGC_0002	female	deceased	progression	local recurrence	77	77	84	1954	C25.0	TNM			2848	2433	unknown		unknown
+DO33392	PACA-AU	PCAWG	ICGC_0139	male	alive	stable		70	70			C25.0	TNM			1014	319	unknown		unknown
+DO34977	PACA-AU		ICGC_0340	female	deceased	progression	distant recurrence/metastasis	78	78		241	C25.0	TNM			307	307	unknown		unknown
+DO49115	PACA-AU		ICGC_0407	female	alive	progression	distant recurrence/metastasis	68	68		326	C25.0	TNM			378	326	unknown		unknown
+DO34608	PACA-AU	PCAWG	ICGC_0201	female	deceased	progression	distant recurrence/metastasis	72	72		350	C25.0	TNM			709	517	unknown		unknown
+DO34897	PACA-AU		ICGC_0318	male	deceased	progression	distant recurrence/metastasis	77	77		451	C25.0	TNM			664	664	unknown		unknown
+DO49116	PACA-AU		ICGC_0408	female	alive	stable		62	62			C25.0	TNM			419	294	unknown		unknown
+DO32827	PACA-AU		ICGC_0003	female	alive	stable		58	58	61		C25.0	TNM			1778	901	unknown		unknown
+DO32908	PACA-AU		ICGC_0035	female	alive	stable		77	77	78		C25.0	TNM			1478	701	unknown		unknown
+DO33024	PACA-AU		ICGC_0065	male	deceased			63	63			C25.0	TNM			127		unknown		unknown
+DO33105	PACA-AU		ICGC_0096	male	deceased	progression	distant recurrence/metastasis	78	78		121	C25.0	TNM	IB		142	142	unknown		unknown
+DO33600	PACA-AU	PCAWG	ICGC_0169	female	alive	progression	distant recurrence/metastasis	77	77			C25.0	TNM			854		unknown		unknown
+DO34528	PACA-AU		ICGC_0232	male	deceased	progression		66	66			C25.0	TNM			140	140	unknown		unknown
+DO49117	PACA-AU		ICGC_0359	female	alive	stable		76	76			C25.0	TNM			398	216	unknown		unknown
+DO33520	PACA-AU		ICGC_0125	female	deceased	progression	local recurrence	63	63		152	C25.0	TNM			256	177	unknown		unknown
+DO34448	PACA-AU	PCAWG	ICGC_0215	female	deceased	progression	distant recurrence/metastasis	79	79			C25.0	TNM			719	375	unknown		unknown
+DO49118	PACA-AU		ICGC_0423	female	deceased	progression	distant recurrence/metastasis	78	78			C25.0	TNM			369	17	unknown		unknown
+DO32829	PACA-AU		ICGC_0004	female	deceased	progression	distant recurrence/metastasis	78	78	80		C25.0	TNM	T2N0MX		1874	667	unknown		unknown
+DO33440	PACA-AU		ICGC_0091	male	deceased			72	72			C25.0	TNM			8	8	unknown		unknown
+DO34368	PACA-AU	PCAWG	ICGC_0235	female	deceased	progression	distant recurrence/metastasis	64	64		342	C25.0	TNM			537	372	unknown		unknown
+DO49119	PACA-AU		ICGC_0409	male	deceased	progression	distant recurrence/metastasis	75	75			C25.0	TNM			279	90	unknown		unknown
+DO33360	PACA-AU		ICGC_0117	female	deceased	progression	local recurrence	64	64			C25.0	TNM			916	78	unknown		unknown
+DO34288	PACA-AU	PCAWG	ICGC_0223	female	deceased	progression		83	83			C25.0	TNM			220	220	unknown		unknown
+DO34945	PACA-AU		ICGC_0342	male	deceased	progression	local recurrence	68	68		168	C25.0	TNM			189	189	unknown		unknown
+DO33028	PACA-AU	PCAWG	ICGC_0066	male	deceased	progression	distant recurrence/metastasis	58	58	58	157	C25.0	TNM			311	231	unknown		unknown
+DO33280	PACA-AU		ICGC_0097	male	deceased			64	64			C25.0	TNM	IA		30	30	unknown		unknown
+DO34865	PACA-AU		ICGC_0323	female	deceased	progression	local recurrence	45	45		136	C25.0	TNM			363	135	unknown		unknown
+DO34785	PACA-AU	PCAWG	ICGC_0304	female	alive	stable		67	67			C25.0	TNM			721	525	unknown		unknown
+DO33976	PACA-AU		ICGC_0210	male	deceased	progression		71	71			C25.0	TNM			113	113	unknown		unknown
+DO34416	PACA-AU		ICGC_0221	female	deceased	progression		63	63			C25.0	TNM			650	42	unknown		unknown
+DO33896	PACA-AU		ICGC_0268	male	deceased			60	60			C25.0	TNM			359	359	unknown		unknown
+DO34336	PACA-AU	PCAWG	ICGC_0217	female	alive	stable		70	70			C25.0	TNM			743	224	unknown		unknown
+DO35065	PACA-AU		ICGC_0353	male	deceased	progression		53	53			C25.0	TNM			164	12	unknown		unknown
+DO33608	PACA-AU		ICGC_0170	female	alive	progression	distant recurrence/metastasis	68	68			C25.0	TNM			761		unknown		unknown
+DO34256	PACA-AU		ICGC_0187	female	alive	stable		52	52			C25.0	TNM			685	547	unknown		unknown
+DO34913	PACA-AU		ICGC_0322	male	alive	progression	distant recurrence/metastasis	70	70			C25.0	TNM			794	580	unknown		unknown
+DO33528	PACA-AU		ICGC_0119	male	deceased	progression	distant recurrence/metastasis	36	36		420	C25.0				343	343	unknown		unknown
+DO34176	PACA-AU		ICGC_0161	male	deceased	progression		84	84			C25.0	TNM			110	110	unknown		unknown
+DO34752	PACA-AU		ICGC_0308	male	alive	stable		60	60			C25.0	TNM			252	252	unknown		unknown
+DO34833	PACA-AU		ICGC_0311	male	alive	progression	distant recurrence/metastasis	78	78			C25.0	TNM			596	272	unknown		unknown
+DO32890	PACA-AU		ICGC_0030	female	deceased			79	79			C25.0	TNM			199		unknown		unknown
+DO33448	PACA-AU		ICGC_0081	male	alive	stable		55	55			C25.0	TNM			1490	944	unknown		unknown
+DO34096	PACA-AU		ICGC_0286	male	deceased	progression		71	71			C25.0	TNM			333	333	unknown		unknown
+DO34672	PACA-AU		ICGC_0191	male	deceased	progression	distant recurrence/metastasis	62	62			C25.0	TNM			356	301	unknown		unknown
+DO49180	PACA-AU		ICGC_0519	female	deceased	progression	local recurrence	61	61		821	C25.0	TNM			1057	1057	unknown		unknown
+DO32972	PACA-AU	PCAWG	ICGC_0051	male	deceased	progression	distant recurrence/metastasis	66	66	67	293	C25.0	TNM			605	535	unknown		unknown
+DO33368	PACA-AU	PCAWG	ICGC_0134	male	deceased	progression	distant recurrence/metastasis	81	81		30	C25.0	TNM			98	98	unknown		unknown
+DO33944	PACA-AU		ICGC_0213	female	deceased	progression		78	78			C25.0	TNM			330	330	unknown		unknown
+DO49181	PACA-AU	PCAWG	ICGC_0507	male	deceased	progression	distant recurrence/metastasis	77	77			C25.0	TNM			1534	1534	unknown		unknown
+DO33288	PACA-AU	PCAWG	ICGC_0088	male	alive	progression	distant recurrence/metastasis	71	71		486	C25.0	TNM			1408	778	unknown		unknown
+DO33864	PACA-AU		ICGC_0264	female	deceased	progression	distant recurrence/metastasis	67	67			C25.0	TNM			890	890	unknown		unknown
+DO34304	PACA-AU		ICGC_0128	female	deceased	progression	distant recurrence/metastasis	68	68		301	C25.0	TNM			638	638	unknown		unknown
+DO35033	PACA-AU		ICGC_0349	female	deceased	progression		83	83			C25.0	TNM			107	107	unknown		unknown
+DO49182	PACA-AU		ICGC_0520	male	deceased	progression	distant recurrence/metastasis	56	56		284	C25.0	TNM			498	498	unknown		unknown
+DO32893	PACA-AU	PCAWG	ICGC_0031	female	deceased	progression	distant recurrence/metastasis	61	61	63	438	C25.0	TNM			1077	732	unknown		unknown
+DO33784	PACA-AU		ICGC_0254	male	deceased	progression	distant recurrence/metastasis	48	48			C25.0	TNM			895	895	unknown		unknown
+DO49183	PACA-AU	PCAWG	ICGC_0521	female	deceased	progression	distant recurrence/metastasis	51	51			C25.0	TNM			429		unknown		unknown
+DO33091	PACA-AU		ICGC_0076	male	deceased			56	56			C25.0	TNM			142	142	unknown		unknown
+DO34144	PACA-AU		ICGC_0292	female	alive	stable		71	71			C25.0	TNM			296	296	unknown		unknown
+DO34720	PACA-AU	PCAWG	ICGC_0301	male	alive	stable		68	68			C25.0	TNM			555	296	unknown		unknown
+DO34801	PACA-AU	PCAWG	ICGC_0295	male	alive	stable		60	60			C25.0	TNM			626		unknown		unknown
+DO46673	PACA-AU		ICGC_0462	male	deceased	progression		69	69			C25.0				319		unknown		unknown
+DO49184	PACA-AU	PCAWG	ICGC_0522	female	deceased	progression	distant recurrence/metastasis	56	56		242	C25.0	TNM			455	455	unknown		unknown
+DO32976	PACA-AU	PCAWG	ICGC_0053	female	deceased	progression	distant recurrence/metastasis	73	73	75	448	C25.0	TNM			610	457	unknown		unknown
+DO33416	PACA-AU		ICGC_0133	female	alive	progression	local recurrence	59	59			C25.0	TNM			1051	293	unknown		unknown
+DO34064	PACA-AU		ICGC_0282	female	alive	stable		65	65			C25.0	TNM			340	340	unknown		unknown
+DO34640	PACA-AU	PCAWG	ICGC_0227	female	deceased	progression	distant recurrence/metastasis	49	49			C25.0	TNM			287	26	unknown		unknown
+DO49185	PACA-AU		ICGC_0542	male	alive	stable		55	55			C25.0	TNM			179		unknown		unknown
+DO32896	PACA-AU		ICGC_0032	female	deceased	progression	distant recurrence/metastasis	66	66	68	632	C25.0	TNM			835	651	unknown		unknown
+DO32940	PACA-AU		ICGC_0043	male	deceased	progression	distant recurrence/metastasis	52	52	53	540	C25.0	TNM			717	540	unknown		unknown
+DO33336	PACA-AU		ICGC_0116	female	deceased	progression	distant recurrence/metastasis	67	67		365	C25.0	TNM			451	446	unknown		unknown
+DO33912	PACA-AU		ICGC_0270	female	deceased	progression	local recurrence	54	54			C25.0	TNM			1081	1081	unknown		unknown
+DO34560	PACA-AU		ICGC_0073	male	deceased	progression		65	65			C25.0	TNM			670	670	unknown		unknown
+DO32860	PACA-AU	PCAWG	ICGC_0020	male	deceased	progression	distant recurrence/metastasis	57	57	59	421	C25.0	TNM			1259	800	unknown		unknown
+DO33256	PACA-AU		ICGC_0118	female	deceased	progression	distant recurrence/metastasis	65	65		334	C25.0	TNM			476	476	unknown		unknown
+DO33832	PACA-AU		ICGC_0260	male	deceased	progression	distant recurrence/metastasis	60	60			C25.0	TNM			716	716	unknown		unknown
+DO34480	PACA-AU		ICGC_0219	female	alive	stable		47	47			C25.0	TNM			634	166	unknown		unknown
+DO35001	PACA-AU		ICGC_0345	female	deceased	progression	distant recurrence/metastasis	83	83		55	C25.0	TNM			77	77	unknown		unknown
+DO46676	PACA-AU		ICGC_0464	female	deceased	progression		46	46			C25.0				755		unknown		unknown
+DO49150	PACA-AU		ICGC_0376	female	deceased	progression	local recurrence	68	68		238	C25.0	TNM			330	330	unknown		unknown
+DO33176	PACA-AU		ICGC_0093	male	deceased	progression	distant recurrence/metastasis	78	78		60	C25.0	TNM			125	125	unknown		unknown
+DO33752	PACA-AU		ICGC_0250	male	deceased	progression	distant recurrence/metastasis	76	76			C25.0	TNM			624	624	unknown		unknown
+DO46721	PACA-AU		ICGC_0483	male	alive	stable		40	40			C25.0				321		unknown		unknown
+DO49151	PACA-AU		ICGC_0377	male	deceased	progression		74	74			C25.0	TNM			56	56	unknown		unknown
+DO49188	PACA-AU		ICGC_0523	male	deceased	stable		76	76			C25.0	TNM			47	47	unknown		unknown
+DO33672	PACA-AU		ICGC_0240	female	deceased	progression	local recurrence	75	75			C25.0	TNM			2423	2423	unknown		unknown
+DO34112	PACA-AU		ICGC_0288	female	alive	progression	distant recurrence/metastasis	51	51			C25.0	TNM			492	492	unknown		unknown
+DO49152	PACA-AU		ICGC_0378	male	deceased	stable		65	65			C25.0	TNM			13	13	unknown		unknown
+DO49189	PACA-AU		ICGC_0524	male	deceased	progression	local recurrence	59	59		323	C25.0	TNM			440	440	unknown		unknown
+DO32863	PACA-AU	PCAWG	ICGC_0021	male	deceased	progression	distant recurrence/metastasis	60	60		380	C25.0	TNM			715		unknown		unknown
+DO32944	PACA-AU		ICGC_0044	female	alive	stable		72	72	73		C25.0	TNM			1424	417	unknown		unknown
+DO33592	PACA-AU		ICGC_0165	male	deceased			61	61			C25.0	TNM					unknown		unknown
+DO34032	PACA-AU		ICGC_0278	female	alive	stable		55	55			C25.0	TNM			592	592	unknown		unknown
+DO46679	PACA-AU		ICGC_0465	female	alive	stable		64	64			C25.0				1607		unknown		unknown
+DO33098	PACA-AU		ICGC_0079	male	deceased	progression	distant recurrence/metastasis	68	68		456	C25.0	TNM			746	746	unknown		unknown
+DO33304	PACA-AU		ICGC_0080	female	deceased	progression	distant recurrence/metastasis	68	68		700	C25.0	TNM	IB		984	926	unknown		unknown
+DO46724	PACA-AU		ICGC_0484	male	deceased	progression		68	68			C25.0				177		unknown		unknown
+DO49154	PACA-AU		ICGC_0380	male	deceased	stable		70	70			C25.0	TNM			154	154	unknown		unknown
+DO33224	PACA-AU		ICGC_0208	male	deceased	stable		55	55			C25.0	TNM			506	268	unknown		unknown
+DO33800	PACA-AU		ICGC_0256	male	deceased	progression	local recurrence	69	69			C25.0	TNM			151	151	unknown		unknown
+DO34728	PACA-AU	PCAWG	ICGC_0313	female	alive	stable		77	77			C25.0	TNM			508		unknown		unknown
+DO34809	PACA-AU	PCAWG	ICGC_0309	female	deceased	progression	distant recurrence/metastasis	74	74		259	C25.0	TNM			297	297	unknown		unknown
+DO49074	PACA-AU	PCAWG	ICGC_0354	male	deceased	progression		49	49			C25.0	TNM			168	168	unknown		unknown
+DO49155	PACA-AU		ICGC_0381	female	deceased	progression	local recurrence	78	78		413	C25.0	TNM			442	442	unknown		unknown
+DO32866	PACA-AU		ICGC_0022	female	deceased			87	87			C25.1	TNM			36		unknown		unknown
+DO33063	PACA-AU		ICGC_0077	female	deceased	progression		63	63		213	C25.0	TNM			549	549	unknown		unknown
+DO33144	PACA-AU		ICGC_0102	male	deceased			66	66			C25.0	TNM			460	460	unknown		unknown
+DO33720	PACA-AU		ICGC_0246	male	deceased	progression	distant recurrence/metastasis	65	65			C25.0	TNM			1169	1169	unknown		unknown
+DO34648	PACA-AU		ICGC_0162	female	alive	stable		65	65			C25.0	TNM			553	553	unknown		unknown
+DO49075	PACA-AU		ICGC_0499	female	deceased	progression	distant recurrence/metastasis	86	86		203	C25.0	TNM			238	238	unknown		unknown
+DO49156	PACA-AU		ICGC_0382	male	alive	progression	distant recurrence/metastasis				386	C25.0	TNM			505	505	unknown		unknown
+DO49200	PACA-AU		ICGC_0528	female	alive	stable		59	59			C25.0	TNM			2703	2703	unknown		unknown
+DO32948	PACA-AU		ICGC_0045	male	deceased	stable		76	76			C25.0	TNM			28		unknown		unknown
+DO33640	PACA-AU		ICGC_0209	female	deceased	progression	distant recurrence/metastasis	68	68		123	C25.0	TNM			523	523	unknown		unknown
+DO34568	PACA-AU		ICGC_0074	male	deceased	progression	distant recurrence/metastasis	73	73		343	C25.0	TNM			362	362	unknown		unknown
+DO46727	PACA-AU		ICGC_0485	female	alive	stable		78	78			C25.0				168		unknown		unknown
+DO49076	PACA-AU	PCAWG	ICGC_0391	male	deceased	progression	distant recurrence/metastasis	64	64		339	C25.0	TNM			480	480	unknown		unknown
+DO49157	PACA-AU		ICGC_0383	female	alive	stable		69	69			C25.0	TNM			974	974	unknown		unknown
+DO49201	PACA-AU		ICGC_0529									C25.0	TNM					unknown		unknown
+DO32831	PACA-AU	PCAWG	ICGC_0006	female	alive	stable		49	49	51	519	C25.1	TNM			1715	841	unknown		unknown
+DO32912	PACA-AU		ICGC_0036	male	alive	stable		64	64	65	241	C25.0	TNM			1253	651	unknown		unknown
+DO33560	PACA-AU		ICGC_0154	female	alive	progression	distant recurrence/metastasis	63	63			C25.0	TNM			936	348	unknown		unknown
+DO34000	PACA-AU		ICGC_0274	male	alive	stable		75	75			C25.0	TNM			422	422	unknown		unknown
+DO34488	PACA-AU		ICGC_0122	female	alive	stable		67	67			C25.0	TNM			375	375	unknown		unknown
+DO35009	PACA-AU		ICGC_0346	male	deceased			64	64			C25.0	TNM			787	76	unknown		unknown
+DO49077	PACA-AU		ICGC_0100	female	deceased	progression	distant recurrence/metastasis	34	34			C25.0	TNM			47	47	unknown		unknown
+DO49121	PACA-AU		ICGC_0360	male	alive	progression	local recurrence	68	68			C25.0	TNM			447	270	unknown		unknown
+DO49158	PACA-AU		ICGC_0384	female	deceased			74	74			C25.0	TNM			278	278	unknown		unknown
+DO49202	PACA-AU		ICGC_0530	male	deceased	progression	distant recurrence/metastasis	69	69		357	C25.0	TNM			464	464	unknown		unknown
+DO32869	PACA-AU		ICGC_0023	male	deceased	progression	distant recurrence/metastasis	49	49	51		C25.0	TNM			942	628	unknown		unknown
+DO33480	PACA-AU	PCAWG	ICGC_0146	male	alive	stable		52	52			C25.0	TNM			1054	264	unknown		unknown
+DO49078	PACA-AU	PCAWG	ICGC_0124	male	deceased	progression	local recurrence	79	79		423	C25.0	TNM			465	465	unknown		unknown
+DO49122	PACA-AU		ICGC_0410	female	deceased	stable		78	78			C25.0	TNM			10	10	unknown		unknown
+DO49159	PACA-AU		ICGC_0385	male	alive	progression	distant recurrence/metastasis	69	69		741	C25.0	TNM			1042	1042	unknown		unknown
+DO49203	PACA-AU		ICGC_0531	female	deceased	progression	local recurrence	68	68		458	C25.0	TNM			518	518	unknown		unknown
+DO32833	PACA-AU	PCAWG	ICGC_0007	female	deceased			74	74			C25.0	TNM	T3N0MX		56		unknown		unknown
+DO34985	PACA-AU		ICGC_0343	female	deceased	progression	distant recurrence/metastasis	61	61			C25.0	TNM			994	700	unknown		unknown
+DO49079	PACA-AU	PCAWG	ICGC_0392	male	deceased	progression	distant recurrence/metastasis	50	50		18	C25.0	TNM			332	332	unknown		unknown
+DO49123	PACA-AU		ICGC_0493	female	deceased	progression	distant recurrence/metastasis	80	80		209	C25.0	TNM			348	268	unknown		unknown
+DO49204	PACA-AU	PCAWG	ICGC_0543	male	deceased	progression	distant recurrence/metastasis	67	67			C25.0	TNM			156		unknown		unknown
+DO33112	PACA-AU		ICGC_0106	male	deceased	progression	distant recurrence/metastasis	68	68		91	C25.0	TNM			223	223	unknown		unknown
+DO34616	PACA-AU	PCAWG	ICGC_0224	female	alive	stable		68	68			C25.0	TNM			666	295	unknown		unknown
+DO49124	PACA-AU		ICGC_0411	male	alive	progression	distant recurrence/metastasis	67	67			C25.0	TNM			377	172	unknown		unknown
+DO49205	PACA-AU		ICGC_0544	female	alive	stable		72	72			C25.0	TNM			89		unknown		unknown
+DO32835	PACA-AU		ICGC_0008	male	deceased	progression	distant recurrence/metastasis	72	72	74	725	C25.0	TNM			1209	825	unknown		unknown
+DO32916	PACA-AU	PCAWG	ICGC_0037	male	deceased	progression	distant recurrence/metastasis	78	78		119	C25.1	TNM			154		unknown		unknown
+DO33032	PACA-AU	PCAWG	ICGC_0067	male	deceased	progression	distant recurrence/metastasis	64	64	65		C25.0	TNM			495	178	unknown		unknown
+DO34536	PACA-AU		ICGC_0233	male	deceased	progression	distant recurrence/metastasis	68	68		295	C25.0	TNM			464	350	unknown		unknown
+DO49125	PACA-AU		ICGC_0361	male	alive	progression	distant recurrence/metastasis	55	55		251	C25.0	TNM			406	251	unknown		unknown
+DO49206	PACA-AU		ICGC_0546	male	alive	progression		82	82			C25.0	TNM			32	32	unknown		unknown
+DO33808	PACA-AU		ICGC_0257	male	deceased			79	79			C25.0	TNM			14	14	unknown		unknown
+DO34456	PACA-AU		ICGC_0195	female	alive	stable		79	79			C25.0	TNM			414	133	unknown		unknown
+DO49126	PACA-AU		ICGC_0362	female	alive	progression	distant recurrence/metastasis	59	59		274	C25.0	TNM			363	275	unknown		unknown
+DO49207	PACA-AU		ICGC_0547	male	alive	progression		73	73			C25.0	TNM			37	37	unknown		unknown
+DO32837	PACA-AU	PCAWG	ICGC_0009	male	deceased	progression	distant recurrence/metastasis	34	34		115	C25.0	TNM			399		unknown		unknown
+DO33728	PACA-AU		ICGC_0247	male	deceased	progression	distant recurrence/metastasis	55	55			C25.0	TNM			1284	1284	unknown		unknown
+DO34376	PACA-AU		ICGC_0137	male	deceased	progression		61	61			C25.0	TNM			179	179	unknown		unknown
+DO49127	PACA-AU	PCAWG	ICGC_0412	female	alive	stable		77	77			C25.0	TNM			392		unknown		unknown
+DO33648	PACA-AU		ICGC_0071	female	deceased	progression	distant recurrence/metastasis	72	72		417	C25.0	TNM			517	517	unknown		unknown
+DO34296	PACA-AU		ICGC_0189	male	alive	stable		62	62			C25.0	TNM			832	249	unknown		unknown
+DO34953	PACA-AU		ICGC_0337	male	deceased	progression	distant recurrence/metastasis	45	45			C25.0	TNM			420		unknown		unknown
+DO49128	PACA-AU		ICGC_0363	female	alive	stable		65	65			C25.0	TNM			326	244	unknown		unknown
+DO32839	PACA-AU		ICGC_0010	male	deceased	stable		55	55			C25.0	TNM			487		unknown		unknown
+DO33568	PACA-AU		ICGC_0094	female	deceased	progression	distant recurrence/metastasis	50	50			C25.0	TNM			233		unknown		unknown
+DO34008	PACA-AU		ICGC_0275	male	alive	stable		58	58			C25.0	TNM			408	408	unknown		unknown
+DO34873	PACA-AU		ICGC_0319	male	deceased	progression	distant recurrence/metastasis	64	64		28	C25.0	TNM			578	278	unknown		unknown
+DO49129	PACA-AU	PCAWG	ICGC_0365	male	alive	stable		50	50			C25.0	TNM			337	64	unknown		unknown
+DO33000	PACA-AU	PCAWG	ICGC_0059	male	alive	progression	distant recurrence/metastasis	68	68	69		C25.0	TNM			1258	288	unknown		unknown
+DO33037	PACA-AU		ICGC_0005	male	deceased	progression	distant recurrence/metastasis	63	63		371	C25.2	TNM			641		unknown		unknown
+DO33488	PACA-AU	PCAWG	ICGC_0150	male	alive	stable		61	61			C25.0	TNM			844	221	unknown		unknown
+DO34504	PACA-AU	PCAWG	ICGC_0230	male	deceased	progression		37	37			C25.0	TNM			257		unknown		unknown
+DO34793	PACA-AU	PCAWG	ICGC_0312	male	deceased	progression	distant recurrence/metastasis	56	56			C25.0	TNM			427	251	unknown		unknown
+DO33984	PACA-AU	PCAWG	ICGC_0144	male	alive	stable		64	64			C25.0	TNM			847	667	unknown		unknown
+DO34424	PACA-AU		ICGC_0238	male	deceased	progression	distant recurrence/metastasis	50	50			C25.0	TNM			284	284	unknown		unknown
+DO34344	PACA-AU		ICGC_0203	female	alive	progression	distant recurrence/metastasis	68	68		342	C25.0	TNM			749	428	unknown		unknown
+DO35073	PACA-AU		ICGC_0341	male	alive	progression	distant recurrence/metastasis	65	65			C25.0	TNM			764	356	unknown		unknown
+DO33616	PACA-AU		ICGC_0175	female	deceased			78	78			C25.0	TNM			132	132	unknown		unknown
+DO34264	PACA-AU	PCAWG	ICGC_0069	female	deceased	progression	local recurrence	63	63		702	C25.0	TNM			1144	1144	unknown		unknown
+DO34921	PACA-AU		ICGC_0320	female	deceased	progression	distant recurrence/metastasis	66	66		125	C25.0	TNM			272	124	unknown		unknown
+DO33004	PACA-AU		ICGC_0060	male	alive	progression	local recurrence	47	47	48		C25.0	TNM			596	195	unknown		unknown
+DO33536	PACA-AU		ICGC_0147	male	deceased	progression	distant recurrence/metastasis	71	71		304	C25.0	TNM			482	452	unknown		unknown
+DO34184	PACA-AU		ICGC_0167	female	alive	progression	distant recurrence/metastasis	66	66			C25.0	TNM			1042	603	unknown		unknown
+DO34760	PACA-AU		ICGC_0307	male	deceased	progression		76	76			C25.0	TNM			610	610	unknown		unknown
+DO34841	PACA-AU		ICGC_0324	male	deceased	progression	local recurrence	71	71			C25.0	TNM			506	163	unknown		unknown
+DO33456	PACA-AU		ICGC_0130	male	deceased	progression	distant recurrence/metastasis	67	67		334	C25.0	TNM			399	399	unknown		unknown
+DO34680	PACA-AU	PCAWG	ICGC_0192	male	deceased	progression	distant recurrence/metastasis	75	75		46	C25.0	TNM			99	99	unknown		unknown
+DO32980	PACA-AU	PCAWG	ICGC_0054	female	deceased	progression	distant recurrence/metastasis	72	72			C25.2	TNM			78		unknown		unknown
+DO33376	PACA-AU	PCAWG	ICGC_0135	female	alive	stable		62	62			C25.0	TNM			909	490	unknown		unknown
+DO33952	PACA-AU		ICGC_0070	male	deceased	progression	local recurrence	72	72		317	C25.0	TNM			1392	1392	unknown		unknown
+DO33296	PACA-AU		ICGC_0078	female	deceased	progression	distant recurrence/metastasis	40	40		395	C25.0	TNM			756	756	unknown		unknown
+DO33872	PACA-AU		ICGC_0265	male	deceased	progression	distant recurrence/metastasis	33	33			C25.0	TNM			1009	1009	unknown		unknown
+DO34312	PACA-AU	PCAWG	ICGC_0315	female	deceased	progression	distant recurrence/metastasis	58	58			C25.0	TNM			226	168	unknown		unknown
+DO35041	PACA-AU		ICGC_0350	male	deceased	progression		61	61			C25.0	TNM			155	155	unknown		unknown
+DO49190	PACA-AU		ICGC_0508	female	deceased	progression	local recurrence	61	61		528	C25.0	TNM			823	823	unknown		unknown
+DO33008	PACA-AU	PCAWG	ICGC_0061	female	deceased	progression	distant recurrence/metastasis	56	56	57	99	C25.0	TNM			970	292	unknown		unknown
+DO33792	PACA-AU		ICGC_0255	male	deceased	progression	distant recurrence/metastasis	64	64			C25.0	TNM			1112	1112	unknown		unknown
+DO34232	PACA-AU		ICGC_0179	female	alive	progression	distant recurrence/metastasis	69	69			C25.0	TNM			905	385	unknown		unknown
+DO34152	PACA-AU		ICGC_0293	female	alive	stable		69	69			C25.0	TNM			297	297	unknown		unknown
+DO49192	PACA-AU		ICGC_0525	male	alive	progression	local recurrence	58	58		1075	C25.0	TNM			1758	1758	unknown		unknown
+DO32984	PACA-AU	PCAWG	ICGC_0055	male	deceased	progression	distant recurrence/metastasis	61	61	62	104	C25.2	TNM			415	365	unknown		unknown
+DO33424	PACA-AU		ICGC_0138	male	alive	stable		77	77			C25.0	TNM			1058	452	unknown		unknown
+DO34072	PACA-AU		ICGC_0283	female	alive	stable		69	69			C25.0	TNM			337	337	unknown		unknown
+DO46682	PACA-AU		ICGC_0467	male	deceased			64	64			C25.0				1263		unknown		unknown
+DO49193	PACA-AU	PCAWG	ICGC_0526	male	deceased	stable		60	60			C25.0	TNM			1	1	unknown		unknown
+DO33344	PACA-AU	PCAWG	ICGC_0087	male	deceased	progression	distant recurrence/metastasis	70	70		243	C25.0	TNM			361	361	unknown		unknown
+DO33920	PACA-AU		ICGC_0271	male	deceased	progression	distant recurrence/metastasis	70	70			C25.0	TNM			957	957	unknown		unknown
+DO34929	PACA-AU		ICGC_0336	female	deceased			72	72			C25.0	TNM			447	447	unknown		unknown
+DO49194	PACA-AU		ICGC_0527	male	deceased			62	62			C25.0	TNM			182	182	unknown		unknown
+DO33264	PACA-AU	PCAWG	ICGC_0207	male	deceased			80	80			C25.0	TNM			205	205	unknown		unknown
+DO33840	PACA-AU		ICGC_0261	female	deceased			67	67			C25.0	TNM			211	211	unknown		unknown
+DO34768	PACA-AU		ICGC_0298	male	alive	progression		63	63			C25.0	TNM			582	337	unknown		unknown
+DO34849	PACA-AU	PCAWG	ICGC_0326	female	deceased	progression	distant recurrence/metastasis	86	86		173	C25.0	TNM			272	202	unknown		unknown
+DO49195	PACA-AU		ICGC_0509	male	deceased	progression	distant recurrence/metastasis	59	59		36	C25.0	TNM			112	112	unknown		unknown
+DO33184	PACA-AU	PCAWG	ICGC_0109	male	deceased	progression	local recurrence	70	70		304	C25.0	TNM			913	610	unknown		unknown
+DO33760	PACA-AU		ICGC_0251	female	deceased	progression	distant recurrence/metastasis	64	64			C25.0	TNM			648	648	unknown		unknown
+DO34200	PACA-AU		ICGC_0174	female	alive	progression	distant recurrence/metastasis	72	72			C25.0	TNM			985	326	unknown		unknown
+DO34688	PACA-AU		ICGC_0194	female	deceased	progression	distant recurrence/metastasis	57	57		57	C25.0	TNM			303	293	unknown		unknown
+DO34769	PACA-AU		ICGC_0305	male	alive	stable		73	73			C25.0	TNM			493	232	unknown		unknown
+DO46685	PACA-AU		ICGC_0468	female	deceased	progression		67	67			C25.0				128		unknown		unknown
+DO49196	PACA-AU		ICGC_0510	male	deceased	progression	distant recurrence/metastasis	66	66		990	C25.0	TNM			1107	1107	unknown		unknown
+DO32988	PACA-AU		ICGC_0056	female	alive	progression	distant recurrence/metastasis	61	61	62		C25.0	TNM			1170	156	unknown		unknown
+DO33680	PACA-AU		ICGC_0241	male	alive	stable		80	80			C25.0	TNM			1477	1477	unknown		unknown
+DO34120	PACA-AU		ICGC_0289	female	alive	progression		68	68			C25.0	TNM			480	480	unknown		unknown
+DO46730	PACA-AU		ICGC_0463	male	deceased	progression		66	66			C25.0				1103		unknown		unknown
+DO49160	PACA-AU		ICGC_0386	female	deceased	progression		80	80			C25.0	TNM			71	71	unknown		unknown
+DO49197	PACA-AU		ICGC_0511	male	deceased	progression	distant recurrence/metastasis	70	70		482	C25.0	TNM			514	514	unknown		unknown
+DO32952	PACA-AU		ICGC_0046	male	deceased	progression	distant recurrence/metastasis	72	72		202	C25.1	TNM			234		unknown		unknown
+DO34040	PACA-AU		ICGC_0279	male	alive	stable		78	78			C25.0	TNM			359	359	unknown		unknown
+DO35049	PACA-AU		ICGC_0351	female	alive	stable		87	87			C25.0	TNM			397		unknown		unknown
+DO49080	PACA-AU	PCAWG	ICGC_0393	male	alive	stable		60	60			C25.0	TNM			83	83	unknown		unknown
+DO49161	PACA-AU		ICGC_0387	male	alive	stable		63	63			C25.0	TNM			603	603	unknown		unknown
+DO49198	PACA-AU		ICGC_0512	female	deceased	progression	distant recurrence/metastasis	61	61		230	C25.0	TNM			251	251	unknown		unknown
+DO32872	PACA-AU		ICGC_0024	male	alive	stable		69	69	71		C25.0	TNM			1639	597	unknown		unknown
+DO33312	PACA-AU		ICGC_0121	female	deceased	progression	distant recurrence/metastasis	53	53			C25.0	TNM			130	130	unknown		unknown
+DO46688	PACA-AU		ICGC_0469	female	alive	stable		78	78			C25.0				1530		unknown		unknown
+DO49081	PACA-AU		ICGC_0394	male	deceased	progression		62	62			C25.0	TNM			132	132	unknown		unknown
+DO49162	PACA-AU		ICGC_0388	female	alive	stable		68	68			C25.0	TNM			419	419	unknown		unknown
+DO49199	PACA-AU		ICGC_0513	male	deceased	progression	distant recurrence/metastasis	52	52		327	C25.3	TNM			1095	1095	unknown		unknown
+DO33070	PACA-AU		ICGC_0089	female	deceased	progression	distant recurrence/metastasis	69	69		213	C25.0	TNM			423	423	unknown		unknown
+DO33232	PACA-AU		ICGC_0101	female	alive	progression	local recurrence	70	70			C25.0	TNM			1107	705	unknown		unknown
+DO34736	PACA-AU	PCAWG	ICGC_0303	female	deceased	progression	distant recurrence/metastasis	78	78			C25.0	TNM			203	110	unknown		unknown
+DO34817	PACA-AU	PCAWG	ICGC_0300	female	alive	stable		72	72			C25.0	TNM			540	268	unknown		unknown
+DO46733	PACA-AU		ICGC_0466	female	deceased	progression		64	64			C25.0				267		unknown		unknown
+DO49082	PACA-AU		ICGC_0514	male	alive	stable		65	65			C25.0	TNM			691	691	unknown		unknown
+DO49163	PACA-AU		ICGC_0389	female	alive	progression	distant recurrence/metastasis	61	61		302	C25.0	TNM			302	302	unknown		unknown
+DO33152	PACA-AU	PCAWG	ICGC_0105	male	deceased	progression	local recurrence	88	88		365	C25.0	TNM			430	430	unknown		unknown
+DO34656	PACA-AU	PCAWG	ICGC_0185	female	alive	progression	distant recurrence/metastasis	61	61			C25.0	TNM			834	175	unknown		unknown
+DO49164	PACA-AU		ICGC_0421	male	alive	stable		70	70			C25.0	TNM			272	76	unknown		unknown
+DO32875	PACA-AU	PCAWG	ICGC_0025	male	deceased	progression	distant recurrence/metastasis	69	69		139	C25.0	TNM			348		unknown		unknown
+DO32956	PACA-AU		ICGC_0047	male	alive	stable		71	71	72		C25.0	TNM			1448	427	unknown		unknown
+DO33928	PACA-AU		ICGC_0272	male	deceased	progression	distant recurrence/metastasis	73	73			C25.0	TNM			1157	1157	unknown		unknown
+DO34576	PACA-AU		ICGC_0148	female	alive	progression	distant recurrence/metastasis	62	62		29	C25.0				929	693	unknown		unknown
+DO49165	PACA-AU		ICGC_0422	female	alive	stable		56	56			C25.0	TNM			205	110	unknown		unknown
+DO32920	PACA-AU		ICGC_0038	male	deceased			57	57			C25.0	TNM	T3N1MX		201		unknown		unknown
+DO33848	PACA-AU		ICGC_0262	male	deceased	progression	distant recurrence/metastasis	75	75			C25.0	TNM			151	151	unknown		unknown
+DO34496	PACA-AU		ICGC_0229	male	deceased	progression	distant recurrence/metastasis	73	73			C25.0	TNM			412	277	unknown		unknown
+DO35017	PACA-AU		ICGC_0347	male	alive	stable		60	60			C25.0	TNM			238	238	unknown		unknown
+DO46736	PACA-AU		ICGC_0471	male	deceased	progression		62	62			C25.0				1079		unknown		unknown
+DO49166	PACA-AU	PCAWG	ICGC_0535	female	alive	progression	distant recurrence/metastasis	40	40			C25.0	TNM			222		unknown		unknown
+DO33768	PACA-AU		ICGC_0252	female	deceased	progression	distant recurrence/metastasis	65	65			C25.0	TNM			331	331	unknown		unknown
+DO34208	PACA-AU		ICGC_0178	male	deceased	progression	distant recurrence/metastasis	66	66		126	C25.0	TNM			305	305	unknown		unknown
+DO46700	PACA-AU		ICGC_0476	male	deceased	progression		61	61			C25.0				518		unknown		unknown
+DO49086	PACA-AU		ICGC_0515	female	alive	progression		76	76			C25.0	TNM			869	538	unknown		unknown
+DO49130	PACA-AU		ICGC_0364	female	alive	stable		76	76			C25.0	TNM			351	93	unknown		unknown
+DO32841	PACA-AU		ICGC_0011	male	alive	stable		62	62	64		C25.0	TNM			1680	921	unknown		unknown
+DO32878	PACA-AU	PCAWG	ICGC_0026	female	deceased	progression	distant recurrence/metastasis	69	69		223	C25.0	TNM			260		unknown		unknown
+DO33200	PACA-AU	PCAWG	ICGC_0206	female	deceased			90	90			C25.0	TNM			109	109	unknown		unknown
+DO33688	PACA-AU		ICGC_0242	female	deceased	progression	distant recurrence/metastasis	68	68			C25.0	TNM			394	394	unknown		unknown
+DO34128	PACA-AU		ICGC_0290	male	alive	stable		76	76			C25.0	TNM			484	484	unknown		unknown
+DO34704	PACA-AU		ICGC_0335	male	deceased	progression	distant recurrence/metastasis	63	63			C25.0	TNM			484	204	unknown		unknown
+DO34993	PACA-AU		ICGC_0344	male	deceased	progression	distant recurrence/metastasis	64	64		38	C25.0	TNM			944	479	unknown		unknown
+DO49087	PACA-AU	PCAWG	ICGC_0395	female	deceased	progression		68	68			C25.0	TNM			260	5	unknown		unknown
+DO49131	PACA-AU		ICGC_0413	male	deceased	stable		78	78			C25.0	TNM			32	32	unknown		unknown
+DO49168	PACA-AU	PCAWG	ICGC_0536	male	alive	stable		58	58			C25.0	TNM			149	119	unknown		unknown
+DO33120	PACA-AU		ICGC_0107	male	deceased			59	59			C25.0	TNM			563	563	unknown		unknown
+DO34048	PACA-AU		ICGC_0280	male	alive	stable		70	70			C25.0	TNM			351	351	unknown		unknown
+DO34624	PACA-AU		ICGC_0225	male	alive	stable		73	73			C25.0	TNM			260	145	unknown		unknown
+DO46739	PACA-AU		ICGC_0473	female	deceased	progression		56	56			C25.0				527		unknown		unknown
+DO49132	PACA-AU		ICGC_0414	female	alive	stable		86	86			C25.0	TNM			349	153	unknown		unknown
+DO49169	PACA-AU		ICGC_0537	male	alive	stable		75	75			C25.0	TNM			196		unknown		unknown
+DO32843	PACA-AU		ICGC_0012	female	deceased	progression	distant recurrence/metastasis	60	60	62	362	C25.0	TNM			1048	893	unknown		unknown
+DO32924	PACA-AU		ICGC_0039	male	deceased	progression	distant recurrence/metastasis	67	67		249	C25.0	TNM			313		unknown		unknown
+DO33077	PACA-AU	PCAWG	ICGC_0075	female	deceased			76	76			C25.0	TNM			476	476	unknown		unknown
+DO34544	PACA-AU		ICGC_0236	male	alive	progression	distant recurrence/metastasis	76	76			C25.0	TNM			427	262	unknown		unknown
+DO46703	PACA-AU		ICGC_0477	male	deceased	progression						C25.0				203		unknown		unknown
+DO49089	PACA-AU		ICGC_0396	male	alive	stable		53	53			C25.0	TNM			474	474	unknown		unknown
+DO49133	PACA-AU	PCAWG	ICGC_0415	female	alive	stable		55	55			C25.0	TNM			188	188	unknown		unknown
+DO33816	PACA-AU		ICGC_0258	male	deceased	progression	distant recurrence/metastasis	62	62			C25.0	TNM			803	803	unknown		unknown
+DO34464	PACA-AU		ICGC_0216	female	alive	progression	distant recurrence/metastasis	83	83			C25.0	TNM			663	403	unknown		unknown
+DO49134	PACA-AU		ICGC_0416	female	alive	progression	distant recurrence/metastasis	83	83		98	C25.0	TNM			350	258	unknown		unknown
+DO32845	PACA-AU		ICGC_0013	male	deceased			81	81			C25.0	TNM			135		unknown		unknown
+DO33042	PACA-AU	PCAWG	ICGC_0052	male	alive	stable		76	76	77	246	C25.0	TNM			1424	445	unknown		unknown
+DO33736	PACA-AU		ICGC_0248	female	deceased	progression	distant recurrence/metastasis	66	66			C25.0	TNM			658	658	unknown		unknown
+DO34384	PACA-AU		ICGC_0218	male	deceased	progression	distant recurrence/metastasis	71	71			C25.0	TNM			587	384	unknown		unknown
+DO49135	PACA-AU	PCAWG	ICGC_0417	male	alive	stable		65	65			C25.0	TNM			270	144	unknown		unknown
+DO33043	PACA-AU		ICGC_0084	female	deceased	progression	distant recurrence/metastasis	60	60		182	C25.0	TNM			381	381	unknown		unknown
+DO33656	PACA-AU		ICGC_0098	female	deceased	progression	distant recurrence/metastasis	76	76		106	C25.0	TNM			164	164	unknown		unknown
+DO34961	PACA-AU	PCAWG	ICGC_0338	male	deceased	progression	distant recurrence/metastasis	71	71			C25.0	TNM			632	639	unknown		unknown
+DO46706	PACA-AU		ICGC_0478	male	alive	stable		76	76			C25.0				379		unknown		unknown
+DO49136	PACA-AU		ICGC_0418	female	alive	progression	distant recurrence/metastasis	57	57		168	C25.0	TNM			309	170	unknown		unknown
+DO32847	PACA-AU		ICGC_0014	female	deceased	progression	local recurrence	47	47	49	239	C25.0	TNM			1200	672	unknown		unknown
+DO32928	PACA-AU		ICGC_0040	male	deceased	progression	local recurrence	77	77		277	C25.0	TNM			304		unknown		unknown
+DO33576	PACA-AU		ICGC_0159	female	alive	stable		43	43			C25.0	TNM			1170		unknown		unknown
+DO34016	PACA-AU		ICGC_0276	male	alive	stable		67	67			C25.0	TNM			407	407	unknown		unknown
+DO34881	PACA-AU		ICGC_0136	male	alive	progression	distant recurrence/metastasis	71	71		707	C25.0	TNM			1001	747	unknown		unknown
+DO49100	PACA-AU		ICGC_0402	male	alive	stable		79	79			C25.0	TNM			308	308	unknown		unknown
+DO49137	PACA-AU	PCAWG	ICGC_0419	female	alive	progression	distant recurrence/metastasis	67	67		45	C25.0	TNM			232	232	unknown		unknown
+DO33496	PACA-AU		ICGC_0152	female	deceased	progression	distant recurrence/metastasis	76	76			C25.0	TNM			695	180	unknown		unknown
+DO49101	PACA-AU		ICGC_0403	male	deceased	progression	distant recurrence/metastasis	76	76		247	C25.0	TNM			385	385	unknown		unknown
+DO49138	PACA-AU	PCAWG	ICGC_0420	male	deceased	progression		74	74			C25.0	TNM			230		unknown		unknown
+DO32849	PACA-AU		ICGC_0015	male	deceased	progression	distant recurrence/metastasis	65	65		293	C25.0	TNM			315		unknown		unknown
+DO33208	PACA-AU	PCAWG	ICGC_0205	male	deceased			59	59			C25.0	TNM			281	281	unknown		unknown
+DO33992	PACA-AU		ICGC_0273	female	deceased	progression	distant recurrence/metastasis	67	67			C25.0	TNM			507	507	unknown		unknown
+DO34432	PACA-AU	PCAWG	ICGC_0214	female	deceased	progression	distant recurrence/metastasis	82	82			C25.0	TNM			400	23	unknown		unknown
+DO46709	PACA-AU		ICGC_0479	male	alive	stable		60	60			C25.0				84		unknown		unknown
+DO33128	PACA-AU	PCAWG	ICGC_0108	male	deceased			72	72			C25.0	TNM			423	423	unknown		unknown
+DO33704	PACA-AU		ICGC_0244	male	deceased	progression	local recurrence	71	71			C25.0	TNM			153	153	unknown		unknown
+DO49103	PACA-AU		ICGC_0355	male	deceased	progression		62	62			C25.0	TNM			123		unknown		unknown
+DO33624	PACA-AU		ICGC_0316	female	deceased			60	60			C25.0	TNM			82	82	unknown		unknown
+DO34272	PACA-AU		ICGC_0202	male	alive	stable		46	46			C25.0	TNM			713	349	unknown		unknown
+DO49104	PACA-AU		ICGC_0356	male	alive	stable		61	61			C25.0	TNM			501	255	unknown		unknown
+DO33012	PACA-AU		ICGC_0062	male	deceased	stable		70	70			C25.0	TNM	T2N0MX		1		unknown		unknown
+DO33049	PACA-AU		ICGC_0085	male	deceased			54	54			C25.0	TNM			324	324	unknown		unknown
+DO33544	PACA-AU	PCAWG	ICGC_0153	female	deceased	progression	local recurrence	83	83			C25.0	TNM			412	144	unknown		unknown
+DO34192	PACA-AU		ICGC_0173	male	deceased	progression	distant recurrence/metastasis	55	55		177	C25.0	TNM			478	478	unknown		unknown
+DO49105	PACA-AU		ICGC_0532	male	deceased	progression	distant recurrence/metastasis	59	59		129	C25.0	TNM			445	445	unknown		unknown
+DO33464	PACA-AU		ICGC_0132	male	deceased	progression	distant recurrence/metastasis	65	65			C25.0	TNM			615	222	unknown		unknown
+DO32817	PACA-AU		ICGC_0327	male	deceased													unknown		unknown
+DO33960	PACA-AU	PCAWG	ICGC_0212	male	deceased	progression	local recurrence	57	57			C25.0	TNM			602	616	unknown		unknown
+DO34400	PACA-AU		ICGC_0220	female	deceased	progression		62	62			C25.0	TNM			813	813	unknown		unknown
+DO34969	PACA-AU		ICGC_0339	male	deceased	progression	local recurrence	75	75		348	C25.0	TNM			579	579	unknown		unknown
+DO49107	PACA-AU		ICGC_0357	female	deceased	progression		60	60			C25.0	TNM			143	138	unknown		unknown
+DO33880	PACA-AU		ICGC_0266	female	deceased	progression	distant recurrence/metastasis	59	59			C25.0	TNM			159	159	unknown		unknown
+DO34320	PACA-AU		ICGC_0157	female	alive	stable		62	62			C25.0	TNM			947	583	unknown		unknown
+DO34889	PACA-AU		ICGC_0317	male	deceased	progression		90	90			C25.0	TNM			191	191	unknown		unknown
+DO49108	PACA-AU		ICGC_0490	male	deceased	progression	distant recurrence/metastasis	81	81			C25.0	TNM			91	91	unknown		unknown
+DO32819	PACA-AU		ICGC_0328	male	deceased				85									unknown		unknown
+DO33016	PACA-AU	PCAWG	ICGC_0063	male	alive	stable		54	54	55		C25.0	TNM			1275	295	unknown		unknown
+DO34240	PACA-AU	PCAWG	ICGC_0188	male	deceased	progression	distant recurrence/metastasis	72	72		50	C25.0	TNM			236	200	unknown		unknown
+DO49109	PACA-AU		ICGC_0404	female	deceased	stable		57	57			C25.0	TNM			19	19	unknown		unknown
+DO33512	PACA-AU	PCAWG	ICGC_0114	female	deceased							C25.0	TNM			499	499	unknown		unknown
+DO34160	PACA-AU		ICGC_0294	female	alive	stable		60	60			C25.0	TNM			290	290	unknown		unknown
+DO32992	PACA-AU		ICGC_0057	male	deceased	progression	distant recurrence/metastasis	64	64		68	C25.0	TNM			363		unknown		unknown
+DO33432	PACA-AU		ICGC_0131	male	deceased	stable		69	69			C25.0	TNM			656	518	unknown		unknown
+DO34080	PACA-AU		ICGC_0284	female	alive	stable		74	74			C25.0	TNM			304	304	unknown		unknown
+DO33352	PACA-AU		ICGC_0083	female	deceased	progression	distant recurrence/metastasis	67	67			C25.0	TNM			1003	273	unknown		unknown
+DO34937	PACA-AU		ICGC_0113	male	deceased	progression		50	50			C25.0	TNM			44	44	unknown		unknown
+DO46691	PACA-AU		ICGC_0470	male	deceased	progression		75	75			C25.0				461		unknown		unknown
+DO33272	PACA-AU		ICGC_0095	male	deceased			62	62			C25.0	TNM			320	320	unknown		unknown
+DO34857	PACA-AU		ICGC_0325	female	alive	stable		67	67			C25.0	TNM			178	178	unknown		unknown
+DO33192	PACA-AU		ICGC_0104	male	deceased	progression	distant recurrence/metastasis	60	60		517	C25.0	TNM			653	515	unknown		unknown
+DO34696	PACA-AU	PCAWG	ICGC_0296	male	alive	stable		75	75			C25.0	TNM			689	365	unknown		unknown
+DO34777	PACA-AU		ICGC_0299	male	alive	stable		66	66			C25.0	TNM			589	16	unknown		unknown
+DO32996	PACA-AU		ICGC_0058	female	deceased	progression	distant recurrence/metastasis	59	59	60	228	C25.0	TNM			280	249	unknown		unknown
+DO33968	PACA-AU		ICGC_0082	female	deceased	progression		68	68			C25.0	TNM			152	152	unknown		unknown
+DO34408	PACA-AU		ICGC_0196	female	deceased	progression		80	80			C25.0	TNM			96	440	unknown		unknown
+DO46694	PACA-AU		ICGC_0472	male	deceased	progression		72	72			C25.0				543		unknown		unknown
+DO32960	PACA-AU	PCAWG	ICGC_0048	female	alive	stable		65	65	66		C25.0	TNM			1258	426	unknown		unknown
+DO33400	PACA-AU	PCAWG	ICGC_0140	female	alive	stable		76	76			C25.0	TNM			1043	103	unknown		unknown
+DO33888	PACA-AU		ICGC_0267	female	deceased	progression	distant recurrence/metastasis	75	75			C25.0	TNM			943	943	unknown		unknown
+DO34328	PACA-AU		ICGC_0228	male	deceased	progression		67	67			C25.0	TNM			468	468	unknown		unknown
+DO35057	PACA-AU		ICGC_0352	female	alive	stable		76	76			C25.0	TNM			485	163	unknown		unknown
+DO33320	PACA-AU		ICGC_0123	female	deceased	progression	distant recurrence/metastasis	65	65			C25.0	TNM			1122	105	unknown		unknown
+DO34248	PACA-AU		ICGC_0184	female	alive	progression	local recurrence	67	67		334	C25.0	TNM			785	334	unknown		unknown
+DO34905	PACA-AU	PCAWG	ICGC_0321	male	alive	stable		64	64			C25.0	TNM			1142	454	unknown		unknown
+DO49170	PACA-AU		ICGC_0538	male	alive	stable		67	67			C25.0	TNM			197		unknown		unknown
+DO32881	PACA-AU		ICGC_0027	male	deceased	progression	distant recurrence/metastasis	64	64		189	C25.1	TNM			409		unknown		unknown
+DO33240	PACA-AU		ICGC_0112	male	deceased	progression	local recurrence	51	51			C25.0	TNM			347	128	unknown		unknown
+DO34168	PACA-AU		ICGC_0158	female	alive	stable		60	60			C25.0	TNM			224	224	unknown		unknown
+DO34744	PACA-AU		ICGC_0302	male	alive	progression	distant recurrence/metastasis	65	65			C25.0	TNM			475	265	unknown		unknown
+DO34825	PACA-AU		ICGC_0310	male	deceased	progression	distant recurrence/metastasis	64	64			C25.0	TNM			456	246	unknown		unknown
+DO46697	PACA-AU		ICGC_0474	male	deceased	progression		81	81			C25.0				279		unknown		unknown
+DO46741	PACA-AU		ICGC_0475	male	alive	stable		66	66			C25.0				254		unknown		unknown
+DO49090	PACA-AU	PCAWG	ICGC_0486	female	deceased	progression	distant recurrence/metastasis	77	77		65	C25.0	TNM			152	152	unknown		unknown
+DO49171	PACA-AU		ICGC_0540	male	alive	stable		58	58			C25.0	TNM			148	2	unknown		unknown
+DO33160	PACA-AU	PCAWG	ICGC_0103	female	deceased	progression	distant recurrence/metastasis	78	78			C25.0	TNM			1091	481	unknown		unknown
+DO34088	PACA-AU		ICGC_0285	female	deceased			75	75			C25.0	TNM			34	34	unknown		unknown
+DO34664	PACA-AU		ICGC_0190	male	deceased	progression		67	67			C25.0	TNM			113	113	unknown		unknown
+DO49091	PACA-AU		ICGC_0487	female	alive	progression	local recurrence	72	72			C25.0	TNM			573	369	unknown		unknown
+DO49172	PACA-AU	PCAWG	ICGC_0502	female	deceased	progression	distant recurrence/metastasis	60	60		688	C25.3	TNM			1021	1021	unknown		unknown
+DO32964	PACA-AU		ICGC_0049	male	deceased	progression	local recurrence	83	83		448	C25.0	TNM			516		unknown		unknown
+DO33936	PACA-AU		ICGC_0211	female	deceased	progression		71	71			C25.0	TNM			486	486	unknown		unknown
+DO34584	PACA-AU		ICGC_0182	female	alive	stable		60	60			C25.0	TNM			903	301	unknown		unknown
+DO49173	PACA-AU		ICGC_0541	female	alive			75	75			C25.0	TNM					unknown		unknown
+DO32884	PACA-AU		ICGC_0028	female	deceased	progression	distant recurrence/metastasis	55	55		450	C25.0	TNM			507		unknown		unknown
+DO33856	PACA-AU		ICGC_0263	male	deceased	progression	distant recurrence/metastasis	46	46			C25.0	TNM			650	650	unknown		unknown
+DO35025	PACA-AU		ICGC_0348	female	alive	stable		56	56			C25.0	TNM			1591	1133	unknown		unknown
+DO49093	PACA-AU		ICGC_0397	male	deceased	progression	distant recurrence/metastasis	75	75		34	C25.0	TNM			538	538	unknown		unknown
+DO49174	PACA-AU	PCAWG	ICGC_0503	female	alive	stable		74	74			C25.0	TNM			838	838	unknown		unknown
+DO33776	PACA-AU		ICGC_0253	female	deceased	progression	distant recurrence/metastasis	70	70			C25.0	TNM			167	167	unknown		unknown
+DO34216	PACA-AU		ICGC_0180	female	alive	progression	distant recurrence/metastasis	52	52		254	C25.0	TNM			864	415	unknown		unknown
+DO49094	PACA-AU		ICGC_0398	male	alive	progression	local recurrence	66	66			C25.0	TNM			1429	764	unknown		unknown
+DO49175	PACA-AU		ICGC_0504	male	deceased	progression	distant recurrence/metastasis	68	68		348	C25.0	TNM			414	414	unknown		unknown
+DO33696	PACA-AU		ICGC_0243	female	deceased	progression		73	73			C25.0	TNM			937	937	unknown		unknown
+DO34136	PACA-AU		ICGC_0291	male	alive	stable		51	51			C25.0	TNM			385	385	unknown		unknown
+DO34712	PACA-AU		ICGC_0198	female	alive	stable		74	74			C25.0	TNM			417	185	unknown		unknown
+DO49176	PACA-AU		ICGC_0505	male	deceased	progression	local recurrence	68	68		701	C25.0	TNM			925	925	unknown		unknown

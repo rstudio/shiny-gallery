@@ -1,0 +1,163 @@
+body, label, input, button, select { 
+    font-family: 'Helvetica Neue', Helvetica;
+    font-weight: 200;
+}
+h1, h2{ font-weight: 400; }
+
+.vega {
+  background-color: white;
+}
+
+#plot {
+  background-color: white;
+}
+
+body {
+    background-color: #F6F6F6;
+}
+
+div.footer{
+    font-size: 24px;
+    background: url(./shinyappFooter.png) no-repeat ;
+    background-position: right; 
+    background-color: #E6E6E6;
+    margin: 0;
+    padding: 15px;
+    height:45px;
+}
+
+h3, .h3 {
+    font-size: 24px;
+    background: url(./xapLogoStackedWhitePlain48.png) no-repeat;
+    background-position: left;
+    background-color: #3699b1;
+    color: #FFF;
+    padding: 15px;
+    font-family: 'Futura', 'Tw Cen MT', 'Helvetica Neue', Helvetica;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h4, .h4 {
+    font-size: 18px;
+    color: #666;
+    margin-top: 21px;
+}
+
+.btn {
+    background-color: #E9421E;
+    color: #FFF;
+}
+
+#plot-container {
+   border: 1px solid #DDD;
+   background-color: white;
+}
+
+a.ggvis-dropdown-toggle {
+background: url(gear.png) no-repeat;
+background-size: 14px;
+background-position: center;
+background-color: #E9421E;
+width: 14px;
+height: 14px;
+opacity: 0.9;
+padding-left: 17px;
+padding-right: 2px;
+cursor: pointer;
+padding-bottom: 1px;
+padding-top: 2px;
+}
+
+#controls {
+  /* Appearance */
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  cursor: move;
+
+  /* Fade out while not hovering */
+  opacity: 0.55;
+  zoom: 0.9;
+  transition: opacity 100ms 100ms;
+}
+
+#controls:hover {
+  /* Fade in while hovering */
+  opacity: 0.95;
+  transition-delay: 0;
+}
+
+/* If not using map tiles, show a white background */
+.leaflet-container {
+  background-color: white !important;
+}
+
+shiny-progress .progress {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  height: 3px;
+  margin: 0px;
+}
+
+.shiny-progress .bar {
+  opacity: 0.6;
+  transition-duration: 250ms;
+}
+
+.shiny-progress .progress-text {
+  position: absolute;
+  right: 200px;
+  height: 24px;
+  width: 50%;
+  background-color: #eef8ff;
+  margin: 200px;
+  padding: 2px 3px;
+  opacity: 0.55;
+}
+
+.shiny-progress .progress-text .progress-message {
+  padding: 0px 3px;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.shiny-progress .progress-text .progress-detail {
+  padding: 0px 3px;
+  font-size: 80%;
+}
+
+.ggvis-tooltip {
+  /* Fade out while not hovering */
+  opacity: 0.85;
+  transition: opacity 3s 3s;
+  transition-delay: 3s;
+}
+
+td.bordered{
+    border-left: solid 1px #000;
+    border-right: solid 1px #000;
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.transcript_table {
+    border-collapse: collapse;
+}
+
+.transcript_table, th, td {
+    border: solid 1px #cccccc;
+    padding: 5px;
+}
+
+.gene_table {
+    border-collapse: collapse;
+}
+
+.gene_table, th, tr {
+    border: thin 1px #cccccc;
+    padding: 5px;
+}
