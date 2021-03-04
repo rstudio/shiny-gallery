@@ -2,9 +2,7 @@
 
 ---
 
-- Developed by: [Stefan Schliebs](https://github.com/nz-stefan)
-- App on gallery: https://gallery.shinyapps.io/cran-explorer
-- Original code: https://github.com/nz-stefan/cran-explorer
+- App on gallery: https://gallery.shinyapps.io/genome_browser
 
 ---
 

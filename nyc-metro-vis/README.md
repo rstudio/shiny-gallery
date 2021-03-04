@@ -1,6 +1,9 @@
 # Animated NYC metro traffic
 
-Submitted to Shiny Contest 2019 by [Tiger Tang](https://community.rstudio.com/u/tiger/). The app is re-hosted at https://gallery.shinyapps.io/nyc-metro-vis/.
+---
+
+- Developed by: [Tiger Tang](https://community.rstudio.com/u/tiger/)
+- App on gallery: https://gallery.shinyapps.io/nyc-metro-vis
 
 ---
 

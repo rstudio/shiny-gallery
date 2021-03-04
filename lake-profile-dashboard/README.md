@@ -1,6 +1,12 @@
 ## LakeProfileDashboard
 
-This app was originally submitted for the 2019 Shiny Contest by [Jake Vander Laan](https://github.com/jakevl). Code is copied over from [this repo](https://github.com/utah-dwq/LakeProfileDashboard) on 2020-06-16 and app is re-deployed at [gallery.shinyapps.io/lake-profile-dashboard](https://gallery.shinyapps.io/lake-profile-dashboard/). 
+---
+
+- Developed by: [Jake Vander Laan](https://github.com/jakevl)
+- App on gallery: https://gallery.shinyapps.io/lake-profile-dashboard
+- Original code: https://github.com/utah-dwq/LakeProfileDashboard
+
+---
 
 ## Description
 

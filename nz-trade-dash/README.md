@@ -1,6 +1,9 @@
 # New Zealand Trade Intelligence
 
-Submitted to Shiny Contest 2019 by [Wei Zhang](https://community.rstudio.com/u/weizhang/summary). The app is re-hosted at https://gallery.shinyapps.io/nz-trade-dash.
+---
+
+- Developed by: [Wei Zhang](https://community.rstudio.com/u/weizhang/summary)
+- App on gallery: https://gallery.shinyapps.io/nz-trade-dash
 
 ---
 
