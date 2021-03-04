@@ -1,7 +1,11 @@
 # shiny-decisions
 
 ---
-Developed by [Pedro Silva](https://github.com/pedrocoutinhosilva), source code for original Shiny Contest submission can be found at https://github.com/pedrocoutinhosilva/shiny.decisions. This folder contains a copy of that code. App deployed at https://gallery.shinyapps.io/shiny-decisions/.
+
+- Developed by: [Pedro Silva](https://github.com/pedrocoutinhosilva)
+- App on gallery: https://gallery.shinyapps.io/shiny-decisions
+- Original code: https://github.com/pedrocoutinhosilva/shiny.decisions
+
 ---
 
 A game about making the best of terrible choices
