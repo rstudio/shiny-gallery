@@ -1,0 +1,10 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.modal-content,
+.ui-element-style {
+  filter: drop-shadow(5px 10px 15px black);
+}

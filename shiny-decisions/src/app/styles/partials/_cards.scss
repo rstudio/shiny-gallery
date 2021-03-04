@@ -1,0 +1,139 @@
+.app-cards {
+  overflow: visible;
+  z-index: 1;
+}
+
+#card_stack_wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+#card_stack {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  overflow: visible;
+
+  .card {
+    border: 3px solid #212529;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 1%;
+    filter: drop-shadow(25px 25px 25px black);
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%) scale(0.95);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 30vh;
+    height: 30vh;
+    max-width: 70vw;
+    max-height: 70vw;
+    font-size: 1rem;
+
+    .card-background {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .card-image {
+      z-index: 2;
+      background-size: 90% 90% !important;
+      background-repeat: no-repeat !important;
+      background-position: 50% 220% !important;
+      filter: drop-shadow(7px 1px 0px #3b3c3e);
+    }
+    .card-color {
+      z-index: 1;
+      filter: blur(10px);
+    }
+  }
+
+  .message-left, .message-right {
+    display: none;
+    padding: 5px;
+    position: absolute;
+    z-index: 4;
+    left: 8px;
+    right: 8px;
+    top: 8px;
+    color: black;
+  }
+
+  .message-left {
+    text-align: right;
+    right: 8px;
+  }
+
+  .dragging-left .message-left,
+  .dragging-right .message-right {
+    display: block;
+  }
+}
+
+#card_stack_message{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: $main-background-color;
+  color: white;
+  padding: 30px;
+  position: relative;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    border-top: 150px solid transparent;
+  }
+
+  &:before {
+    left: -40px;
+    border-right: 40px solid $main-background-color;
+  }
+
+  &:after {
+    right: -40px;
+    border-left: 40px solid $main-background-color;
+  }
+}
+
+.week-content {
+  text-align: center;
+  font-size: 28px;
+  filter: drop-shadow(5px 10px 15px black);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffffff33;
+}
+
+@media (orientation: portrait) {
+  .card {
+    font-size: 140% !important;
+  }
+
+  #card_stack_message {
+    font-size: 140% !important;
+    height: 90% !important;
+    background-color: transparent;
+  }
+  #card_stack_message:after,
+  #card_stack_message:before {
+    display: none !important;
+  }
+
+  .week-content {
+    color: white;
+    line-height: 80px;
+  }
+}

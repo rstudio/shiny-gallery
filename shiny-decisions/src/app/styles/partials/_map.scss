@@ -1,0 +1,28 @@
+.app-map {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.leaflet-marker-icon {
+  filter: drop-shadow(2px 2px 0 black) drop-shadow(-2px -2px 0 black);
+}
+
+.marker-tree,
+.marker-tree_large,
+.marker-tree_small {
+  z-index: 1 !important;
+}
+
+#map-mainMap {
+  background: url("//stamen-tiles-a.a.ssl.fastly.net/watercolor/2/4/0.png");
+  background-size: contain;
+}
+
+@media (orientation: portrait) {
+  .app-map {
+    height: 40vh !important;
+    bottom: 10%;
+  }
+}

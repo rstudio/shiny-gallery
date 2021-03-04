@@ -1,0 +1,168 @@
+.app-metrics {
+  color: #fff;
+  z-index: 3;
+}
+
+.metric-wrapper {
+  padding-left: 55px;
+  position: relative;
+  background-color: $main-background-color;
+
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    border-bottom: 80px solid transparent;
+  }
+  &:before {
+    left: -20px;
+    border-right: 20px solid $main-background-color;
+  }
+  &:after {
+    right: -20px;
+    border-left: 20px solid $main-background-color;
+  }
+
+  &.will-change,
+  &.will-change-large {
+    -webkit-animation: color-change 1s infinite;
+    -moz-animation: color-change 1s infinite;
+    -o-animation: color-change 1s infinite;
+    -ms-animation: color-change 1s infinite;
+    animation: color-change 1s infinite;
+  }
+
+  label {
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  progress {
+    width: calc(100% - 20px);
+  }
+
+  .metric-icon {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+}
+
+.metric-karma {
+  z-index: 100;
+
+  .karma-container {
+    background-color: $main-background-color;
+
+    .karma-bad,
+    .karma-good {
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .karma-bad {
+      background-size: 34px;
+      background-position: 20px;
+    }
+
+    .karma-good:before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      z-index: -1;
+      border-left: 80px solid #212529;
+      border-top: 20px solid transparent;
+    }
+    .karma-bad:after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      z-index: -1;
+      border-left: 80px solid #212529;
+      border-bottom: 20px solid transparent;
+    }    
+  }
+
+  .karma-value {
+    width: calc(50vh - 100px);
+    transform: translate(29px, 0) rotate(-90deg);
+
+    .karma-wrapper {
+      display: flex;
+
+      .positive{
+        width: 50%;
+        float: right;
+        padding-left: 4px;
+      }
+
+      .negative{
+        transform: rotate(180deg);
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+}
+
+.nes-progress {
+  height: 20px !important;
+  margin: 0 !important;
+
+  &.is-opinion {
+    &::-webkit-progress-bar {
+        background-color: $progress-background-color;
+    }
+    &::-webkit-progress-value {
+        background-color: $progress-opinion-fill;
+    }
+    &::-moz-progress-bar {
+        background-color: $progress-opinion-fill;
+    }
+    &::-ms-fill {
+        background-color: $progress-opinion-fill;
+        border: none
+    }
+  }
+
+  &.is-wealth {
+    &::-webkit-progress-bar {
+        background-color: $progress-background-color;
+    }
+    &::-webkit-progress-value {
+        background-color: $progress-wealth-fill;
+    }
+    &::-moz-progress-bar {
+        background-color: $progress-wealth-fill;
+    }
+    &::-ms-fill {
+        background-color: $progress-wealth-fill;
+        border: none
+    }
+  }
+
+  &.is-environment {
+    &::-webkit-progress-bar {
+        background-color: $progress-background-color;
+    }
+    &::-webkit-progress-value {
+        background-color: $progress-environment-fill;
+    }
+    &::-moz-progress-bar {
+        background-color: $progress-environment-fill;
+    }
+    &::-ms-fill {
+        background-color: $progress-environment-fill;
+        border: none
+    }
+  }
+}

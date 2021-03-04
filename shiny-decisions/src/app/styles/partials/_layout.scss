@@ -1,0 +1,17 @@
+body {
+  background-color: $main-background-color !important;
+}
+
+@media (orientation: portrait) {
+  #page-wrapper {
+    grid-template-areas:
+      'app-metrics  app-metrics  app-metrics'
+      '...          app-week     ...'
+      'app-karma    app-task     ...'
+      'app-karma    app-task     ...'
+      'app-karma    app-cards    ...'
+      'app-karma    ...          ...' !important;
+    grid-template-rows: 80px 80px 20% 50px 1fr 20% !important;
+    grid-template-columns: 80px 1fr 80px !important;
+  }
+}

@@ -1,0 +1,133 @@
+.modal {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+
+#gameOverScreen {
+  z-index: 100100 !important;
+
+  .title, #game_over_message {
+    font-size: 300%;
+  }
+}
+
+.entry-screen {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    margin: 15px;
+  }
+}
+
+@media (orientation: portrait) {
+  .entry-screen {
+    grid-template-rows: 1fr 150px !important;
+    font-size: 140% !important;
+  }
+}
+
+#entryScreen {
+  .modal-content {
+    margin-top: 10vh !important;
+    margin-bottom: calc(15vh + 200px) !important;
+  }
+}
+
+#attributionScreen {
+  pointer-events: none;
+
+  background: transparent !important;
+  z-index: 10001 !important;
+  .modal-content {
+    .title {
+      text-decoration: underline;
+    }
+
+    .links {
+      pointer-events: all;
+    }
+
+    background: transparent !important;
+
+    width: 427px !important;
+    height: 200px !important;
+    padding: 0 !important;
+
+    margin-left: 10vw !important;
+    margin-bottom: 10vh !important;
+
+    @media (orientation: portrait) {
+      font-size: 75%;
+    }
+  }
+
+  #author-details {
+    text-align: left;
+    grid-gap: 10px;
+    margin: 0 !important;
+
+    .avatar {
+      background: url("/assets/ui/author.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+#projectDetailsScreen {
+  pointer-events: none;
+
+  background: transparent !important;
+  z-index: 10001 !important;
+  .modal-content {
+
+    .title {
+      text-decoration: underline;
+    }
+
+    .links {
+      pointer-events: all;
+    }
+
+    background: transparent !important;
+
+    width: 237px !important;
+    height: 200px !important;
+    padding: 0 !important;
+
+    margin-right: 10vw !important;
+    margin-bottom: 10vh !important;
+
+    @media (orientation: portrait) {
+      font-size: 75%;
+    }
+  }
+
+  #project-details {
+    text-align: left;
+    grid-gap: 10px;
+    margin: 0 !important;
+
+    .avatar {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+#pause-game {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 1.5cm;
+  width: 1.5cm;
+  z-index: 10010;
+  background-size: contain;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzElEQVRYR+2X0Q6AIAhF5f8/2jYXZkwEjNSVvVUjDpcrGgT7FUkI2D9xRfQETwNIiWO85wfINfQUEyxBG2ArsLwC0jioGt5zFcwF4OYDPi/mBYKm4t0U8ATgRm3ThFoAqkhNgWkA0jJLvaOVSs7j3qMnSgXWBMiWPXe94QqMBMBc1VZIvaTu5u5pQewq0EqNZvIEMCmxAawK0DNkay9QmfFNAJUXfgGgUkLaE7j/h8fnASkxHTz0DGIBMCnBeeM7AArpUd3mz2x3C7wADglA8BcWMZhZAAAAAElFTkSuQmCC) 14 0, pointer;
+  background-color: #d1d1d1;
+  border-radius: 50%;
+  image-rendering: pixelated;
+  filter: hue-rotate(-160deg) drop-shadow(2px 4px 6px black);
+}
