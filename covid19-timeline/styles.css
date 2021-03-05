@@ -1,0 +1,501 @@
+input[type="number"] {
+  max-width: 80%;
+}
+
+div.outer {
+  /*position: fixed;*/
+  top: 41px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Customize fonts */
+body, label, input, button, select { 
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  overflow-x:hidden !important;
+}
+h1, h2, h3, h4 { font-weight: 400; }
+
+#controls_panel {
+  /* Appearance */
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  cursor: move;
+  /* Fade out while not hovering */
+  opacity: 1;
+  zoom: 0.9;
+}
+
+/* Position and style citation */
+#cite {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+}
+
+#mymap {
+  font-size: 120px;
+}
+
+/* If not using map tiles, show a white background */
+.leaflet-container {
+  background-color: #161616 !important;
+}
+
+#total_cases, #text_default{
+  font-size: 1.5em;
+}
+
+#show_everything {
+  font-size:1em;
+}
+
+#all_default, #all_country {
+  font-size: 1.3em;
+  background-color: rgba(52,84,209,0.5);
+  text-align: center;
+  border-radius: 20% 10% 20% 10%;
+}
+
+#recovered_default, #recovered_country {
+  font-size: 1.3em;
+  background-color: rgba(35,240,199,0.5);
+  text-align: center;
+  border-radius: 20% 10% 20% 10%;
+}
+
+#death_default, #death_country {
+  font-size: 1.3em;
+  background-color: rgba(237,37,78,0.5);
+  text-align: center;
+  border-radius: 20% 10% 20% 10%;
+}
+
+#date {
+  text-align:left;
+}
+
+section.content {
+  padding:0;
+}
+
+.container-fluid {
+  padding-right:0px !important;
+  padding-left:0px !important;
+}
+
+
+.story_1 {
+  padding-top:70%;
+  padding-bottom:80vh;
+  background-color:#161616;
+  font-family: 'Open Sans', sans-serif;
+  font-size:3.8vh;
+  color:#00bb8b;
+  font-weight:bold;
+  line-height:4.875vh;
+}
+
+.story_2 {
+  padding-bottom:80vh;
+  background-color:#161616;
+  font-family: 'Open Sans', sans-serif;
+  color:#00bb8b;
+  font-size:3.8vh;
+  font-weight:bold;
+  line-height:4.875vh;
+}
+
+.story_3 {
+  padding-bottom:80vh;
+  background-color:#161616;
+  font-family: 'Open Sans', sans-serif;
+  color:#fb5a19;
+  font-size:3.8vh;
+  font-weight:bold;
+  line-height:4.875vh;
+}
+
+.date_1 {
+  padding-top:20%;
+  background-color:#161616;
+  padding-bottom: 3.4vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size:2.2vh;
+  color:#fb5a19;
+  line-height:2.875vh;
+}
+
+.date_2 {
+  background-color:#161616;
+  padding-bottom: 3.4vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size:2.2vh;
+  color:#fb5a19;
+  line-height:2.875vh;
+}
+
+.date_4 {
+  background-color:#161616;
+  padding-bottom: 3.2vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size:2.2vh;
+  color:#fb5a19;
+  line-height:2.875vh;
+}
+
+.date_3 {
+  padding-top:80vh;
+  background-color:#161616;
+  padding-bottom: 3.4vh;
+  font-family: 'Open Sans', sans-serif;
+  font-size:2.2vh;
+  color:#fb5a19;
+  line-height:2.875vh;
+}
+
+.title_big {
+  /* padding-left:11vh;*/
+  text-align:right;
+  padding-bottom:1%;
+  background-color:#161616;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  font-size:3vw;
+  color:#00bb8b;
+  line-height:6.875vh;
+}
+
+
+.title_medium_1 {
+/*  padding-left:99.15vh;*/ 
+  text-align:right;
+  padding-bottom:8%;
+  background-color:#161616;
+  font-size:2.2vw;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  color:#00bb8b;
+  line-height:4.875vh;
+}
+
+.title_wrapper_1 {
+  width: 55.5815vw;
+  margin-top:27vh;
+  margin-bottom:18vh;
+  margin-left: 5.8vw;
+}
+
+.title_wrapper_2 {
+  width: 55.5815vw;
+  margin-left: 5.8vw;
+  margin-bottom:4vh;
+}
+
+
+.title_medium_2 {
+  text-align:right;
+  padding-bottom:8%;
+  background-color:#161616;
+  font-size:4.8vh;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  color:#00bb8b;
+  line-height:4.875vh;
+}
+
+
+
+.title_small {
+  background-color:#161616;
+  padding-bottom:4vh;
+  font-size:3vh;
+  color:#00bb8b;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  line-height:4.875vh;
+}
+
+
+#tabset {
+  border: 0px solid red;
+}
+
+a {
+    text-decoration: none!important;
+    padding-bottom:80vh;
+}
+
+a:hover {
+  color: #006f52 !important;
+  text-decoration: none;
+  font-weight: none }
+  
+  
+.myBtn {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 3vh; /* Place the button at the bottom of the page */
+  right: 3vh; /* Place the button 30vh from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #161616; /* Set a background color */
+  color: #00bb8b; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 1vh; /* Some padding */
+  border-radius: 1vh; /* Rounded corners */
+  font-size: 2vh; /* Increase font size */
+  /*border:1px solid #00bb8b;*/
+  width: 6%;
+}
+
+.myBtn:hover {
+  background-color: #00bb8b;
+  color: #161616;/* Add a dark-grey background on hover */
+}
+
+.github {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 17vh; /* Place the button at the bottom of the page */
+  right: 3vh; /* Place the button 30vh from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #161616; /* Set a background color */
+  color: #00bb8b; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 1vh; /* Some padding */
+  border-radius: 1vh; /* Rounded corners */
+  font-size: 2vh; /* Increase font size */
+  /*border:1px solid #00bb8b; */
+  width: 6%;
+}
+
+.github:hover {
+  background-color: #00bb8b;
+  color: #161616;/* Add a dark-grey background on hover */
+}
+
+#chapter_sel {
+  position: fixed; /* Fixed/sticky position */
+  bottom: 10vh; /* Place the button at the bottom of the page */
+  right: 3vh; /* Place the button 30vh from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #161616; /* Set a background color */
+  color: #00bb8b; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 1vh; /* Some padding */
+  border-radius: 1vh; /* Rounded corners */
+  font-size: 2vh; /* Increase font size */
+  /*border:1px solid #00bb8b; */
+  width: 6%;
+}
+
+#chapter_sel:hover {
+  background-color: #00bb8b;
+  color: #161616;/* Add a dark-grey background on hover */
+}
+
+
+.final_1 {
+  padding-top:15%;
+  background-color:#161616;
+  padding-bottom: 2%;
+  font-family: 'Open Sans', sans-serif;
+  font-size:2.2vh;
+  color:#00bb8b;
+  line-height:2.875vh;
+}
+
+.final_2 {
+  padding-top:15%;
+  background-color:#161616;
+  padding-bottom: 40%;
+  font-family: 'Open Sans', sans-serif;
+  font-size:2.2vh;
+  color:#00bb8b;
+  line-height:2.875vh;
+}
+
+.wrapper_2 {
+  padding-left:7.4vw;
+  padding-bottom: 33.55vh;
+  padding-top:1vh;
+  
+}
+
+.wrapper_1 {
+  margin-left: 5.15vw;
+}
+
+
+#lf1 {
+  z-index: -1;
+  position:relative;
+}
+
+#lf2 {
+  z-index: -1;
+  position:relative;
+}
+
+#lf3 {
+  z-index: -1;
+  position:relative;
+}
+
+
+
+.chapter_big {
+  /* padding-left:11vh;*/
+  text-align:left;
+  padding-bottom:1%;
+  background-color:#161616;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  font-size:6.8vh;
+  color:#00bb8b;
+  line-height:6.875vh;
+}
+
+
+.chapter_medium {
+/*  padding-left:99.15vh;*/ 
+  text-align:left;
+  padding-bottom:8%;
+  background-color:#161616;
+  font-size:4.8vh;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  color:#00bb8b;
+  line-height:4.875vh;
+}
+
+.chapter_wrapper_1 {
+  width: 55.5815vw;
+  margin-top:23vh;
+  margin-bottom:18vh;
+  margin-left: 5.8vw;
+}
+
+.chapter_wrapper_2 {
+  width: 55.5815vw;
+  margin-left: 5.8vw;
+  margin-bottom:64vh;
+}
+
+.chapter_small {
+  background-color:#161616;
+  padding-bottom:4vh;
+  font-size:3vh;
+  color:#00bb8b;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  line-height:4.875vh;
+}
+
+
+.link_small {
+  background-color:#161616;
+  text-align: left;
+  padding-bottom:4vh;
+  font-size:1.4vh;
+  color:#00bb8b !important;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  line-height:4.875vh;
+}
+
+.date_chapter {
+  background-color:#161616;
+  text-align:right;
+  padding-bottom:4vh;
+  font-size:1.4vh;
+  color:#00bb8b;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  line-height:4.875vh;
+}
+
+#modal .modal-dialog{
+  margin-left:62vw;
+  width:32vw;
+  color:#00bb8b;
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+}
+
+a:visited {
+  color: #00bb8b;
+}
+a:active {
+  color: #00bb8b;
+}
+a:link {
+  color: #00bb8b;
+}
+
+
+div.modal-content {
+  background-color: #161616;
+}
+
+#shiny-modal > div > div > div.modal-header > h4 {
+  color:#00bb8b;
+  font-weight:bold;
+  font-size: 2.2vh;
+}
+
+#shiny-modal > div > div > div.modal-footer > button {
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #161616; /* Set a background color */
+  color: #00bb8b; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 1vh; /* Some padding */
+  border-radius: 1vh; /* Rounded corners */
+  font-size: 1.6vh; /* Increase font size */
+  font-family: 'Quicksand', sans-serif;
+  /*border:1px solid #00bb8b; */
+}
+
+
+#shiny-modal > div > div > div.modal-footer > button:hover {
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #00bb8b; /* Set a background color */
+  color: #161616; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 1vh; /* Some padding */
+  border-radius: 1vh; /* Rounded corners */
+  font-size: 1.6vh; /* Increase font size */
+  font-family: 'Quicksand', sans-serif;
+  /*border:1px solid #00bb8b; */
+}
+
+.clp_btn {
+  float:right;
+  color:#161616;
+  border:none;
+  outline: none; /* Remove outline */
+  background-color: white; /* Set a background color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  border-radius: 1vh; /* Rounded corners */
+  font-size: 1.8vh; /* Increase font size */
+}
+
+.clp_btn:hover {
+  background-color: #161616;
+  color: white;/* Add a dark-grey background on hover */
+}
+
+.mapboxgl-ctrl-logo {
+ opacity: 0;
+}

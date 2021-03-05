@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	</head>
+<body>
+<div class = "date_3" data-aos="slide-up" data-aos-delay="50">
+January 31, 2020
+</div>
+<div class = "story_2" data-aos="slide-up" data-aos-delay="50">
+On Jan. 31, the United States suspended entry for people who had recently been to China with the exception of immediate family members of American citizens or permanent residents.
+</div>
+<div class = "story_2" data-aos="slide-up" data-aos-delay="50">
+Italy becomes the first state in the European Union to declare a state of emergency.
+</div>
+<div class = "story_2" data-aos="slide-up" data-aos-delay="50">
+Several other countries have already closed the borders to all visitors arriving from mainland China.
+</div>
+<div class = "story_2" data-aos="slide-up" data-aos-delay="50">
+If we look at the number of confirmed cases for the month of January, we can see that the number of infections outside China grew at nearly the same rate as the number of infections in the country.
+</div>
+<div class = "story_2" data-aos="slide-up" data-aos-delay="50">
+In China the number of cases increased by 2.070% compared to 2.000% in the rest of the world.
+</div>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+<script>
+(function (H) {
+
+    var pendingRenders = [];
+
+    // https://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport/7557433#7557433
+    function isElementInViewport(el) {
+
+        var rect = el.getBoundingClientRect();
+
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (
+                window.innerHeight ||
+                document.documentElement.clientHeight
+            ) &&
+            rect.right <= (
+                window.innerWidth ||
+                document.documentElement.clientWidth
+            )
+        );
+    }
+
+    H.wrap(H.Series.prototype, 'render', function deferRender(proceed) {
+        var series = this,
+            renderTo = this.chart.container.parentNode;
+
+        // It is appeared, render it
+        if (isElementInViewport(renderTo) || !series.options.animation) {
+            proceed.call(series);
+
+        // It is not appeared, halt renering until appear
+        } else  {
+            pendingRenders.push({
+                element: renderTo,
+                appear: function () {
+                    proceed.call(series);
+                }
+            });
+        }
+    });
+
+    function recalculate() {
+        pendingRenders.forEach(function (item) {
+            if (isElementInViewport(item.element)) {
+                item.appear();
+                H.erase(pendingRenders, item);
+            }
+        });
+    }
+
+    if (window.addEventListener) {
+        ['DOMContentLoaded', 'load', 'scroll', 'resize']
+            .forEach(function (eventType) {
+                addEventListener(eventType, recalculate, false);
+            });
+    }
+
+}(Highcharts));
+</script>
+ </body>

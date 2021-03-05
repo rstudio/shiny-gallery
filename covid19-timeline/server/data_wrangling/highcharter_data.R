@@ -1,0 +1,8 @@
+infected <- read_sf("data/infected.shp")
+coords_inf <- read_sf("data/coords.shp")
+january <- fread("data/january.csv")
+february <- fread("data/february.csv")
+feb_euro <- fread("data/february_europe.csv")
+top10feb <- fread("data/top10_february.csv")
+pandemic <- fread("data/pandemic.csv")
+germany <- fread("data/germany.csv")

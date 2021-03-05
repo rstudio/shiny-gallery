@@ -1,0 +1,23 @@
+Country/Region,date,confirmed,deaths
+China,2020-01-21,548,17
+China,2020-01-22,643,18
+China,2020-01-23,920,26
+China,2020-01-24,1406,42
+China,2020-01-25,2075,56
+China,2020-01-26,2877,82
+China,2020-01-27,5509,131
+China,2020-01-28,6087,133
+China,2020-01-29,8141,171
+China,2020-01-30,9802,213
+China,2020-01-31,11891,259
+Outside China,2020-01-21,7,0
+Outside China,2020-01-22,11,0
+Outside China,2020-01-23,21,0
+Outside China,2020-01-24,28,0
+Outside China,2020-01-25,43,0
+Outside China,2020-01-26,50,0
+Outside China,2020-01-27,69,0
+Outside China,2020-01-28,79,0
+Outside China,2020-01-29,93,0
+Outside China,2020-01-30,125,0
+Outside China,2020-01-31,147,0
