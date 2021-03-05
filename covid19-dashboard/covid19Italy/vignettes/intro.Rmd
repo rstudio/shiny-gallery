@@ -1,0 +1,140 @@
+---
+title: "Introduction to the covid19italy Datasets"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The covid19italy R package provides a tidy format dataset of the 2019 Novel Coronavirus COVID-19 (2019-nCoV) pandemic outbreak in Italy. The package includes the following three datasets:
+
+- `italy_total` - daily summary of the outbreak on the national level
+- `italy_region` - daily summary of the outbreak on the region level
+- `italy_province` - daily summary of the outbreak on the province level
+
+The data was pull from [Italy Department of Civil Protection](http://www.protezionecivile.it/)
+
+## Installation
+
+You can install the released version of covid19italy from [CRAN](https://cran.r-project.org/package=covid19italy) with:
+
+``` r
+install.packages("covid19italy")
+```
+
+Or, install the most recent version from [GitHub](https://github.com/RamiKrispin/covid19italy) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("RamiKrispin/covid19Italy")
+```
+## Data refresh
+
+
+The **covid19italy** package dev version is been updated on a daily bases. The `update_data` function enables a simple refresh of the installed package datasets with the most updated version on Github:
+
+``` r
+library(covid19italy)
+
+update_data()
+```
+
+Note: must restart the R session to have the updates available
+
+## Italy summary
+
+The `italy_total` dataset provides an overall summary of the cases in Italy since the beginning of the covid19 outbreak since February 24, 2020. The dataset contains the following fields:
+
+* `date` - timestamp, a `Date` object
+* `hospitalized_with_symptoms` - daily number of patients hospitalized with symptoms
+* `intensive_care` - daily number of patients on intensive care
+* `total_hospitalized` - daily total number of patients hospitalized (`hospitalized_with_symptoms` + `intensive_care`)
+* `home_confinement` - daily number of people under home confinement
+* `cumulative_positive_cases` - a daily snapshot of the number of positive cases
+* `daily_positive_cases` - daily new positive cases
+* `daily_cases` - daily new positive, recovered, and death cases
+* `recovered` - total number of recovered cases (cumulative)
+* `death` - total number of death cases (cumulative)
+* `positive_clinical_activity` - positive cases emerged from clinical activity
+* `positive_surveys_tests` - positive cases emerging from surveys and tests, planned at national or regional level
+* `cumulative_cases` - total number of positive cases (cumulative)
+* `total_tests` - total number of tests performed (cumulative)
+
+
+```{r}
+library(covid19italy)
+
+data(italy_total)
+
+str(italy_total)
+
+head(italy_total)
+```
+
+
+
+## Italy region level
+
+The `italy_region` dataset provides an overall summary of the cases in Italy's regions. The dataset contains the following fields:
+
+* `date` - timestamp, a `Date` object
+* `region_code` - the region code
+* `region_name` - the region name
+* `lat` - region latitude coordinate
+* `long` - region longitude coordinate
+* `hospitalized_with_symptoms` - daily number of patients hospitalized with symptoms
+* `intensive_care` - daily number of patients on intensive care
+* `total_hospitalized` - daily total number of patients hospitalized (`hospitalized_with_symptoms` + `intensive_care`)
+* `home_confinement` - daily number of people under home confinement
+* `cumulative_positive_cases` - a daily snapshot of the number of positive cases
+* `daily_positive_cases` - daily new positive cases
+* `daily_cases` - daily new positive, recovered, and death cases
+* `recovered` - total number of recovered cases (cumulative)
+* `death` - total number of death cases (cumulative)
+* `positive_clinical_activity` - positive cases emerged from clinical activity
+* `positive_surveys_tests` - positive cases emerging from surveys and tests, planned at national or regional level
+* `cumulative_cases` - total number of positive cases, recovered, and death (cumulative)
+* `total_tests` - total number of tests performed (cumulative)
+* `region_spatial` - the spatial region names as in the output of the `ne_states` function from the **rnaturalearth** package  
+
+
+```{r}
+data(italy_region)
+
+str(italy_region)
+
+head(italy_region)
+```
+
+## Italy province level
+
+The `italy_region` dataset provides an overall summary of the cases in Italy's regions. The dataset contains the following fields:
+
+* `date` - timestamp, a `Date` object
+* `region_code` - the region code
+* `region_name` - the region name
+* `province_code` - the province code
+* `province_name` - the province name
+* `province_abb` - the province abbreviation
+* `lat` - province latitude coordinate
+* `long` - province longitude coordinate
+* `total_cases` - total number of positive cases (cumulative)
+* `new_tests` - daily number of positive cases
+* `province_spatial` - the spatial province names as in the output of the `ne_states` function from the **rnaturalearth** package
+
+
+```{r}
+data(italy_province)
+
+str(italy_province)
+
+head(italy_province)
+```

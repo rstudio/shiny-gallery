@@ -1,0 +1,33 @@
+.shiny-material-side-nav-tab-content{
+padding-top: 0.8em;
+padding-left: 0.8em;
+}
+.btn:hover, .btn-large:hover, .btn-small:hover {
+background-color:#D0DADF;
+}
+.btn, .btn-large, .btn-small {
+background-color:#174763;
+}
+.btn:focus, .btn-large:focus, .btn-small:focus {
+background-color:#174763;
+}
+.sidenav-close{
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -0px;
+  font-size: 2em;
+  background-color: #ffffff42;
+  margin: auto;
+  color: #133050;
+}
+
+@media only screen and (min-width: 993px){
+  a.sidenav-close {
+    display:none;
+  }
+}
+
+nav .nav-wrapper{
+  padding-left: 1em;
+}

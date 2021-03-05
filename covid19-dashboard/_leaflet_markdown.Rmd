@@ -1,0 +1,88 @@
+---
+title: "Leaflet wordlmap"
+output: html_document
+runtime: shiny
+---
+
+Loading libraries
+
+```{r, echo = FALSE}
+library(leaflet.extras)
+library(dplyr)
+```
+
+Create a data set from daily reports
+
+```{r, echo = FALSE}
+source("shiny/data_gen.R")
+covid_global_confirmed <- generate_all_from_daily("shiny/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports")
+```
+
+Build up the basics of the app, including a slider for the date:
+
+```{r, echo = TRUE, warning=FALSE}
+# Extract dates
+all_dates <- covid_global_confirmed$date %>% unique() %>% as.POSIXct(origin = "1970-01-01")
+
+# Calculate some basics
+only_numeric <- sort(as.numeric(unique(covid_global_confirmed$active)))
+col_pal <- colorNumeric(
+    c(rep("#FFFFFF", 1), viridisLite::viridis(99)),
+    domain = c(min(only_numeric, na.rm = TRUE), max(only_numeric, na.rm = T))
+  )
+
+max_val <- max(only_numeric, na.rm = T)
+
+# Create Date input
+shiny::sliderInput(inputId = "datum", min = min(all_dates), max = max(all_dates), value = min(all_dates), label = "Date", timeFormat="%Y-%m-%d")
+
+# Extract the current date
+curr_date <- reactiveVal( as.character(Sys.Date() + 1))
+
+```
+
+
+Create a map using leaflet
+
+```{r, echo = TRUE, warning=FALSE}
+# Print out leaflet map
+renderLeaflet({
+  date_to_choose <- as.character(input$datum)
+  
+  
+  date_to_choose <- if (is.null(input$datum)) {
+    as.character(Sys.Date() - 1)
+  } else {
+    as.character(input$datum)
+  }
+  
+  # Filter the data
+  data_for_display <- covid_global_confirmed %>%
+    filter(date == as.character(date_to_choose)) %>%
+    select(Lat, Long, active, date, Combined_Key) %>%
+    filter(active > 0) %>%
+    filter(!is.na(Long) & !is.na(Lat)) %>%
+    mutate(active_scaled = case_when(
+      grepl(pattern = "\\,\\s{0,1}US", x = Combined_Key) &
+        as.Date(date_to_choose, origin = "1970-01-01") > as.Date("2020-03-21", origin = "1970-01-01") ~ scales::rescale(
+          x = active, from = c(0, max_val), to = c(12000, 650000)
+        ),
+      TRUE ~ scales::rescale(x = active, from = c(0, max_val), to = c(60000, 450000))
+    ),
+    text = paste0(as.character(Combined_Key), "\n", active),
+    color = col_pal(active)
+    ) %>%
+    arrange(active)
+  
+  # Create the map
+  leaflet() %>% addProviderTiles(providers$ CartoDB.Positron) %>%
+    setView(0,0, 2) %>%
+    clearGroup(curr_date()) %>%
+    addCircles(data = data_for_display, lng = ~Long, lat = ~Lat,
+               radius = ~active_scaled, popup = ~text, fillColor = ~color, stroke = FALSE, fillOpacity = 0.5,
+               group = stringr::str_match(date_to_choose, "\\d{4}\\-\\d{2}\\-\\d{2}")[1,1]
+    )
+})
+
+
+```

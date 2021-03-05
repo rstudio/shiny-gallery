@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^csv$
+^data_raw$
+^LICENSE\.md$
+^docs$
+^README\.Rmd$
+^.github$
+^CRAN-RELEASE$
+^vignettes/geospatial_visualization.Rmd$
+^docker$

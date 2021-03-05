@@ -1,0 +1,144 @@
+---
+title: "Visualization covid19italy with Choropleth Maps "
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{geospatial_visualization}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  message=FALSE, 
+  warning=FALSE,
+  fig.height=8, 
+  fig.width=8,
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+The goal of this vignette is to demonstrate methods for creating choropleth maps for the covid19 cases in Italy by province and region. We will use the [rnaturalearth](https://docs.ropensci.org/rnaturalearth/) package to extract the geometry spital data of Italy, and [mapview](https://r-spatial.github.io/mapview/index.html), [ggplot2](https://ggplot2.tidyverse.org/index.html) packages to create choropleth maps of Italy province and regions.
+
+
+## Getting the geometry spital data
+
+The `ne_state` function from the rnaturalearth package returns the geometry spital data of Italy's province. We will set the return class to `sf` (Simple Features) object:
+
+```{r}
+library(covid19italy)
+library(rnaturalearth)
+library(dplyr)
+
+italy_map <- ne_states(country = "Italy", returnclass = "sf") 
+
+str(italy_map)
+```
+
+The function returns many features, such as a different naming convention. However, for the purpose of this vignette, we will only need the following columns:
+
+* `name` - the province name
+* `region` - the region name
+* `geometry` - the geometry spital data of the provinces
+
+
+```{r fig.height=8, fig.width=8}
+italy_map <- italy_map %>% 
+  select(province = name, region, geometry) 
+
+head(italy_map)
+```
+
+The `italy_map` object, as it is, can now use to create a choropleth map plot for the province level. To get a similar object to the regional level, we will use the **dplyr** package to group the data by the `region` column. This will automatically will group the **geometry** objects of the `italy_map` to the region level:
+
+```{r}
+italy_map_region <- italy_map %>%
+  group_by(region) %>%
+  summarise(n = n())
+
+head(italy_map_region)
+```
+
+
+Note that since we had to feed some variable to the `summarise` function, we used the n function as a dummy variable.
+
+Now, we have a geometric object for the provinces and regions levels, we can merge them with the corresponding datasets - italy_province and italy_region. Each dataset ha
+
+
+The `province_spatial` and `region_spatial` columns on the `italy_province` and `italy_region` datasets are the default provinces and regions names as used in the **rnatualearth** package spatial objects, and we will use them to merge the objects:
+
+```{r}
+italy_map_region <- italy_map_region %>%
+  left_join(italy_region %>% 
+              filter(date == max(date)), # subseting for the most recent day
+            by = c("region" = "region_spatial"))
+
+
+italy_map_province <- italy_map %>%
+  left_join(italy_province %>% 
+              filter(date == max(date)), # subseting for the most recent day
+            by = c("province" = "province_spatial"))
+```
+
+
+Now that we have one object for the province level and one for the regional level, we can start to plot them.
+
+## Choropleth maps with the mapview package
+
+The mapview package provides interactive visualisations of spatial data based on the Leaflet JavaScript library. In the following example we will plot the total number of covide19 cases in Italy as of `r max(italy_province$date)`, using the `total_cases` variable:
+
+
+```{r}
+library(mapview)
+
+italy_map_province %>%
+  mapview(zcol = "total_cases")
+```
+
+**Note:** the Italy province spatial data on the rnaturalearth package is not updated with changes in the provinces of the Sardegna region that occurred in 2016. Therefore, some of the provinces in that region is missing from the plot. Alternatively, you can download Italy shapefile from the European Environment Agency [website](https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2/gis-files/italy-shapefile). However, the use of shapefiles is not cover on this vignette.
+
+
+The `col.regions` argument enables to set the color pallet of the choropleth map. For example, we will use the `plasma` color pallet from the **viridisLite** package:
+
+```{r}
+italy_map_province %>%
+  mapview(zcol = "total_cases", col.regions = viridisLite::plasma)
+```
+
+
+Similarly, we can plot the region level total number of tests conduct as of `r max(italy_province$date)`:
+
+
+```{r}
+italy_map_region %>% 
+  mapview(zcol = "total_tests")
+```
+
+Additional customization options can be found on the mapview package [site](https://r-spatial.github.io/mapview/index.html)
+
+
+## Choropleth maps with the ggplot2 package
+
+Once the geometric objects of the province and region levels are ready, it is straightforward to plot the mops with the **ggplot2** package. For example, let's plot the total number of testing again, this time with **ggplot2**:
+
+```{r}
+library(ggplot2)
+ggplot(data = italy_map_province, aes(fill = `total_cases`)) + 
+  geom_sf() + 
+  scale_fill_viridis_b()
+```
+
+Customizations of the plot color palette can be done with the `scale_fill_viridis_b` argument. For example, by default, the function uses the `viridis` palette from the **viridis** package. We can modify the palette to `magma`, by setting the `option` argument to `A`:
+
+
+```{r}
+ggplot(data = italy_map_province, aes(fill = `total_cases`)) + 
+  geom_sf() + 
+    scale_fill_viridis_b(option = "A",
+                       begin = 0.2,
+                       end = 0.7) + 
+   theme_void()
+```
+
+The `theme_void` remove the axis grids and the gray background.

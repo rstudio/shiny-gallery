@@ -1,0 +1,41 @@
+#!/bin/bash
+
+echo $1
+
+echo "Updating the total dataset"
+Rscript -e "source('./data_raw/italy_total_refresh.R'); update_italy_total(branch = '$1')"
+
+if [[ "$(git status --porcelain)" != "" ]]; then
+    git config --global user.name 'RamiKrispin'
+    git config --global user.email 'ramkrisp@umich.edu'
+    git add csv/italy_total.csv
+    git add data/italy_total.rda
+    git commit -m "Update italy total data"
+    git push
+fi
+
+
+echo "Updating the total dataset"
+Rscript -e "source('./data_raw/italy_region_refresh.R'); update_italy_region(branch = '$1')"
+
+if [[ "$(git status --porcelain)" != "" ]]; then
+    git config --global user.name 'RamiKrispin'
+    git config --global user.email 'ramkrisp@umich.edu'
+    git add csv/italy_region.csv
+    git add data/italy_region.rda
+    git commit -m "Update italy region data"
+    git push
+fi
+
+echo "Updating the province dataset"
+Rscript -e "source('./data_raw/italy_province_refresh.R'); update_italy_province(branch = '$1')"
+
+if [[ "$(git status --porcelain)" != "" ]]; then
+    git config --global user.name 'RamiKrispin'
+    git config --global user.email 'ramkrisp@umich.edu'
+    git add csv/italy_province.csv
+    git add data/italy_province.rda
+    git commit -m "Update italy province data"
+    git push
+fi
+

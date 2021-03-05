@@ -1,0 +1,30 @@
+name: Data Refresh
+
+on:
+  schedule:
+    - cron:  '0 */4 * * *'
+jobs:
+  data_refresh_dev:
+    name: covid19Italy dataset refresh on dev branch
+    runs-on: ubuntu-18.04 
+    container: 
+     image: rkrispin/covid19italy:dev
+    steps:
+      - name: checkout_repo
+        uses: actions/checkout@v2
+        with: 
+          ref: 'dev'
+      - name: Refresh the data
+        run: bash ./data_raw/data_refresh.bs "dev"
+  data_refresh_master:
+    name: covid19Italy dataset refresh on master branch
+    runs-on: ubuntu-18.04 
+    container: 
+     image: rkrispin/covid19italy:dev
+    steps:
+      - name: checkout_repo
+        uses: actions/checkout@v2
+        with: 
+          ref: 'master'
+      - name: Refresh the data
+        run: bash ./data_raw/data_refresh.bs "master"
