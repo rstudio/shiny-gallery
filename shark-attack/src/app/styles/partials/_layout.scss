@@ -1,0 +1,21 @@
+.ms-Fabric {
+  height: 100vh;
+  margin: 0;
+  div {
+    height: 100%;
+  }
+  
+  .ms-Dialog-main {
+    height: auto;
+  }
+}
+
+.countdown {
+  font-size: 300px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 50%;
+}

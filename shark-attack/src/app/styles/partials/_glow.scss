@@ -1,0 +1,21 @@
+.glow {
+  &.diver {
+    box-shadow: inset 0px 0px 10px 1px $glowDiver, 0px 0px 10px 1px $glowDiver;
+    border-radius: 50%;
+  }
+  
+  &.shark {
+    box-shadow: inset 0px 0px 10px 1px $glowShark, 0px 0px 10px 1px $glowShark;
+    border-radius: 50%;
+  }
+  
+  &.boat {
+    box-shadow: inset 0px 0px 10px 1px $glowBoat, 0px 0px 10px 1px $glowBoat;
+    border-radius: 50%;
+  }
+  
+  &.organic, &.glass, &.metal, &.plastic, &.electro, &.radio {
+    box-shadow: inset 0px 0px 10px 1px $glowTrash, 0px 0px 10px 1px $glowTrash;
+    border-radius: 50%;
+  }
+}
