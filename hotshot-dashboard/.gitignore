@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+prototyping/*
+!prototyping/README.md
+.Renviron

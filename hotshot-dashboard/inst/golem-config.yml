@@ -1,0 +1,8 @@
+default:
+  golem_name: hotshots.dashboard
+  golem_version: 1.0
+  app_prod: no
+production:
+  app_prod: yes
+dev:
+  golem_wd: !expr here::here()

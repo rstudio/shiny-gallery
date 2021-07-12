@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'TTSupermolotNeue-Bold';
+    src: url('../fonts/TTSupermolotNeue-Bold.eot');
+    src: local('../fonts/TT Supermolot Neue Bold'), local('../fonts/TTSupermolotNeue-Bold'),
+        url('../fonts/TTSupermolotNeue-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TTSupermolotNeue-Bold.woff2') format('woff2'),
+        url('../fonts/TTSupermolotNeue-Bold.woff') format('woff'),
+        url('../fonts/TTSupermolotNeue-Bold.svg#TTSupermolotNeue-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

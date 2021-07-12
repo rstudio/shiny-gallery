@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  hotshotsdash:
+    build:
+      context: ./rstudio_docker
+    container_name: ${CONTAINER_NAME}
+    volumes:
+      - ${VOLUME_PATH}:${VOLUME_PATH}
+      - /home/${USER}/.ssh:/home/${USER}/.ssh
+      - ${RENV_PATHS_CACHE_HOST}:${RENV_PATHS_CACHE_CONTAINER}
+      - ${VOLUME_PATH}/.devcontainer/rstudio_config_dir:/home/${USER}/.config/rstudio
+    restart:
+      unless-stopped
+    ports:
+      - ${LOCAL_PORT}:8787
+    env_file: .env
+

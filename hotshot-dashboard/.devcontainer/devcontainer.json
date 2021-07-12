@@ -1,0 +1,51 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.134.1/containers/r
+{
+	"name": "R",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Add more local mounts to container
+	"mounts": [
+		"source=/opt/local/renv/cache,target=/renv/cache,type=bind,consistency=cached"
+	],
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		//"terminal.integrated.shell.linux": "/bin/bash",
+		"terminal.integrated.shell.linux": "/usr/bin/fish",
+		"r.alwaysUseActiveTerminal": true,
+  		"r.bracketedPaste": true,
+		"r.sessionWatcher": true,
+		"r.rterm.linux": "/usr/local/bin/radian",
+		"r.rterm.option": [
+			""
+		],
+		"r.autoDetect": "false",
+		"r.terminalPath": "/usr/local/bin/radian",
+		"r.interpreterPath": "/usr/local/bin/R",
+		"r.debugger.timeouts.startup": 8000
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ikuyadeu.r",
+		//"/renv/cache/r-latest.vslx",
+		//"mikhail-arkhipov.r",
+		"REditorSupport.r-lsp",
+		"GrapeCity.gc-excelviewer",
+		"Mohamed-El-Fodil-Ihaddaden.shinysnip",
+		"RDebugger.r-debugger"
+	]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "R --version",
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "docker"
+}

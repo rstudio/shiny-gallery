@@ -1,0 +1,345 @@
+---
+title: "explore"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{explore}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+devtools::load_all()
+
+library(pins)
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+library(echarts4r)
+# create connection to pins board
+board_register_dospace()
+df <- pin_get("hotshots_race_results", board = "dospace")
+```
+
+
+## obtain cars used up to this point
+
+```{r}
+
+gen_tidy_racers <- function(df) {
+    res <- df %>%
+      tibble::as_tibble(.) %>%
+      tidyr::unnest_wider(col = "drivers") %>%
+      tidyr::unnest_longer(col = "cars") %>%
+      tidyr::unnest_wider(col = "cars")
+    return(res)
+}
+
+used_cars <- df %>%
+  select(driver, car) %>%
+  distinct() %>%
+  arrange(driver, car)
+
+df %>%
+  filter(grand_prix == "hotshot") %>%
+  select(driver, car) %>%
+  distinct() %>%
+  arrange(driver, car)
+
+
+#openxlsx::write.xlsx(used_cars, file = "used_cars.xlsx")
+
+hd <- hotshot_data
+hd$grand_prix <- NULL
+hd$tracks <- NULL
+available_cars <- gen_tidy_racers(hd) %>%
+  filter(!car_name %in% used_cars$car) %>%
+  select(driver_name, car_name)
+
+#openxlsx::write.xlsx(available_cars, file = "avail_cars.xlsx")
+```
+
+
+
+## Explore the data
+
+```{r}
+df
+```
+
+## Create a season table
+
+The goal is to have an overall season table that has one row per racing session, and then leverage `reactable` to create nested contents expandable within the rows and have each row selectable to show additional metrics in the app UI. I've seen nice examples from [racing-reference.info](https://www.racing-reference.info/season-stats/2020/W/).  Since our scoring system assigns points for the overall standings after the normal and mirrored races, it seems to make sense to do it this way.
+
+First we derive the necessary point totals with a custom function
+
+```{r}
+df_gp <- df %>%
+  gen_tidy_race_data() %>%
+  gen_summary_gp_data()
+
+df_gp
+```
+
+Let's try creating a nested table so we have one row per grand prix entry.  But first we can compute some gp-level metrics in a separate df
+
+```{r}
+
+```
+
+
+## finish changes (consecutive)
+
+```{r}
+df2 <- gen_tidy_race_data(df)
+
+df2 <- df2 %>%
+  arrange(grand_prix_fct, player_name, direction_fct, track_fct) %>%
+  group_by(grand_prix_fct, player_name, direction_fct) %>%
+  mutate(previous_position = lag(position)) %>%
+  ungroup() %>%
+  mutate(position_diff = previous_position - position)
+  #select(player_name, direction_fct, track_fct, position, position_diff)
+  
+select(df2, player_name, direction_fct, track_fct, position, position_diff)
+```
+
+```{r}
+df2 %>%
+  filter(grand_prix_fct == "tour") %>%
+  e_charts() %>%
+  e_histogram(position_diff)
+```
+
+
+## Create Grand Prix Stat Charts
+
+```{r}
+df2 <- gen_tidy_race_data(df)
+
+
+mov_summary <- df2 %>%
+  filter(position == 1) %>%
+  select(grand_prix_fct, track_fct, direction_fct, player_name, margin_victory) %>%
+  distinct()
+
+mov_summary
+
+my_chart <- mov_summary %>%
+  group_by(grand_prix_fct) %>%
+  e_charts() %>%
+  e_boxplot(margin_victory) %>%
+  e_tooltip(trigger = "item") %>%
+  e_theme("dark")
+
+my_chart
+```
+
+## Convert times
+
+```{r}
+my_options <- options(digits.secs = 3)     # Modify and save default global options
+x <- "02:56.499"
+x2 <- as.numeric(as.difftime(x, format="%M:%OS", units="secs"))
+x2
+
+strptime(x, "%M:%OS")
+
+library(countup)
+
+x_od <- stringr::str_replace_all(x, ":", "")
+
+odometer(
+  x2,
+  theme = "car"
+)
+```
+
+## Tidy racing data
+
+1. Replace last `:` with `.`
+2. treat DNF as NA
+3. Create a numeric version of the race times in seconds
+4. Create factor versions of track and grand prix to preserve ordering
+
+```{r}
+data("hotshot_data")
+
+grand_prix_order <- names(hotshot_data$grand_prix)
+track_order <- purrr::simplify(hotshot_data$grand_prix)
+names(track_order) <- NULL
+
+df2 <- df %>%
+  mutate(player_time = stringi::stri_replace_last(player_time, replacement = ".", regex = "\\:"),
+         race_time = as.numeric(as.difftime(player_time, format="%M:%OS", units="secs")),
+         grand_prix_fct = factor(grand_prix, levels = grand_prix_order),
+         track_fct = factor(track, levels = track_order),
+         direction_fct = factor(direction, levels = c("normal", "mirrored")))
+
+df2
+```
+
+## Compute margin of victory for each race
+
+```{r}
+df2 <- df2 %>%
+  group_by(grand_prix_fct, direction_fct, track_fct) %>%
+  mutate(winning_time = min(race_time, na.rm = TRUE),
+         diff_time = race_time - winning_time) %>%
+  ungroup()
+
+df_mov <- df2 %>%
+  group_by(grand_prix_fct, direction_fct, track_fct) %>%
+  arrange(grand_prix_fct, direction_fct, track_fct, diff_time) %>%
+  mutate(diff_index = row_number()) %>%
+  filter(diff_index == 2) %>%
+  rename(margin_victory = diff_time) %>%
+  ungroup() %>%
+  select(grand_prix_fct, direction_fct, track_fct, margin_victory)
+
+df_top3 <- df2 %>%
+  group_by(grand_prix_fct, direction_fct, track_fct) %>%
+  arrange(grand_prix_fct, direction_fct, track_fct, diff_time) %>%
+  mutate(diff_index = row_number()) %>%
+  filter(diff_index == 3) %>%
+  rename(top_3_sep = diff_time) %>%
+  ungroup() %>%
+  select(grand_prix_fct, direction_fct, track_fct, top_3_sep)
+
+df2 <- left_join(df2, df_mov, by = c("grand_prix_fct", "direction_fct", "track_fct"))
+df2 <- left_join(df2, df_top3, by = c("grand_prix_fct", "direction_fct", "track_fct"))
+
+df2
+```
+
+
+## Race bar chart of running points total
+
+First we will use the above tidy data frame and compute the running total of race points after each race completes.
+
+```{r}
+df_chart <- df2 %>%
+  group_by(player_name) %>%
+  mutate(points_running = cumsum(points)) %>%
+  ungroup() %>%
+  select(grand_prix_fct, track_fct, direction_fct, player_name, position, points, points_running)
+
+df_chart
+```
+
+Now let's create the chart!
+
+```{r}
+df_chart %>%
+  group_by(grand_prix_fct, direction_fct, track_fct) %>%
+  e_charts(player_name, timeline = TRUE) %>%
+  e_bar(points_running, realtimeSort = TRUE) %>%
+  e_legend(show = FALSE) %>%
+  e_flip_coords() %>%
+  e_y_axis(inverse = TRUE) %>%
+  e_labels(position = "insideRight") %>%
+  e_timeline_opts(autoPlay = FALSE, top = "15") 
+```
+
+## Generate summary statistics by player
+
+First we compute the total points earned in each half of the grand prix (normal and mirrored). In the event that racers are tied with points, the first tiebreaker is the number of first-place finishes. If that is still tied, then it is the number of second place finishes.  If that is still tied, then it is the number of third place finishes.  At that point if they are still tied, then it is alphabetical order. Then we compute the grand prix place order using the points metadata.
+
+```{r}
+
+data(hotshot_points)
+
+df_summary1 <- df2 %>%
+  group_by(grand_prix_fct, direction, player_name) %>%
+  summarize(race_points_total = sum(points, na.rm = TRUE),
+            n_races = n(),
+            n_first = sum(position == 1),
+            n_second = sum(position == 2),
+            n_third = sum(position == 3),
+            n_top3 = sum(position <= 3)) %>%
+  arrange(grand_prix_fct, desc(direction), desc(race_points_total), desc(n_first), desc(n_second), desc(n_third)) %>%
+  #mutate(position = row_number()) %>%
+  ungroup() %>%
+  group_by(grand_prix_fct, direction) %>%
+  mutate(position = row_number()) %>%
+  left_join(hotshot_points, by = "position") %>%
+  ungroup()
+
+df_summary1
+```
+
+Assuming grand prix is complete, we can use the above set to get the total points
+
+```{r}
+df_summary2 <- df_summary1 %>%
+  group_by(grand_prix_fct, player_name) %>%
+  summarize(total_gp_points = sum(points, na.rm = TRUE),
+            n_races = sum(n_races),
+            n_top3 = sum(n_top3),
+            n_first_race = sum(n_first),
+            n_first_gp = sum(position == 1),
+            n_second_gp = sum(position == 2),
+            n_third_gp = sum(position == 3)) %>%
+  ungroup() %>%
+  arrange(grand_prix_fct, desc(total_gp_points), desc(n_first_gp), desc(n_second_gp), desc(n_third_gp)) %>%
+  group_by(player_name) %>%
+  summarize(total_points = sum(total_gp_points),
+            n_races = sum(n_races),
+            n_top3 = sum(n_top3),
+            n_first_race = sum(n_first_race),
+            n_first_gp = sum(n_first_gp),
+            n_second_gp = sum(n_second_gp),
+            n_third_gp = sum(n_third_gp)) %>%
+  ungroup() %>%
+  arrange(desc(total_points), desc(n_first_gp), desc(n_second_gp), desc(n_third_gp))
+
+df_summary2
+```
+
+## Generate summary statistics by grand prix
+
+```{r}
+df_summary3 <- df2 %>%
+  group_by(grand_prix_fct, direction_fct) %>%
+  summarize(avg_margin_victory = mean(margin_victory),
+            avg_top_3_sep = mean(top_3_sep),
+            n_racers = length(unique(player_name))) %>%
+  ungroup()
+  
+
+df_summary3
+```
+
+## Generate overall statistics
+
+```{r}
+# unique first place winners
+fp_winners <- df2 %>%
+  filter(position == 1) %>%
+  pull(player_name) %>%
+  unique()
+
+dnf_losers <- df2 %>%
+  filter(player_time == "DNF") %>%
+  pull(player_name) %>%
+  unique()
+
+
+df_summary4 <- df2 %>%
+  summarize(n_grand_prix = length(unique(grand_prix)),
+            n_races = length(unique(track)) * 2,
+            n_racers = length(unique(player_name)),
+            avg_margin_victory = mean(margin_victory),
+            avg_top_3_sep = mean(top_3_sep)) %>%
+  mutate(n_firstplace_winners = length(fp_winners),
+         n_dnf_losers = length(dnf_losers))
+
+df_summary4
+```
+
