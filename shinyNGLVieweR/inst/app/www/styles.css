@@ -1,0 +1,57 @@
+/* Sidebar styles   */
+.sidebar { 
+  height: 90vh; 
+  overflow-y: auto; 
+}
+.treeview-menu{
+  padding-bottom: 15px;
+}
+.btn-link {
+  font-weight: 700; 
+}
+/* sequenceOuput   */
+#sequence .btn-primary{
+  background-color: black;
+  margin: 0;
+  padding: 5px;
+}
+#sequence {
+  margin: 0; 
+  padding: 0;
+}
+#sequenceOutput_ui_1-PDBsequence{
+  height: 100% !important;
+  margin: 0;
+}
+.box{
+  margin: 0; 
+  border: 0; 
+  box-shadow:0 0 0;
+}
+.box.box-solid.box-primary > .box-header {
+  background-color: black;
+}
+.box.box-solid.box-primary{
+  border-color: #fff;
+}
+.content{
+  padding: 10px 0 0 0;
+}
+.content-wrapper{
+  background-color: black;
+}
+
+/* NGLVieweR output */
+#NGLVieweROutput_ui_1-structure{
+  height: calc(91vh) !important;
+}
+
+#labelcontrols_ui_1-labelBox .btn-primary{
+  background-color: black;
+  margin: 0;
+  padding: 5px;
+}
+
+.hideBox {
+visibility: hidden;
+}

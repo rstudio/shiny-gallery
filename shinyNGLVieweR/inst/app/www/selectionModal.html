@@ -1,0 +1,21 @@
+<strong>Expressions</strong>
+<ul>
+<li>residue number: <em>1</em>, <em>2</em>, <em>100</em></li>
+<li>residue number range: <em>3-40</em> (Note that around the dash <strong>-</strong> no spaces are allowed)</li>
+<li>sequence: <em>&lt;NGLSD&gt;</em></li>
+<li>chain name: <strong>:A</strong></li>
+<li>atom name: <strong>.CA</strong>, <strong>.C</strong>, <strong>.N</strong>, ...</li>
+<li>residue name: <em>ALA</em>, <em>GLU</em>, <em>SOL</em>, <em>DMPC</em>, ...</li>
+<li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
+</ul>
+<strong>Examples</strong>
+<ul>
+<li><code>1-20 #select residues 1-20</code></li>
+<li><code>ALA #select all Alanine residues</code></li>
+<li><code>20-30 or &lt;NGLSD&gt; #select residues 20-30 and sequence "NGLSD"</code></li>
+<li><code>:A and ( 1 or 10 or 100 ) #select residues 1, 10 and 100 from chain A: </code></li>
+<li><code>:A and 63 and .CA #select atom .CA on residue 63 from chain A:</code></li>
+<li><code>(1 OR 2 OR 3) AND NOT [HOH] #select residues 1, 2 and 3 but not [HOH]</code></li>
+</ul>
+
+See the <a href="https://nglviewer.org/ngl/api/manual/usage/selection-language.html">NGL Manual</a> for a complete overview.

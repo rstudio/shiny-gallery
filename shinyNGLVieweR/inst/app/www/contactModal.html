@@ -1,0 +1,40 @@
+<strong>Expressions</strong>
+<ul>
+  <li>all residues: <em>*</em></li>
+  <li>residue number: <em>1</em>, <em>2</em>, <em>100</em></li>
+  <li>residue number range: <em>3-40</em> (Note that around the dash <strong>-</strong> no spaces are allowed)</li>
+  <li>sequence: <em>&lt;NGLSD&gt;</em></li>
+  <li>chain name: <strong>:A</strong></li>
+  <li>atom name: <strong>.CA</strong>, <strong>.C</strong>, <strong>.N</strong>, ...</li>
+  <li>residue name: <em>ALA</em>, <em>GLU</em>, <em>SOL</em>, <em>DMPC</em>, ...</li>
+  <li>model: <strong>/0</strong>, <strong>/1</strong>, ...</li>
+</ul>
+<strong>Examples</strong>
+<ul>
+  <li>Contacts between all residues
+    <ul>
+      <li>Selection A: <code>*</code></li>
+      <li>Selection B: <code>*</code></li>
+    </ul>
+  </li>
+  <li>Contacts between chain A and chain B
+    <ul>
+      <li>Selection A: <code>:A</code></li>
+      <li>Selection B: <code>:B</code></li>
+    </ul>
+  </li>
+  <li>Contacts between Biotin and chain A but not residue 128
+    <ul>
+      <li>Selection A: <code>&lt;BTN&gt;</code></li>
+      <li>Selection B: <code>:A and not 128</code></li>
+    </ul>
+  </li>
+  <li>Contacts between chain A residues 109 or 123 and chain B residue 107
+    <ul>
+      <li>Selection A: <code>:A and (109 or 123)</code></li>
+      <li>Selection B: <code>:B and 107</code></li>
+    </ul>
+  </li>
+</ul>
+
+See the <a href="https://nglviewer.org/ngl/api/manual/usage/selection-language.html">NGL Manual</a> for a complete overview.
