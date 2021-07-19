@@ -1,0 +1,166 @@
+
+/*split panel css */
+.gutter {
+    opacity: 0.5;
+    background-color: #84a4b7;
+    border-radius: 2px;
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+
+}
+
+.gutter.gutter-vertical {
+  cursor: row-resize;
+
+}
+
+
+
+.split-content {
+  border: 1px solid #eee;
+  box-shadow: inset 0 1px 2px #e4e4e4;
+  background-color: #fff;
+    display: flex;
+  flex-direction: column;
+}
+
+.split {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+}
+
+.split.split-horizontal,
+.gutter.gutter-horizontal {
+  height: 100%;
+  float: left;
+}
+.split-header{
+  background-color: #3c8dbc;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  position: relative;
+}
+
+.split-title {
+  margin: 0;
+  color: white;
+  font-size: 18px;
+}
+
+.split-tool {
+    float: right!important;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.split-tool .btn {
+    background-color:  #3c8dbc;
+    border: 0;
+    box-shadow: none;
+}
+
+.split-tool .btn:hover {
+    background-color:  #2e6da4;
+}
+
+.split-tool i {
+    color: white;
+}
+
+.split-body {
+    flex: 1;
+    display: grid;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*workflow running session plots*/
+.rs_plot {
+    height: 80%;
+}
+
+.rs_plot_container{
+    display: block;
+    height: 99%;
+    width: 65%;
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+}
+
+.rs_plot_container img {
+   display: block;
+   height: 100%;
+   width: 100%;
+ }
+
+.rs-plot-default {
+    opacity: 0.2;
+}
+
+.rs_plot_arrow .btn {
+    position: absolute;
+    background-color: transparent;
+    color: #337ab7;
+    font-size: 2em;
+    top: 45%;
+    left: 0;
+    border: none;
+    outline:none;
+}
+
+.rs_plot_arrow .btn:hover {
+    background-color: #eee;
+    border-radius: 25px;
+}
+
+.rs_plot_arrow .btn[disabled] {
+    color: black;
+    opacity: 0.1;
+}
+
+.rs_plot_arrow .btn:focus {
+    outline:none;
+    border-radius: 25px;
+}
+
+.rs_plot_arrow.arrow_right .btn {
+    position: absolute;
+    left: auto;
+    right: 0;
+}
+
+.rs_plot_footer {
+    text-align: center;
+}
+
+.rs_plot_footer h5{
+    display: inline-block;
+    font-size: 1.5em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rs_plot_footer .btn{
+    color: #337ab7;
+    font-size: 1.25em;
+    border: none;
+    background-color: transparent;
+}
+
+.rs_plot_footer .btn:hover {
+    background-color: transparent;
+}
+.rs_plot_footer .btn[disabled] {
+    color: black;
+    opacity: 0.2;
+}

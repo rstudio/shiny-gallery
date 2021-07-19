@@ -1,0 +1,29 @@
+###########################
+## Hisat2-Paired_end.yml ##
+###########################
+
+idx_basedir:
+  class: Directory
+  path: ./data
+
+idx_basename: tair10.fasta
+
+fq1:
+  class: File
+  path: _FASTQ_PATH1_
+
+fq2:
+  class: File
+  path: _FASTQ_PATH2_
+  
+SampleName: _SampleName_
+
+results_path:
+  class: Directory
+  path: ./results
+
+thread: 4
+
+ModulesToLoad: 
+  module1: hisat2/2.1.0
+

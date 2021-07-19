@@ -1,0 +1,94 @@
+
+title:
+    default: 'systemPipeShiny'
+    other: ['*']
+
+title_logo:
+    default: "img/sps_small.png"
+    other: ['*']
+
+mode:
+    default: local
+    other: [server]
+
+login_screen:
+    default: false
+    other: [true]
+
+login_theme:
+    default: random
+    other: ["*"]
+
+# Use pure js instead unless this pkg is pushed to CRAN
+# loading_particles:
+#     default: false
+#     other: [true]
+
+use_crayon:
+    default: true
+    other: [false]
+
+# will work on this option once `shinymeta` is on CRAN
+#display_code:
+#    default: false
+#    other: [true]
+
+verbose:
+    default: false
+    other: [true]
+
+admin_page:
+    default: true
+    other: [false]
+
+admin_url:
+    default: admin
+    other: ["*"]
+
+warning_toast:
+    default: false
+    other: [true]
+
+module_wf:
+    default: true
+    other: [false]
+
+module_rnaseq:
+    default: true
+    other: [false]
+
+module_ggplot:
+    default: true
+    other: [false]
+
+tab_welcome:
+    default: true
+    other: [false]
+
+tab_vs_main:
+    default: true
+    other: [false]
+
+tab_canvas:
+    default: true
+    other: [false]
+
+tab_about:
+    default: true
+    other: [false]
+
+note_url:
+    default: 'https://raw.githubusercontent.com/systemPipeR/systemPipeShiny/master/inst/remote_resource/notifications.yaml'
+    other: ['*']
+
+traceback:
+    default: false
+    other: [true]
+
+is_demo:
+    default: false
+    other: [true]
+
+welcome_guide:
+    default: true
+    other: [false]
