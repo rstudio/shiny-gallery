@@ -1,0 +1,11 @@
+MeanDecreaseAccuracy,var,name
+26.367862471607918,depto,department
+61.99057247427991,area,area
+0.3254262611563629,sex,sex
+39.459506511980365,age,age
+24.96028186392045,language_1,primary language
+139.23584409169482,marital,marital status
+16.296941634453795,indigenous,indigenous identity
+21.439043299800492,cellphone,cellphone access
+68.09225366029052,internet_use,internet access
+9.18139636818782,hh_tot_inc,monthly household income
