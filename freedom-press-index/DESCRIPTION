@@ -1,0 +1,28 @@
+Package: fopi.app
+Title: 'Shiny' Application to Visualise the 'Freedom of Press Index'
+Version: 0.0.0.9000
+Authors@R: c(person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre")), person(family = "news-r", role = "cph"))
+Description: 'Shiny' Application to Visualise the 'Freedom of Press Index'.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    emo,
+    fopi,
+    shiny,
+    golem,
+    dplyr,
+    typed,
+    tidyr,
+    fullPage,
+    magrittr,
+    echarts4r,
+    shinythemes,
+    shinyWidgets,
+    pkgload
+RoxygenNote: 7.0.2
+Remotes:
+  hadley/emo,
+  news-r/fopi,
+  JohnCoene/typed,
+  RinteRface/fullPage
