@@ -3,7 +3,7 @@
 ---
 
 - Developed by: [John Coene](https://john-coene.com)
-- Link to deployed app: https://johncoene.shinyapps.io/fopi-contest
+- Link to deployed app: https://gallery.shinyapps.io/freedom-press-index/
 
 ---
 
