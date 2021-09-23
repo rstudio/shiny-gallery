@@ -3,7 +3,7 @@
 ---
 
 - Developed by: [Eric Nantz](https://shinydevseries.com)
-- Link to deployed app: https://rpodcast.shinyapps.io/hotshot_dashboard/
+- Link to deployed app: https://gallery.shinyapps.io/hotshot-dashboard/
 
 ---
 

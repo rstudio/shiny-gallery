@@ -5,8 +5,8 @@ user_name:    Eric Nantz
 user_url:     https://twitter.com/thercast
 date:         2021-07-11
 tags:         golem, dashboard, data, gaming, theme, shiny
-app_url:      https://rpodcast.shinyapps.io/hotshot_dashboard
-source_url:   https://github.com/rstudio/shiny-gallery/hotshot-dashboard
+app_url:      https://gallery.shinyapps.io/hotshot-dashboard/
+source_url:   https://github.com/rstudio/shiny-gallery/tree/master/hotshot-dashboard
 rscloud_url:  https://rstudio.cloud/project/2554000
 rscomm_url:   https://community.rstudio.com/u/rpodcast
 contest:      yes
