@@ -1,0 +1,5 @@
+GITHUB_PAT=""
+DO_SPACE="do-residual-snippets"
+DO_ACCESS_KEY_ID=""
+DO_SECRET_ACCESS_KEY=""
+DO_DATACENTER="nyc3"

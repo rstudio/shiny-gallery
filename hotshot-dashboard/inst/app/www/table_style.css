@@ -1,0 +1,10 @@
+.flag {
+    margin-right: 8px;
+    height: 21px;
+    border: 1px solid #f0f0f0;
+}
+  
+.table-heading-print {
+  color: "black";
+  align: "center"
+}
