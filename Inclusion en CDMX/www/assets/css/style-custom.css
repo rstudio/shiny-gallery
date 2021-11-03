@@ -1,0 +1,65 @@
+/** Material design cards ****************************************************/
+
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card {
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-clip: padding-box
+}
+.card .card-content {
+  padding: 16px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.card .card-content p {
+  margin: 0;
+  color: inherit;
+}
+
+
+/** Appearance of form labels ************************************************/
+
+.control-label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 400;
+    color: gray;
+    font-size: 0.9em;
+}
+
+
+/** Appearance of data tables ************************************************/
+
+.dataTables_paginate {
+  font-size: 0.85em;
+}
+
+
+/** Seet alert modal adjustments *********************************************/
+
+.swal-modal {
+    width: 478px;
+    opacity: 0;
+    pointer-events: none;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    position: static;
+    margin: 100px auto 20px auto;  /* This shifts the modal box down by 100px to not make it overlap with the menu */
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    z-index: 10001;
+    transition: opacity .2s,-webkit-transform .3s;
+    transition: transform .3s,opacity .2s;
+    transition: transform .3s,opacity .2s,-webkit-transform .3s;
+}
