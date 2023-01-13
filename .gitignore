@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 rsconnect
+
+**/__pycache__
+**/venv
