@@ -1,0 +1,17 @@
+{
+  "name": "Respiratory Disease PyShiny",
+  "short_name": "Respiratory Disease PyShiny",
+  "start_url": "https://connect.appsilon.com/respiratory_disease_pyshiny/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Respiratory Disease PyShiny",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
