@@ -1,8 +1,10 @@
+Note: The original version of this application is at https://github.com/Appsilon/respiratory_disease_pyshiny
+
 # Respiratory Disease: Shiny for Python Version
 
-This repository contains the result of a Py/Shiny (Shiny for Python) app-sprint during a hackathon. The goal of this sprint was to "translate" an R/Shiny application into a "Shiny for Python" version, as well as to explore some Py/Shiny-specific features. You can explore the original app as a [demo](https://connect.appsilon.com/respiratory_disease_app_sprint/). To see the original R/Shiny app code, please reach out to us. 
+This repository contains the result of a Py/Shiny (Shiny for Python) app-sprint during a hackathon. The goal of this sprint was to "translate" an R/Shiny application into a "Shiny for Python" version, as well as to explore some Py/Shiny-specific features. You can explore the original app as a [demo](https://connect.appsilon.com/respiratory_disease_app_sprint/). To see the original R/Shiny app code, please reach out to us.
 
-Note: this app was built in August 2022 with the early Alpha version of Shiny for Python. Some solutions implemented here may be resolved in future Shiny for Python versions. Please review the [official documenation](https://shiny.rstudio.com/py/docs/get-started.html) for current information. 
+Note: this app was built in August 2022 with the early Alpha version of Shiny for Python. Some solutions implemented here may be resolved in future Shiny for Python versions. Please review the [official documenation](https://shiny.rstudio.com/py/docs/get-started.html) for current information.
 
 ## Explore the app
 The "normal" app is deployed at [Appsilon RSConnect](https://connect.appsilon.com/respiratory_disease_pyshiny/). The WASM version aka Shinylive is deployed at https://connect.appsilon.com/respiratory_disease_shinylive/. Please note, that for a ShinyLive application a large bundle has to be downloaded which can take some time (but it will be cached and used later - even without an internet connection).
