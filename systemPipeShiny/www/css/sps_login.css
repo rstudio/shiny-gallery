@@ -1,0 +1,167 @@
+#user-toapp{
+    border: none;
+    background: none;
+    z-index: 100;
+    top: 85%;
+    left: 50%;
+    position: absolute;
+    display: block;
+    transform: translate(-50%, -50%);
+    font-size: 2vmax;
+}
+
+#user-toapp:active {
+    transform: translate(-50%, -10%);
+}
+
+
+#admin-bg, #user-bg {
+    height: 100vh;
+    width: 100%;
+    margin: 0px 0px;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#user-bg {
+    transition: opacity 0.5s;
+}
+
+#admin-bg canvas {
+    overflow: hidden;
+}
+
+.login {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    z-index: 99;
+}
+
+.login > .img-container {
+    display: block;
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    overflow: hidden;
+}
+
+.img-container img {
+    position: absolute;
+    user-drag: none;
+    -webkit-user-drag: none;
+    bottom:0px;
+    transform: translateY(100%);
+    transition: transform 0.5s linear;
+    width: 20rem;
+    height: 20rem;
+}
+.login .login-box {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 30rem;
+    background-color: transparent;
+    border-radius: 15px;
+    opacity: 0.3;
+    transition: 0.5s;
+    overflow: hidden;
+    color: white;
+}
+
+#admin-login_page .login .login-box {
+    margin: auto;
+}
+
+#user-login .login-box {
+    opacity: 1;
+    color: black;
+}
+
+.login .login-box:hover {
+    opacity: 1;
+    background-color: #fff;
+    color: black;
+    border: 1px solid var(--primary);
+}
+
+
+.login .btn.btn-info {
+    display: block;
+}
+
+.login .alert-danger {
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.login .alert-danger label {
+    display: inline;
+}
+
+
+.about-micro {
+    position: absolute;
+    color: #9e9e9e;
+    bottom: 1%;
+    left: 2%;
+    margin: 0;
+    padding: 0;
+}
+
+.about-micro a {
+    color: var(--info);
+    display: block;
+}
+
+.about-micro a:hover {
+    text-decoration: none;
+}
+
+/*theme chooser*/
+@media screen and (min-width: 1200px) {
+  #user-theme-container {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 600px) {
+  #user-theme-container {
+    width: 30%;
+  }
+}
+
+#user-theme-container {
+    opacity: 0.7;
+    left: 1%;
+    top: 1%;
+    position: absolute;
+    transition: 0.3s ease-in;
+}
+
+#user-theme-container:hover {
+    opacity: 1;
+}
+
+#user-theme-container h4 {
+    overflow: visible;
+    display: block;
+}
+
+#user-theme-container .form-group {
+    display: none;
+}
+
+#user-theme-container .form-group label {
+    display: none;
+}
+
+
+

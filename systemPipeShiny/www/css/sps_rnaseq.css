@@ -1,0 +1,21 @@
+/*RNAseq module css */
+
+/* Center items in a panel*/
+.center-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.center-child {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sps-panel-nav {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#shiny-tab-vs_rnaseq .sps-panel-nav .nav-tabs {
+    background-color: #d9edf7;
+}

@@ -1,0 +1,3 @@
+ - Could be usful to store some data written from app.
+ - For future release, this can be used to store results from workflow running.
+ - not in use for now.

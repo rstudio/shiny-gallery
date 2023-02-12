@@ -1,0 +1,23 @@
+# Project ID: Arabidopsis - Pseudomonas alternative splicing study (SRA: SRP010938; PMID: 24098335)
+# The following line(s) allow to specify the contrasts needed for comparative analyses, such as DEG identification. All possible comparisons can be specified with 'CMPset: ALL'.
+# <CMP> CMPset1: M1-A1, M1-V1, A1-V1, M6-A6, M6-V6, A6-V6, M12-A12, M12-V12, A12-V12
+# <CMP> CMPset2: ALL
+FileName	SampleName	Factor	SampleLong	Experiment	Date
+./data/SRR446027_1.fastq.gz	M1A	M1	Mock.1h.A	1	23-Mar-2012
+./data/SRR446028_1.fastq.gz	M1B	M1	Mock.1h.B	1	23-Mar-2012
+./data/SRR446029_1.fastq.gz	A1A	A1	Avr.1h.A	1	23-Mar-2012
+./data/SRR446030_1.fastq.gz	A1B	A1	Avr.1h.B	1	23-Mar-2012
+./data/SRR446031_1.fastq.gz	V1A	V1	Vir.1h.A	1	23-Mar-2012
+./data/SRR446032_1.fastq.gz	V1B	V1	Vir.1h.B	1	23-Mar-2012
+./data/SRR446033_1.fastq.gz	M6A	M6	Mock.6h.A	1	23-Mar-2012
+./data/SRR446034_1.fastq.gz	M6B	M6	Mock.6h.B	1	23-Mar-2012
+./data/SRR446035_1.fastq.gz	A6A	A6	Avr.6h.A	1	23-Mar-2012
+./data/SRR446036_1.fastq.gz	A6B	A6	Avr.6h.B	1	23-Mar-2012
+./data/SRR446037_1.fastq.gz	V6A	V6	Vir.6h.A	1	23-Mar-2012
+./data/SRR446038_1.fastq.gz	V6B	V6	Vir.6h.B	1	23-Mar-2012
+./data/SRR446039_1.fastq.gz	M12A	M12	Mock.12h.A	1	23-Mar-2012
+./data/SRR446040_1.fastq.gz	M12B	M12	Mock.12h.B	1	23-Mar-2012
+./data/SRR446041_1.fastq.gz	A12A	A12	Avr.12h.A	1	23-Mar-2012
+./data/SRR446042_1.fastq.gz	A12B	A12	Avr.12h.B	1	23-Mar-2012
+./data/SRR446043_1.fastq.gz	V12A	V12	Vir.12h.A	1	23-Mar-2012
+./data/SRR446044_1.fastq.gz	V12B	V12	Vir.12h.B	1	23-Mar-2012

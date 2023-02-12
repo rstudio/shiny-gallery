@@ -1,0 +1,17 @@
+/*Esq module css */
+
+
+.esq .btn-default {
+  color: initial;
+  background-color: initial;
+  border-color: initial;
+}
+
+.esq .btn-default:hover{
+  background-color: initial;
+}
+
+
+.dragula-block .label {
+    font-size: 100%;
+}

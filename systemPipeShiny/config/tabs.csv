@@ -1,0 +1,15 @@
+# List of SPS tabs,,,,,,,
+# Editing by hand is not recommended ,,,,,,,
+# image paths use `www` folder as root,,,,,,,
+tab_id,display_label,type,type_sub,image,displayed,tab_file_name,plugin
+core_about,About this App,core,,,1,No file for core,core
+core_canvas,Canvas,core,,,1,No file for core,core
+core_welcome,Home,core,,,1,No file for core,core
+core_right,Internal use only,core,,,1,No file for core,core
+core_top,Top push bars,core,,,1,No file for core,core
+module_main,Module Main Page,core,,,1,No file for core,core
+wf,Workflow module,module,,,1,No file for core,core
+vs_rnaseq,RNAseq module,module,,,1,No file for core,core
+vs_esq,Quick ggplot module,module,,,1,No file for core,core
+vs_main,custom tabs main page,core,,,1,No file for core,core
+vs_example,My custom plotting tab,vs,plot,,1,tab_vs_example.R,
