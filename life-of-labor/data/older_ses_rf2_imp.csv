@@ -1,0 +1,19 @@
+MeanDecreaseAccuracy,var,name
+20.073597910631904,depto,department
+43.248137257456975,area,area
+50.56137779644405,sex,sex
+6.433817889136652,age,age
+13.887086003858974,language_1,primary language
+24.84156476827132,marital,marital status
+11.190788265485866,literate,literacy
+5.603721227991235,indigenous,indigenous identity
+13.754532344971143,education,education
+1.4461924884718278,chronic_disease_1,chronic disease
+7.054528695457414,disability,disability
+18.56458604282822,cellphone,cellphone access
+14.140435063484423,internet_use,internet access
+8.92686796567142,union_member,union membership
+7.999837416492431,nonlab_monthly_inc,monthly non-labor income
+23.373892083936365,size,household size
+45.756216631141676,rest_of_hh,"monthly per capita income
+for rest of household"
