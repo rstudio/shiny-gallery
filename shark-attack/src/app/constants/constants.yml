@@ -1,0 +1,27 @@
+default:
+  sass:
+    input: "styles/main.scss"
+    style: "compressed"
+    output: "www/css/sass.min.css"
+  colors:
+    success: "#41aa00"
+    navy: "navy"
+  texts:
+    gameOver: "You tried your best, and the planet is grateful for your sacrifice. Lets hope the next diver does a better job."
+    gameSuccess: "Congratulations! The ocean is now... slightly cleaner. Still a lot of work to do!"
+    modalFooter: "This Shiny app was created with the help of <a href='https://github.com/Appsilon/shiny.fluent' target='_blank'>shiny.fluent</a> package by Appsilon. Learn more about Appsilon <a href='https://appsilon.com/ai-for-good/' target='_blank'>AI4GOOD</a> initiative."
+    currentScore: "Your score this round:"
+    highScore: "Your highscores so far:"
+    noHighScore: "Sorry, you have not qualified for the leaderboard"
+  links:
+    link1: "https://www.conservation.org/stories/ocean-pollution-11-facts-you-need-to-know"
+    link2: "https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-pollution"
+    link3: "https://www.nrdc.org/stories/ocean-pollution-dirty-facts"
+    link4: "http://www.unesco.org/new/en/natural-sciences/ioc-oceans/focus-areas/rio-20-ocean/blueprint-for-the-future-we-want/marine-pollution/"
+    link5: "https://www.nationalgeographic.com/science/article/150109-oceans-plastic-sea-trash-science-marine-debris"
+  tutorial:
+    1: "We have made a terrible mess in the oceans! They are full of plastic and other waste, harming marine life and polluting the environment. Your goal today is to clean a small part of the ocean as much as you can. It is up to you to save this corner of planet Earth!"
+    2: "Move your diver using the ARROW KEYS. Swim onto a trash pile to collect it. For each pile of trash collected, you will receive points. Check the current score on the bottom-right of the diver. Note that different types of trash are worth different amounts of points depending on the pollution they cause. HOLD YOUR BREATH! You only have enough oxygen for a one-minute dive. Before one minute expires, you need to finish your ecological rescue mission and go back to the submarine. The current time remaining can be viewed above the diver."
+    3: "Fortunately, there are still some plants alive in this junkyard of an ocean! You need to preserve what little sea life there is left, so you cannot swim through the aquatic plants."
+    4: "BE CAREFUL! There are sharks swimming in this area. They do not realize that you are here to help them, but they do know that humans are responsible for all of this trash in their habitat. Unlike most sharks you may encounter in the real world, these sharks are quite angry and will try to eat you. Before starting the game, you can select their anger level to change the level of difficulty."
+    5: "Remember! To finish the game successfully and save your score, you need to return to the submarine before the time limit expires (and before you are eaten by a shark). Swim onto the submarine to finish the game and log your high score. Good luck, diver!"

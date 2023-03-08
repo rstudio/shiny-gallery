@@ -1,0 +1,57 @@
+#grid {
+  box-sizing: border-box;
+  .all-grid {
+    background-image: url("../assets/ocean.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .single-grid {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      position: relative;
+      p {
+        margin: 0;
+        opacity: 1;
+        display: block;
+        position: absolute;
+        font-weight: bold;
+        color: $darkblue;
+        &.timer {
+          right: 5%;
+        }
+        &.score {
+          right: 5%;
+          bottom: 5%;
+        }
+        &.show-score-organic {
+          font-size: 15px;
+          color: $yellow1;
+        }
+        &.show-score-glass {
+          font-size: 20px;
+          color: $yellow2;
+        }
+        &.show-score-metal {
+          font-size: 20px;
+          color: $yellow2;
+        }
+        &.show-score-electro {
+          font-size: 25px;
+          color: $yellow3;
+        }
+        &.show-score-plastic {
+          font-size: 25px;
+          color: $yellow3;
+        }
+        &.show-score-radio {
+          font-size: 30px;
+          color: $yellow4;
+        }
+      }
+      &.rotated {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}

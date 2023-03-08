@@ -1,0 +1,302 @@
+.ms-Button {
+  &--icon {
+    color: $darkblue;
+  }
+  &--primary {
+    background-color: $darkblue;
+    border: $darkblue;
+  }
+}
+
+.end-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 15px 100px 150px 100px;
+  padding: 20px;
+  gap: 10px;
+  
+  .modal-element {
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    &--text {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+      text-align: center;
+    }
+    
+    &--icon {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+      img {
+        width: 150px;
+        right: 10px;
+        top: 10px;
+        opacity: 20%;
+        position: absolute;
+      }
+    }
+  
+    &--buttons {
+      grid-column: 1 / span 1;
+      grid-row: 5 / span 1;
+    }
+    
+    &--scores {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
+    }
+    
+    &--leaderboard {
+      grid-column: 1 / span 1;
+      grid-row: 4 / span 1;
+    }
+  }
+}
+
+.leaderboard-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(1, 1fr);
+  padding: 20px;
+  gap: 10px;
+  .button-nick {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    display: block !important;
+    height: auto;
+    .ms-TextField {
+      padding: 10px;
+      .ms-TextField-wrapper {
+        display: block;
+      }
+    }
+  }
+  .table-leaderboard {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    font-weight: bold;
+    table {
+      font-size: 10px;
+      td {
+        text-align: center;
+      }
+      th {
+        border-bottom: 1px solid black;
+      }
+    }
+    #gameOver-leaderboardPartOne {
+      table {
+        border-right: 1px solid black;
+      }
+    }
+  }
+}
+
+.buttons-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 20px;
+  gap: 10px;
+  .button-play {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+  }
+
+  .button-learn {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+  }
+  
+  .button-menu {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+  
+  .buttons-footer {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+    text-align: center;
+  }
+  
+}
+
+.scores-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20px 80px;
+  padding: 20px;
+  column-gap: 90px;
+  .scores-current-text {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    text-align: center;
+    font-weight: bold;
+  }
+  .scores-high-text {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 1;
+    text-align: center;
+    font-weight: bold;
+  }
+  .scores-current-score {
+    font-size: 50px;
+    height: 100px;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  } 
+  .scores-easy-score {
+    font-size: 20px;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    p {
+      font-size: 30px;
+    }
+  }
+  .scores-medium-score {
+    font-size: 20px;
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    p {
+      font-size: 30px;
+    }
+  }
+  .scores-hard-score {
+    font-size: 20px;
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+    p {
+      font-size: 30px;
+    }
+  }
+  img {
+    width: 50px;
+  }
+}
+
+.image-small {
+  img {
+    width: 50px;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.start-grid {
+  display: grid;
+  grid-template-columns: 80px 300px 80px;
+  grid-template-rows: 500px 30px 100px;
+  padding: 20px;
+  gap: 10px;
+  
+  .start-element {
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
+    
+    &--tutorial {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 1;
+      display: grid;
+      grid-template-columns: 20px 380px 20px;
+      grid-template-rows: 4fr 2fr 1fr;
+      padding: 20px;
+      gap: 10px;
+      
+      .arrow {
+        &--left {
+          grid-column: 1 / span 1;
+          grid-row: 1 / span 3;
+        }
+        &--right {
+          grid-column: 3 / span 1;
+          grid-row: 1 / span 3;
+        }
+      }
+      
+      .steps {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+      }
+      
+      .text {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+      }
+      
+      .image {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    
+    &--icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform .2s;
+      img {
+        width: 50px;
+      }
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+    
+    &--confirm {
+      grid-column: 2 / span 1;
+      grid-row: 3 / span 1;
+    }
+    
+    &--levels {
+      grid-column: 2 / span 1;
+      grid-row: 3 / span 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      visibility: hidden;
+      
+      .level-icon--text {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 1;
+        justify-self: stretch;
+        text-align: center;
+        h4 {
+          margin: 0;
+        }
+      }
+      .level-icon--easy {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+      }
+      .level-icon--medium {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+      }
+      .level-icon--hard {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+      }
+    }
+  }
+}
+
+#gameOver-endModal {
+  position: fixed;
+}
+
+#gameStart-startModal {
+  position: fixed;
+}
