@@ -1,0 +1,41 @@
+Package: shinyNGLVieweR
+Title: Shiny application for the NGLVieweR package
+Version: 1.0
+Authors@R: 
+    person(given = "Niels",
+           family = "van der Velden",
+           role = c("aut", "cre"),
+           email = "n.s.j.vandervelden@gmail.com")
+Description: Load, edit and save Protein Database files (PDB) in the webbrowser.
+License: MIT
+Imports: 
+    config,
+    golem,
+    shiny,
+    processx,
+    attempt,
+    DT,
+    glue,
+    htmltools,
+    shinydashboard,
+    shinyWidgets,
+    shinyjs,
+    readr,
+    tools,
+    dplyr,
+    shinydashboardPlus,
+    stringr,
+    tidyr,
+    colourpicker,
+    bsplus,
+    r2d3,
+    NGLVieweR,
+    shinyjqui,
+    uuid,
+    pkgload
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
