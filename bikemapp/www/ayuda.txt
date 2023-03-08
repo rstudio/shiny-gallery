@@ -1,0 +1,51 @@
+ <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+ <style>
+h1 {text-align: center;} 
+h5 {text-align: center;} 
+ul {word-wrap: break-word;}
+</style>
+
+ <p>Usá el menú de la izquierda <span class="glyphicon glyphicon-road"></span> para mostrar/ocultar:</p>    
+    <ul>
+         <li>Calles con mala superficie:</li>
+         <ul>
+            <li>Empedrado: <img src="pics/cobblestone.jpg" width="50" height="50" /></li>    
+            <br>  
+            <li>Adoquín: <img src="pics/sett.jpg" width="50" height="50"/></li>       
+            <br>
+            <li>Ripio: <img src="pics/gravel.jpg" width="50" height="50"/></li>
+         </ul>
+         <li><a href="#" onclick='window.open("https://www.buenosaires.gob.ar/ecobici/pedalea-la-ciudad");return false;'>Ciclovías</a> de CABA.</li>       
+    </ul>
+<br>
+ <p>Usá el menú de la derecha <span class="glyphicon glyphicon-map-marker"></span> para mostrar/ocultar:</p>    
+    <ul>
+        <li><span class="glyphicon glyphicon-tint"></span> Puntos para cargar/tomar agua.</li>
+        <li><span class="fas fa-gas-pump"></span> Estaciones de servicio para inflar.</li>
+        <li><span class="fas fa-parking"></span> Estacionamientos privados y públicos.</li>
+        <li><span class="glyphicon glyphicon-wrench"></span> Bicicleterías y talleres de reparación.</li>
+    </ul>
+<br>
+<p>Dentro del mapa, usá</p>
+    <ul>
+        <li><span class="fas fa-search"></span> Para buscar una dirección.</li>
+        <ul>
+            <li>Es importante que escribas la dirección con la mayor precisión posible (por ej, si la calle es una avenida, agregá "<i>Av</i>") y aclarando la localidad.</li>
+        </ul>
+        <li><span class="iconify" data-icon="ion-arrow-shrink" data-inline="false"></span> Para volver a la vista inicial.</li>
+        <li><span class="fas fa-crosshairs"></span> Para centrar la vista en tu ubicación.</li>
+        <li><span class="fas fa-ruler-combined"></span> Para medir distancias y áreas.</li>
+    </ul>
+<br>
+Si ves que hay información que falta o que es incorrecta, sumate al equipo colaborativo de <a href="#" onclick='window.open("https://wiki.openstreetmap.org/wiki/ES:Gu%C3%ADa_de_principiantes");return false;'>Open Street Map</a>, para <b>editar</b> los datos relacionados con calles y lugares.
+<br>
+<br>
+Para acceder más rápido al mapa, agregá la app a la <b>pantalla de inicio</b> de tu teléfono usando 
+<ul>
+<li>en Chrome, el botón:  <span class="fas fa-ellipsis-v"></span>  , y <i>"Add to home screen"</i> / <i>"Agregar a la pantalla principal"</i> en <a href="#" onclick='window.open("https://www.xatakandroid.com/aplicaciones-android/como-instalar-aplicaciones-web-progresivas-tu-android-para-ahorrar-espacio");return false;'>Android</a>.</li>
+<li>en Safari, el botón:  <span class="iconify" data-icon="ion-share-outline" data-inline="false"></span>  , y <i>"Add to home screen"</i> / <i>"Añadir a la pantalla de incio"</i> en <a href="#" onclick='window.open("https://www.adapptative.com/adapptative/instalar-pwa-en-ios/");return false;'>iOS</a>.</li>
+</ul>
+<br>
+<br>
+<h1><span class="fas fa-bicycle"></span></h1>
+<h5>Con la bici, a todos lados.</h5>
